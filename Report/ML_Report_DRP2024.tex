@@ -1,30 +1,4 @@
-
 \documentclass{tufte-handout}
-
-\makeatletter
-\renewcommand{\maketitlepage}{%
-\begingroup%
-\setlength{\parindent}{0pt}
-
-{\fontsize{24}{24}\selectfont\textit{\@author}\par}
-
-\vspace{1.75in}{\fontsize{36}{54}\selectfont\@title\par}
-
-\vspace{0.5in}{\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}\par}
-
-\vfill{\fontsize{14}{14}\selectfont\textit{\@publisher}\par}
-
-\thispagestyle{empty}
-\endgroup
-\newpage
-}
-\makeatother
-
-% Book metadata
-\title{An Introduction to Machine Learning}
-\date{\today}
-\author{Alexandre St-Aubin}
-\publisher{McGill University -- Directed Reading Program}
 
 \usepackage{amsmath}
 \usepackage{amsthm} %needed for the proofs 
@@ -82,10 +56,12 @@
   \\
   \textit{Solution:}\\%
 }
-\newcommand{\indep}{\perp \!\!\! \perp}
 
+% --- shortcuts --- %
+\newcommand{\indep}{\perp \!\!\! \perp}
 \DeclareMathOperator{\var}{Var}
 \DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\net}{net}
 
 %\geometry{showframe} % display margins for debugging page layout
 
@@ -107,35 +83,67 @@
 
 
 \usepackage{hyperref}% for better handling of links 
-% Prints argument within hanging parentheses (i.e., parentheses that take
-% up no horizontal space).  Useful in tabular environments.
-\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
 
-%%
-% Prints an asterisk that takes up no horizontal space.
-% Useful in tabular environments.
-\newcommand{\hangstar}{\makebox[0pt][l]{*}}
-
-%%
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
 
-% Generates the index
-%\usepackage{makeidx}
-%\makeindex
-
-% Standardize command font styles and environments
-\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
-\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
-\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
-\newcommand{\docenv}[1]{\textsf{#1}}% environment name
-\newcommand{\docpkg}[1]{\texttt{#1}}% package name
-\newcommand{\doccls}[1]{\texttt{#1}}% document class name
-\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
-\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
-
-
+%---- Code ----%
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+%/---- Code ----/%
 \setcounter{secnumdepth}{4} %to set the section numbering
+
+\newsavebox{\titleimage}
+\savebox{\titleimage}{\includegraphics[height=15\baselineskip]{cover.jpg}}
+
+\makeatletter
+\renewcommand{\maketitlepage}{%
+\begingroup%
+\setlength{\parindent}{0pt}
+
+{\fontsize{24}{24}\selectfont\textit{\@author}\par}
+
+\vspace{1.75in}{\fontsize{36}{54}\selectfont\@title\par}
+
+\vspace{0.5in}{\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}\par}
+
+\vspace{0.5in}\usebox{\titleimage}
+
+\vfill{\fontsize{14}{14}\selectfont\textit{\@publisher}\par}
+
+\thispagestyle{empty}
+\endgroup
+\newpage
+}
+\makeatother
+% Book metadata
+\title{An Introduction to Machine Learning}
+\date{\today}
+\author{Alexandre St-Aubin}
+\publisher{McGill University -- Directed Reading Program}
 
 \begin{document}
 
@@ -147,40 +155,83 @@
 
 \section{Introduction}
 There are several types of Machine Learning algorithms. The main categories are divided into \textit{Supervised learning, Semi-supervised learning, Unsupervised learning and Reinforcement learning.} Here, we will focus on \textit{Supervised learning.}
+
+\text{\color{red} Introduce problems requiring machine learning, why it is so popular,}
+
+\text{\color{red}what's the goal. How ML is not about understanding the data but more }
+
+\text{\color{red}about being able to infer about new data.}
+
 \begin{definition}[Supervised Learning]
   In supervised learning, the machine learns through examples. The machine learning algorithm is tasked with developing the strategy for achieving the specified outputs given some input.  To do so, a known dataset is supplied  that contains a set of inputs and associated outputs. The algorithm finds patterns in the data, learns from observations, and makes predictions. At the end of the learning process, the algorithm can be tested on data that is unknown to it, but that the operator knows the answers to, in order to test its accuracy. Then, the algorithm is adjusted if needed, and the process continues in an iterated manner.
 \end{definition}
-talk about types of ML problems (classification, regression)
+\text{\color{red}Types of ML problems (classification, regression).}
+
+\text{\color{red} What is a neural network, quickly talk about components of neural network. }
+
+\text{\color{red} Structure of neural network.}
 \section{Neural Networks}
-Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain\cite{web:IBM:NN}.They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. The overall network is a combination of function composition and matrix multiplication:
+Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain\cite{web:IBM:NN}.They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
+\subsection{Single Layer Perceptron}%
+The simplest neural network is referred to as the perceptron. This neural network contains
+a single input layer and an output node.\cite{inbook:Aggarwal-1.2}
 
-  $$g(x) = f^L (W^Lf^{L-1}(W^{L-1} \hdots f^1(W^1x)\hdots)), $$
-  where $L$ is the number of layers (\ref{sub:Layers}), $W$ is the weight matrix (\ref{sub:Weights}), and $f$ is the activation function (\ref{sub:ActivationFunction}).
+Consider a situation where each \textit{training instance} is of the form $(\overline{X}, y)$, where each $\overline{X} = [x_1,..., x_d]$ contains $d$ feature variables, and $y \in [-1, +1]$ contains the observed value of the binary class variable. By “observed value” we refer to the fact that it is given to us as a part of the training data, and our goal is to predict the class variable for cases in which it is not observed.
 
-\subsection{Neurons}%
+The input layer of the \textbf{perceptron} contains $d$ nodes that transmit the $d$ features $\overline{X} = [x_1, . . . x_d]$ with \textbf{edges} of \textbf{weight} $\overline{W} = [w_1, . . . w_d]$  to an output node. The input \textbf{layer} does not perform any computation in its own right. The linear function $\overline{W} \cdot \overline{X} =\sum^{d}_{i=1}  w_ix_i$ is computed at the output node. Subsequently, the sign of this real value is used in order to predict the dependent variable of $\overline{X}$. Therefore, the prediction $\hat y$ is computed as follows:
+\begin{marginfigure}
+  \includegraphics{SingleLayerP}
+  \label{SingleLayerP}
+  \caption{A single layer perceptron.}
+\end{marginfigure}
+  \label{sub:Single Layer Perceptron}
+ $$\hat y = \text{sign}[\overline{X} \cdot \overline{W}] =\text{sign}\left[\sum^{d}_{i=1}  w_ix_i\right] $$ 
+ Here, the sign function serves the role of an activation function (\ref{sub:ActivationFunction}). The goal of the \textbf{perceptron} algorithm with respect to all training instances in a data set $\mathcal{D} = \{(\overline{X_1}, y_1 ), \cdots,(\overline{X_n}, y_n )\}$ is to minimize the loss function (\ref{sub:Loss Function}). We shall learn more about loss functions in a following section, but an example would be to minimize the least-squares function: 
+ \begin{equation*}
+  \begin{split}
+    \sum^{n}_{i=1} (\hat y_i - y_i)^2 =\sum^{n}_{i=1} \left(\text{sign}[\overline{X_i} \cdot \overline{W}] -y_i \right)
+  \end{split}
+ \end{equation*}
+ To optimize the loss function, the perceptron will use a \textit{gradient descent} method, which we will see later.
+ \subsection{Neurons}%
   \label{sub:Neurons}
-
+The neuron is the smallest computational unit of a neural network. The single layer perceptron described in the previous section is exactly a neuron.  
 \begin{definition}[Neurons]
-  Neurons are the building blocks of neural networks. They receive an input, multiply it by a weight, and output it using an activation function. A simple mathematical model for a neuron's output activation is\cite{book:AIModernApp}
+  Neurons are made up of 4 elements: 
+  \begin{enumerate}
+    \item The inputs, seen as \textit{nodes}, consist of either the input layer, or the outputs of the previous layer of the neural network. 
+    \item The weights and bias, seen as \textit{edges} will act on the inputs before they reach the input function of the neuron. 
+    \item The input function takes a sum of the weighed inputs. 
+    \item The activation function acts on the input function and outputs the result to the following layers. 
+  \end{enumerate}
+   receive an input, multiply it by a weight, and output it using an activation function. A simple mathematical model for a neuron's output activation is\cite{book:AIModernApp}
 \begin{marginfigure}
   \includegraphics{Neuron}
   \label{Neuron}
   \caption{A neuron and its inputs and outputs.}
 \end{marginfigure}
-  $$a_j = f \left( \sum^{n}_{i=0}w_{i,j} a_i  \right)$$
-  where $f$ is the activation function (\ref{sub:ActivationFunction}), $a_i$ is the output activation of neuron $i$ and $w_{i,j}$ is the weight on the link from neuron $i$ to $a_j$. We will explore activation functions in more depth shortly.  
+  $$o_j = f \left( \sum^{n}_{i=0}w_{i,j} o_i  \right)$$
+  where $f$ is the activation function (\ref{sub:ActivationFunction}), $o_i$ is the output activation of neuron $i$ and $w_{i,j}$ is the weight on the directed edge from neuron $i$ to the neuron $j$. We will explore activation functions in more depth shortly.  
 \end{definition}
+\begin{definition}[Weights]
+  \text{\color{red} FIND A DEFINITION (maybe relate it to the edge of a graph)}
+\end{definition}
+\subsection{Feed-Forward Neural Networks}%
+  \label{sub:Feed-Forward Neural Networks}
+  Having defined neurons, the building blocks of neural networks, we may now give a rigorous definition of the latter. A feed-forward network has connections only in one direction—that is, it forms a directed acyclic graph. Every node receives input from “upstream” nodes and delivers output to “downstream” nodes; there are no loops. A feed-forward network represents a function of its current input; thus, it has no internal state other than the weights themselves.\cite{book:AIModernApp}
 
-  
-\begin{definition}[Artificial Neural Networks]
- 
-\end{definition}
-\subsection{Weights}%
-  \label{sub:Weights}
-  
+The overall network is a combination of function composition and matrix multiplication:
+
+  $$g(x) = f^L (W^Lf^{L-1}(W^{L-1} \hdots f^1(W^1x)\hdots)), $$
+  where $L$ is the number of layers (\ref{sub:Layers}), $W$ is the weight matrix, and $f$ is the activation function (\ref{sub:ActivationFunction}).
+ \begin{definition}[Feed-forward Neural Network]
+  A neural network is a \textit{computational directed acyclic graph,} in which a unit of computation is the neuron. Each directed edge in the graph represents a function passing the weighed output of a node in a layer to a node in the next layer.
+ \end{definition} 
+
+   Artificial neural networks are often refered to as \textbf{multi-layer perceptrons} (abbreviated to MLPs) for one simple reason: you can think of such an MLP as the composition of multiple perceptrons, where, in this case, the perceptron would be a synonym for artificial neuron, so the smallest computational unit of a neural network, which performs, for example, a linear combination of its inputs followed by the application of an activation function, which can be the sigmoid, tanh, ReLU, identity, or any other function that is differentiable, if you plan to train the neural network with gradient descent.
 \subsection{Layers}
 \label{sub:Layers}
-The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. See figure \ref{NeuralNetwork} for an image of the layers. Layers are a general term given to a grouping of neurons that act together in the neural network.
+Feed-forward networks are usually arranged in layers, such that each unit receives inputonly from units in the immediately preceding layer. The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. See figure \ref{NeuralNetwork} for an image of the layers. Layers are a general term given to a grouping of neurons that act together in the neural network.
 \begin{marginfigure}
   \includegraphics{NeuralNetwork}
   \label{NeuralNetwork}
@@ -281,14 +332,138 @@ The following is a table summarizing the information above. \begin{figure*}
 \includegraphics{ActFunTable}
 \caption{Common activation functions, their derivatives, range, and order of continuity.}
 \end{figure*}
+
 \newpage
 \section{Learning}
   \label{sec:Learning}
-\subsection{Cost Function}%
-  \label{sub:Cost Function}
+\subsection{Loss Function}%
+  \label{sub:Loss Function}
   Here, we present some common loss functions\cite{ciampiconi2023survey}
 \subsection{BackPropagation}%
   \label{sub:BackPropagation}
+\textbf{Backpropagation} is a gradient estimation method used to train neural network models. The gradient estimate is used by the optimization algorithm to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
+\begin{marginfigure}
+  \includegraphics{simpleNet}
+  \label{simpleNet}
+  \caption{A simple network with 2 inputs, one hidden layer, and two outputs.}
+\end{marginfigure}
+
+  Let us first begin by recalling that a neural network evaluates compositions of functions computed at individual nodes. Think of a neural network as a function $h_w(x)$ of the input, parametrized by the weights. Consider the network in Figure \ref{simpleNet}, let $\{x_1,x_2\}$ be the input vector, $f$ the activation function and $a_i$ denote the activated output at node $i$. Then, the output at node 3 is given by
+  $$a_3 = f(w_{0, 3} + f(x_1)w_{1,3} + f(x_2)w_{2,3}), $$
+  where $w_{0,3}$ is the bias weight at node 3 \text{\color{red}(explain what a bias weight is)}. Similarly, the output at node 5 is
+  \begin{equation*}
+    \begin{split}
+      a_5 &= f( w_{0,5} + f(a_3) w_{3,5} + f(a_4) w_{4,5}  )\\ 
+      &= f[w_{0,5} + f(w_{0, 3} + f(x_1)w_{1,3} + f(x_2)w_{2,3})w_{3,5} +f(w_{0, 4} + f(x_1)w_{1,4} + f(x_2)w_{2,4})w_{4,5} ]
+    \end{split}
+  \end{equation*}
+  And even with such a small network, we can already see how awkward it would be to compute the derivative of $a_5$ with respect to $w$. But an even bigger problem arises when we think of how we would compute the loss function in hidden layers. Whereas the error $y -h_w$\sidenote{$y$ is the target output, and $h_w$ the value computed by the network } at the output layer is clear, the error at the hidden layers seems mysterious because the training data do not say what value the hidden nodes should have.
+
+  Therefore, we need some kind of iterative approach to compute the derivatives, and a way to \textit{back-propagate} the error from the output layer to the hidden layers. The resulting iterative approach uses \textit{dynamic programming}, and the \textbf{weight update rule} is the \textit{chain rule} of differential calculus\cite{inbook:Aggarwal-3.2}.
+
+\text{\color{red} continue from p.733 of Russel, p.570 of Murphy, and p.109 of Charu}
+\begin{theorem}[Multivariate Chain Rule] \label{chain}
+    Let $z = f(y_1, y_2, \ldots, y_m)$ be a differentiable function of $m$ variables, where each $y_j = g_j(x_1, x_2, \ldots, x_n)$ is a differentiable function of $n$ variables. Then, for each $i = 1, 2, \ldots, n$, the partial derivative of $z$ with respect to $x_i$ is given by
+$$
+\frac{\partial z}{\partial x_i} = \sum_{j=1}^{m} \frac{\partial z}{\partial y_j} \frac{\partial y_j}{\partial x_i}.$$
+  \end{theorem}
+  We note that backpropagation can be implemented by using either the \textit{pre-activation}, or \textit{post-activation} values at each neuron. Here, we'll focus on the method that acts on the pre activation values neurons. For the sake of simplicity, we view the neural network as a \textit{Directed Acyclic Graph} $G$, where 
+  \begin{marginfigure}
+    \includegraphics{pre-post-neuron}  
+    \caption{Pre and Post activation values of a neuron.}
+  \end{marginfigure}
+  \begin{enumerate}
+    \item Each node represents a neuron, and is denoted by a number $j$.
+    \item The weight on the edge from neuron $i$ to $j$ is denoted $w_{i,j}$.
+  \end{enumerate}
+  The algorithm can be divided in two phases: \textit{forward} and \textit{backward} phases.
+  \begin{enumerate}
+    \item[\bf Forward Phase.] The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The derivative of the loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. For the sake of simplicity, we will explore the case of a single output node $o$ for the time being. We will then talk about the simple generalisation to many outputs. 
+
+    \item[\bf Backward Phase.] In this phase, the gradient of the loss function with respect to different weights is calculated. First, the derivative $\frac{\partial {o}}{\partial {w}} {}$ is computed. This establishes the gradient computation's initialization. The multivariable chain rule is then used to propagate the derivatives in the opposite direction. Since we are focussing on the pre-activation approach, the gradients are computed with respect to the pre-activation values of the hidden variables, which are then propagated backwards.
+  \end{enumerate}
+  More precisely, the process can be described as follows. Let $(x,t)$ be the input to our algorithm, where $t$ is the target output of the input vector $x.$ Define the value
+  $$L = \operatorname{Loss}(y,t),$$
+  where Loss could be any \textit{loss function}, such as the MSE. At each neuron $j$, let its post-activation output be 
+  $$o_j = \Phi (\net_j) = \Phi \left( \sum^{n}_{i=0}w_{i,j} o_i  \right) , $$
+  where $\Phi$ is any \textit{activation function}, $w_{i,j}$ is the weight on the edge between neurons $i$ and $j$, and $o_i$ is the output from neuron $i.$ Then, the pre-activation value is easily seen to be $\net_j$.
+
+  \begin{enumerate}
+    \item The \textbf{forward pass} propagates $x$ through the neural network, computing the values of all hidden neurons to reach the output $\hat y$ of the neural network, which corresponds to the predicted output. Then, $L = \operatorname{Loss}(\hat y, t)$  is computed.
+    \item The derivative $\frac{\partial {L}}{\partial {\hat y}}$ at the output can be directly computed. Then, to compute the derivative of $L$ with respect to $o_j$ for an arbitrary neuron $j$, 
+
+    \item Define the following recurrence, 
+    $$\delta (v_{a_i}, \hat y) := \frac{\partial {L}}{\partial {v_{a_i}}} {} = \sum^{}_{} \frac{\partial {L}}{\partial {v_a}} \frac{\partial {v_{a}}}{\partial {v_{a_i}}} {}   $$
+  \end{enumerate}
+  \subsection{Overfitting}%
+  \label{sub:Overfitting}
+\subsection{Cross-Validation}%
+  \label{sub:Cross-Validation}
+  
+ \section{Example Using Pytorch} 
+ \subsection{Introduction}%
+  \label{sub:Introduction}
+  
+In this example, we'll demonstrate how to use PyTorch to implement a Machine Learning model.\cite{brownlee_2023}
+
+\subsection{Importing the Data}
+The first step involves preparing and loading your data. Tabular data, such as CSV files, can be handled using common Python libraries. For instance, Pandas facilitates CSV loading, while tools from scikit-learn assist in encoding categorical data like class labels.
+
+PyTorch offers the \texttt{Dataset} class, which permits customization for data loading. Below is a skeletal outline of a custom Dataset class.
+
+\begin{lstlisting}[language=Python, caption=Python code for a PyTorch Dataset class]
+class CSVDataset(Dataset):
+    # load the dataset
+    def __init__(self, path):
+        # store the inputs and outputs
+        self.X = ...
+        self.y = ...
+ 
+    # number of rows in the dataset
+    def __len__(self):
+        return len(self.X)
+ 
+    # get a row at an index
+    def __getitem__(self, idx):
+        return [self.X[idx], self.y[idx]]
+\end{lstlisting}
+Once the data is loaded, PyTorch offers the \texttt{DataLoader} class for navigating a \texttt{Dataset} instance during model training and evaluation. 
+
+The \texttt{random\_split()} function splits a dataset into \textit{train} and \textit{test} sets. After splitting, a subset of rows from the Dataset can be supplied to a \texttt{DataLoader}, along with parameters such as batch size and whether data should be shuffled every \textit{epoch}.
+
+For instance, a \texttt{DataLoader} can be defined by providing a chosen sample of rows from the dataset.
+\begin{lstlisting}[language=Python, caption=Python code for creating a DataLoader instance]
+...
+# create the dataset
+dataset = CSVDataset(...)
+# select rows from the dataset
+train, test = random_split(dataset, [[...], [...]])
+# create a data loader for train and test sets
+train_dl = DataLoader(train, batch_size=32, shuffle=True)
+test_dl = DataLoader(test, batch_size=1024, shuffle=False)
+\end{lstlisting}
+\subsection{Defining the Model}%
+  \label{sub:Defining the Model}
+  To define a model in PyTorch we define a class that extends the PyTorch \texttt{Module} class. In the constructor, we will set the layers and the \texttt{forward()} function, which defines the behaviour of the \textit{forward} step of the backprop algorithm.
+
+  In the following code, we define the layers of the NN using the function \texttt{nn.Linear(in, out, bias)}, where \texttt{in} and \texttt{out} represent the size of each input and output sample, respectively. 
+\begin{lstlisting}[language=python]
+  # model definition
+class MLP(Module):
+    # define model elements
+    def __init__(self, n_inputs):
+        super(MLP, self).__init__()
+        # define the layers
+        self.layer = Linear(n_inputs, 1)
+        # define the activation function 
+        self.activation = Sigmoid()
+ 
+    # forward propagate input
+    def forward(self, X):
+        X = self.layer(X)
+        X = self.activation(X)
+        return X
+  \end{lstlisting}
 \newpage
     \bibliographystyle{plainnat}
 \bibliography{ML_Report_DRP2024}

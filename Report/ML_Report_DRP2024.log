@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  21 FEB 2024 09:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  20 MAR 2024 12:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -294,10 +294,10 @@ LaTeX Info: Redefining \cite on input line 694.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/natbib/bibentry.sty
 Package: bibentry 2007/10/30 1.5 (PWD)
 ) (./ML_Report_DRP2024.bbl
-./ML_Report_DRP2024.bbl:13: Illegal parameter number in definition of \BR@r@layers.
+./ML_Report_DRP2024.bbl:30: Illegal parameter number in definition of \BR@r@layers.
 <to be read again> 
                    3
-l.13 
+l.30 
      
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -861,30 +861,58 @@ Package: fancyvrb 2023/01/19 4.5a verbatim text (tvz,hv)
 \c@FancyVerbLine=\count350
 \FV@StepNumber=\count351
 \FV@OutFile=\write4
-) (./ML_Report_DRP2024.aux)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count352
+\lst@gtempboxa=\box124
+\lst@token=\toks54
+\lst@length=\count353
+\lst@currlwidth=\dimen321
+\lst@column=\count354
+\lst@pos=\count355
+\lst@lostspace=\dimen322
+\lst@width=\dimen323
+\lst@newlines=\count356
+\lst@lineno=\count357
+\lst@maxwidth=\dimen324
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count358
+\lst@skipnumbers=\count359
+\lst@framebox=\box125
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+\titleimage=\box126
+<graphics//cover.jpg, id=4, 548.0475pt x 357.335pt>
+File: graphics//cover.jpg Graphic file (type jpg)
+<use graphics//cover.jpg>
+Package pdftex.def Info: graphics//cover.jpg  used on input line 120.
+(pdftex.def)             Requested size: 322.08247pt x 210.00249pt.
+ (./ML_Report_DRP2024.aux)
 \openout1 = `ML_Report_DRP2024.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-Package hyperref Info: Link coloring OFF on input line 140.
-
-(./ML_Report_DRP2024.out) (./ML_Report_DRP2024.out)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+Package hyperref Info: Link coloring OFF on input line 148.
+ (./ML_Report_DRP2024.out) (./ML_Report_DRP2024.out)
 \@outlinefile=\write5
 \openout5 = `ML_Report_DRP2024.out'.
 
@@ -926,17 +954,17 @@ Package hyperref Info: Link coloring OFF on input line 140.
 \langwohyphens=\language87
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count352
-\scratchdimen=\dimen321
-\scratchbox=\box124
-\nofMPsegments=\count353
-\nofMParguments=\count354
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count355
-\MPscratchDim=\dimen322
-\MPnumerator=\count356
-\makeMPintoPDFobject=\count357
-\everyMPtoPDFconversion=\toks55
+\scratchcounter=\count360
+\scratchdimen=\dimen325
+\scratchbox=\box127
+\nofMPsegments=\count361
+\nofMParguments=\count362
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count363
+\MPscratchDim=\dimen326
+\MPnumerator=\count364
+\makeMPintoPDFobject=\count365
+\everyMPtoPDFconversion=\toks56
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -945,68 +973,88 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 142.
+\c@lstlisting=\count366
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 150.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 12.59991pt on input line 142.
+(Font)              scaled to size 12.59991pt on input line 150.
 LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
-(Font)              scaled to size 12.59991pt on input line 142.
- [1
+(Font)              scaled to size 12.59991pt on input line 150.
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./ML_Report_DRP2024.toc)
+Overfull \hbox (10.08247pt too wide) in paragraph at lines 150--150
+[][]  
+ []
+
+[1
+
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc} <./graphics//cover.jpg>] (./ML_Report_DRP2024.toc)
 \tf@toc=\write6
 \openout6 = `ML_Report_DRP2024.toc'.
 
  [2]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 150.
-LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 155.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+Overfull \hbox (9.33977pt too wide) in paragraph at lines 159--160
+[][][]  
+ []
+
+
+Overfull \hbox (24.11977pt too wide) in paragraph at lines 161--162
+[][][]  
+ []
+
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 165.
+
+Overfull \hbox (45.34975pt too wide) in paragraph at lines 170--171
+[][][]  
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 174.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 155.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 174.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 155.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 174.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 155.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 174.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 155.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 174.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 155.
+(Font)              scaled to size 10.42007pt on input line 174.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 155.
+(Font)              scaled to size 7.91925pt on input line 174.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 155.
+(Font)              scaled to size 6.25204pt on input line 174.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 155.
+(Font)              scaled to size 10.42007pt on input line 174.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 155.
+(Font)              scaled to size 7.91925pt on input line 174.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 155.
+(Font)              scaled to size 6.25204pt on input line 174.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 155.
+(Font)              scaled to size 8.33606pt on input line 174.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 155.
+(Font)              scaled to size 5.21004pt on input line 174.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 155.
+(Font)              scaled to size 8.33606pt on input line 174.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 155.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 155.
+(Font)              scaled to size 5.21004pt on input line 174.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 174.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 155.
+(Font)              scaled to size 6.80005pt on input line 174.
 
 
 LaTeX Warning: Marginpar on page 3 moved.
@@ -1014,121 +1062,216 @@ LaTeX Warning: Marginpar on page 3 moved.
 
 LaTeX Warning: Marginpar on page 3 moved.
 
-<graphics//Neuron.jpg, id=61, 616.704pt x 284.56313pt>
+[3]
+<graphics//SingleLayerP.jpg, id=99, 345.29pt x 273.02pt>
+File: graphics//SingleLayerP.jpg Graphic file (type jpg)
+<use graphics//SingleLayerP.jpg>
+Package pdftex.def Info: graphics//SingleLayerP.jpg  used on input line 183.
+(pdftex.def)             Requested size: 143.99867pt x 113.85942pt.
+
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+<graphics//Neuron.jpg, id=102, 616.704pt x 284.56313pt>
 File: graphics//Neuron.jpg Graphic file (type jpg)
 <use graphics//Neuron.jpg>
-Package pdftex.def Info: graphics//Neuron.jpg  used on input line 166.
+Package pdftex.def Info: graphics//Neuron.jpg  used on input line 209.
 (pdftex.def)             Requested size: 144.00327pt x 66.44681pt.
 
-LaTeX Warning: Marginpar on page 3 moved.
+LaTeX Warning: Marginpar on page 4 moved.
 
-[3 <./graphics//Neuron.jpg>]
-<graphics//NeuralNetwork.jpg, id=82, 795.7471pt x 672.9658pt>
+[4 <./graphics//SingleLayerP.jpg> <./graphics//Neuron.jpg>]
+Overfull \hbox (85.3899pt too wide) in paragraph at lines 217--218
+[][]\T1/pplj/b/n/10 Definition 2.2 (Weights). [][][]  
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{cite.book:AIModernApp}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.221 ...eights themselves.\cite{book:AIModernApp}
+                                                  
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+<graphics//NeuralNetwork.jpg, id=121, 795.7471pt x 672.9658pt>
 File: graphics//NeuralNetwork.jpg Graphic file (type jpg)
 <use graphics//NeuralNetwork.jpg>
-Package pdftex.def Info: graphics//NeuralNetwork.jpg  used on input line 185.
+Package pdftex.def Info: graphics//NeuralNetwork.jpg  used on input line 237.
 (pdftex.def)             Requested size: 143.99324pt x 121.77553pt.
-
-./ML_Report_DRP2024.tex:192: Illegal parameter number in definition of \Hy@tempa.
+[5 <./graphics//NeuralNetwork.jpg>]
+./ML_Report_DRP2024.tex:244: Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
                    3
-l.192 ...ect eyes, third a nose, etc.\cite{layers}
+l.244 ...ect eyes, third a nose, etc.\cite{layers}
                                                   .
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./ML_Report_DRP2024.tex:192: Illegal parameter number in definition of \Hy@tempa.
+./ML_Report_DRP2024.tex:244: Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
                    3
-l.192 ...ect eyes, third a nose, etc.\cite{layers}
+l.244 ...ect eyes, third a nose, etc.\cite{layers}
                                                   .
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
 
-Overfull \hbox (6.8706pt too wide) in paragraph at lines 192--192
+Overfull \hbox (6.8706pt too wide) in paragraph at lines 244--244
 \T1/fvm/m/n/8 what-[]is-[]a-[]layer-[]in-[]a-[]neural-[]network / 
  []
 
 
-LaTeX Warning: Marginpar on page 4 moved.
+LaTeX Warning: Marginpar on page 6 moved.
 
 
-LaTeX Warning: Marginpar on page 4 moved.
+LaTeX Warning: Marginpar on page 6 moved.
 
-[4 <./graphics//NeuralNetwork.jpg>]
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 225.
- [5]
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 272.
+[6]
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 277.
+ [7]
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 324.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-<graphics//ActFunTable.jpg, id=104, 1134.2375pt x 489.83pt>
+<graphics//ActFunTable.jpg, id=150, 1134.2375pt x 489.83pt>
 File: graphics//ActFunTable.jpg Graphic file (type jpg)
 <use graphics//ActFunTable.jpg>
-Package pdftex.def Info: graphics//ActFunTable.jpg  used on input line 281.
+Package pdftex.def Info: graphics//ActFunTable.jpg  used on input line 333.
 (pdftex.def)             Requested size: 479.99368pt x 207.28929pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--283
+Underfull \hbox (badness 10000) in paragraph at lines 333--335
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--283
+Underfull \hbox (badness 10000) in paragraph at lines 333--335
 
  []
 
-[6]
+[8 <./graphics//ActFunTable.jpg>]
 
-LaTeX Warning: Marginpar on page 7 moved.
+LaTeX Warning: Marginpar on page 9 moved.
 
-[7 <./graphics//ActFunTable.jpg>] (./ML_Report_DRP2024.bbl
+<graphics//simpleNet.jpg, id=157, 407.5225pt x 219.82124pt>
+File: graphics//simpleNet.jpg Graphic file (type jpg)
+<use graphics//simpleNet.jpg>
+Package pdftex.def Info: graphics//simpleNet.jpg  used on input line 347.
+(pdftex.def)             Requested size: 143.99681pt x 77.67314pt.
+
+Overfull \hbox (2.46976pt too wide) in paragraph at lines 353--355
+\T1/pplj/m/n/10 where $\OML/zplm/m/it/10 w[]$ \T1/pplj/m/n/10 is the bias weight at node 3 [][]. 
+ []
+
+
+Overfull \hbox (77.65584pt too wide) detected at line 360
+[]
+ []
+
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+
+Overfull \hbox (3.4998pt too wide) in paragraph at lines 365--366
+[][][] 
+ []
+
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 366.
+
+Overfull \hbox (13.98746pt too wide) in paragraph at lines 367--368
+\T1/pplj/m/n/10 a dif-fer-en-tiable func-tion of $\OML/zplm/m/it/10 m$ \T1/pplj/m/n/10 vari-ables, where each $\OML/zplm/m/it/10 y[] \OT1/zplm/m/n/10 = \OML/zplm/m/it/10 g[]\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x[]\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 x[]\OT1/pplx/m/n/10 , [] , \OML/zplm/m/it/10 x[]\OT1/zplm/m/n/10 )$ 
+ []
+
+
+Overfull \hbox (1.82477pt too wide) in paragraph at lines 367--368
+\T1/pplj/m/n/10 is a dif-fer-en-tiable func-tion of $\OML/zplm/m/it/10 n$ \T1/pplj/m/n/10 vari-ables. Then, for each $\OML/zplm/m/it/10 i \OT1/zplm/m/n/10 = \OT1/pplx/m/n/10 1, 2, [] , \OML/zplm/m/it/10 n$\T1/pplj/m/n/10 , 
+ []
+
+[9 <./graphics//simpleNet.jpg>]
+<graphics//pre-post-neuron.jpg, id=168, 487.8225pt x 292.09125pt>
+File: graphics//pre-post-neuron.jpg Graphic file (type jpg)
+<use graphics//pre-post-neuron.jpg>
+Package pdftex.def Info: graphics//pre-post-neuron.jpg  used on input line 373.
+(pdftex.def)             Requested size: 143.99571pt x 86.21965pt.
+ [10 <./graphics//pre-post-neuron.jpg>]
+Overfull \hbox (46.80688pt too wide) in paragraph at lines 408--408
+\T1/fvm/m/n/8 pytorch-[]tutorial-[]develop-[]deep-[]learning-[]models/$[]  
+ []
+
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 8.50006pt on input line 413.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 415.
+ [11] [12] [13] (./ML_Report_DRP2024.bbl
+pdfTeX warning (ext4): destination with the same identifier (name{cite.inbook:Aggarwal-1.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 ...l(2018{\natexlab{a}})]{inbook:Aggarwal-1.2}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{cite.inbook:Aggarwal-3.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.14 ...(2018{\natexlab{b}})]{inbook:Aggarwal-3.2}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{cite.brownlee_2023}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.20 \bibitem[Brownlee(2023)]{brownlee_2023}
+                                            
 pdfTeX warning (ext4): destination with the same identifier (name{cite.layers}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8 \bibitem[cdeterman()]{layers}
-                                 
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 12.
-
+l.25 \bibitem[cdeterman()]{layers}
+                                  
 pdfTeX warning (ext4): destination with the same identifier (name{cite.ciampiconi2023survey}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 ... Mohamed, and Rozza]{ciampiconi2023survey}
+l.31 ... Mohamed, and Rozza]{ciampiconi2023survey}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{cite.web:IBM:NN}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.18 \bibitem[IBM(2024)]{web:IBM:NN}
+l.35 \bibitem[IBM(2024)]{web:IBM:NN}
                                     
 pdfTeX warning (ext4): destination with the same identifier (name{cite.jagtap2022important}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...nd Karniadakis(2022)]{jagtap2022important}
+l.41 ...nd Karniadakis(2022)]{jagtap2022important}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{cite.book:AIModernApp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 ...tem[Stuart~Russel(2010)]{book:AIModernApp}
-                                                  ) [8] (./ML_Report_DRP2024.aux)
+l.45 ...tem[Stuart~Russel(2010)]{book:AIModernApp}
+                                                  ) [14] (./ML_Report_DRP2024.aux)
 Package rerunfilecheck Info: File `ML_Report_DRP2024.out' has not changed.
-(rerunfilecheck)             Checksum: 667AC434BC7576E4A93C3AF4A1E531D4;307.
+(rerunfilecheck)             Checksum: D5890B5CFE50C316FCFBF1B263B453A9;461.
  ) 
 Here is how much of TeX's memory you used:
- 36680 strings out of 476025
- 834650 string characters out of 5790018
- 1867388 words of memory out of 5000000
- 56332 multiletter control sequences out of 15000+600000
- 600808 words of font info for 158 fonts, out of 8000000 for 9000
+ 38623 strings out of 476025
+ 861043 string characters out of 5790018
+ 2058388 words of memory out of 5000000
+ 58187 multiletter control sequences out of 15000+600000
+ 601167 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,94p,742b,731s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,18n,94p,789b,2216s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ML_Report_DRP2024.pdf (8 pages, 534147 bytes).
+Output written on ML_Report_DRP2024.pdf (14 pages, 948683 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 2100 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 332 PDF objects out of 1000 (max. 8388607)
+ 257 compressed objects within 3 object streams
+ 103 named destinations out of 1000 (max. 500000)
+ 2128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
