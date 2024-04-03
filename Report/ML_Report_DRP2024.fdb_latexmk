@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex ML_Report_DRP2024"] 1710952683 "ML_Report_DRP2024.aux" "ML_Report_DRP2024.bbl" "ML_Report_DRP2024" 1710952683 0
-  "./ML_Report_DRP2024.bib" 1710515347 2126 928ec5656ca043df927ca257d3551fdd ""
+["bibtex ML_Report_DRP2024"] 1712159779 "ML_Report_DRP2024.aux" "ML_Report_DRP2024.bbl" "ML_Report_DRP2024" 1712160203 0
+  "./ML_Report_DRP2024.bib" 1712158224 2430 93e708846becfee38efb5748f609875c ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "ML_Report_DRP2024.aux" 1710952681 7235 26821a43dd2dbd55a0a1b8aff6b4de75 "pdflatex"
+  "ML_Report_DRP2024.aux" 1712160203 7679 e1b3f0307a6618beeb312628964a183b "pdflatex"
   (generated)
   "ML_Report_DRP2024.bbl"
   "ML_Report_DRP2024.blg"
   (rewritten before read)
-["pdflatex"] 1710952679 "ML_Report_DRP2024.tex" "ML_Report_DRP2024.pdf" "ML_Report_DRP2024" 1710952683 2
-  "/dev/null" 1710952683 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1712160201 "ML_Report_DRP2024.tex" "ML_Report_DRP2024.pdf" "ML_Report_DRP2024" 1712160203 0
+  "/dev/null" 1712160181 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm" 1136768653 4712 9ef4d7d106579d4b136e1529e1a4533c ""
@@ -42,6 +42,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm" 1136768653 1012 955c4ca523d7827d33db91a33412b048 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm" 1136768653 1316 b4037e9c09961a72f8476628774e1ec1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb" 1136849748 29228 440002646d60f9d1a0cdf5878b9a308f ""
@@ -241,7 +242,6 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty" 1677530001 205154 31132370016e8c97e49bc3862419679b ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty" 1677530001 77021 d05e9115c67855816136d82929db8892 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/letterspace.sty" 1678741534 16456 b1ef09f34923d02b3b2ccf999be0f46c ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/natbib/bibentry.sty" 1193854157 3400 e000bb2fc43fc077e107f62f8c25613e ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/natbib/natbib.sty" 1291685959 45456 1c8843383c0bd05870c45fa0ebea6cc2 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/paralist/paralist.sty" 1485124581 14857 82c76ebe8f06becf69ab309565b2a0cb ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty" 1601326656 1090 bae35ef70b3168089ef166db3e66f5b2 ""
@@ -303,11 +303,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1693683507 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1693683423 7883466 0daf13f68d70d6b799279728d2d79159 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "ML_Report_DRP2024.aux" 1710952681 7235 26821a43dd2dbd55a0a1b8aff6b4de75 "pdflatex"
-  "ML_Report_DRP2024.bbl" 1710952683 2236 9489f05941959c377a345dae0aa859f3 "bibtex ML_Report_DRP2024"
-  "ML_Report_DRP2024.out" 1710952681 461 d5890b5cfe50c316fcfbf1b263b453a9 "pdflatex"
-  "ML_Report_DRP2024.tex" 1710952679 29002 24a25d64d7b96e0b457376599a5ea743 ""
-  "ML_Report_DRP2024.toc" 1710952681 1281 ad703395e179dcd29f1a9f3dbb556efd "pdflatex"
+  "ML_Report_DRP2024.aux" 1712160203 7679 e1b3f0307a6618beeb312628964a183b "pdflatex"
+  "ML_Report_DRP2024.bbl" 1712159779 2595 1ff7ee1a052784cc9a63793cf9d8424f "bibtex ML_Report_DRP2024"
+  "ML_Report_DRP2024.out" 1712160203 461 d5890b5cfe50c316fcfbf1b263b453a9 "pdflatex"
+  "ML_Report_DRP2024.tex" 1712160201 33436 96d6e0c00836d51833c710e742584bb4 ""
+  "ML_Report_DRP2024.toc" 1712160203 1366 3567125eff2ff917b55b8072b7243af5 "pdflatex"
   "graphics//ActFunTable.jpg" 1707891071 121740 b41e76938ce6a55a9816b50ca1932cfd ""
   "graphics//NeuralNetwork.jpg" 1707316820 103561 649d8c0299c4cc5bf362e07c31a5dcf1 ""
   "graphics//Neuron.jpg" 1707320985 170194 9f9208a880413f1aee05f7bb4acd548f ""

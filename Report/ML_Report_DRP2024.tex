@@ -1,13 +1,13 @@
-\documentclass{tufte-handout}
+\documentclass[nobib]{tufte-handout} % nobib to have normal citation behaviour 
 
-\usepackage{amsmath}
-\usepackage{amsthm} %needed for the proofs 
-\usepackage{amssymb}
+\usepackage{amsmath, amsthm, amssymb}
 \usepackage{xcolor} %for heading colors
 \usepackage{titling}
 \usepackage{thmtools}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e} %For pseudocode
 
+\usepackage{natbib}
+\setcitestyle{authoryear}
 %For plots
 \usepackage{pgfplots}
 \pgfplotsset{compat = newest}
@@ -171,10 +171,10 @@ There are several types of Machine Learning algorithms. The main categories are 
 
 \text{\color{red} Structure of neural network.}
 \section{Neural Networks}
-Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain\cite{web:IBM:NN}.They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
+Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}.They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
 \subsection{Single Layer Perceptron}%
 The simplest neural network is referred to as the perceptron. This neural network contains
-a single input layer and an output node.\cite{inbook:Aggarwal-1.2}
+a single input layer and an output node \citep{inbook:Aggarwal-1.2}.
 
 Consider a situation where each \textit{training instance} is of the form $(\overline{X}, y)$, where each $\overline{X} = [x_1,..., x_d]$ contains $d$ feature variables, and $y \in [-1, +1]$ contains the observed value of the binary class variable. By “observed value” we refer to the fact that it is given to us as a part of the training data, and our goal is to predict the class variable for cases in which it is not observed.
 
@@ -204,7 +204,7 @@ The neuron is the smallest computational unit of a neural network. The single la
     \item The input function takes a sum of the weighed inputs. 
     \item The activation function acts on the input function and outputs the result to the following layers. 
   \end{enumerate}
-   receive an input, multiply it by a weight, and output it using an activation function. A simple mathematical model for a neuron's output activation is\cite{book:AIModernApp}
+   receive an input, multiply it by a weight, and output it using an activation function. A simple mathematical model for a neuron's output activation is \citep{book:AIModernApp}
 \begin{marginfigure}
   \includegraphics{Neuron}
   \label{Neuron}
@@ -218,7 +218,7 @@ The neuron is the smallest computational unit of a neural network. The single la
 \end{definition}
 \subsection{Feed-Forward Neural Networks}%
   \label{sub:Feed-Forward Neural Networks}
-  Having defined neurons, the building blocks of neural networks, we may now give a rigorous definition of the latter. A feed-forward network has connections only in one direction—that is, it forms a directed acyclic graph. Every node receives input from “upstream” nodes and delivers output to “downstream” nodes; there are no loops. A feed-forward network represents a function of its current input; thus, it has no internal state other than the weights themselves.\cite{book:AIModernApp}
+  Having defined neurons, the building blocks of neural networks, we may now give a rigorous definition of the latter. A feed-forward network has connections only in one direction—that is, it forms a directed acyclic graph. Every node receives input from “upstream” nodes and delivers output to “downstream” nodes; there are no loops. A feed-forward network represents a function of its current input; thus, it has no internal state other than the weights themselves \citep{book:AIModernApp}.
 
 The overall network is a combination of function composition and matrix multiplication:
 
@@ -240,7 +240,7 @@ Feed-forward networks are usually arranged in layers, such that each unit receiv
 \begin{definition}[Layers] $  $
   \begin{enumerate}
     \item[\it Input Layer.] The first layer in a neural network, it receives the initial data for the network from the outside world. The "Entry point" of the neural network.
-    \item[\it Hidden layers.] The hidden layer(s) are where the magic happens in neural networks. Each layer is trying to learn different aspects about the data by minimizing the \textbf{cost function}. The most intuitive way to understand these layers is in the context of 'image recognition' such as a face. The first layer may learn edge detection, the second may detect eyes, third a nose, etc.\cite{layers}.
+    \item[\it Hidden layers.] The hidden layer(s) are where the magic happens in neural networks. Each layer is trying to learn different aspects about the data by minimizing the \textbf{cost function}. The most intuitive way to understand these layers is in the context of image recognition such as a face. The first layer may learn edge detection, the second may detect eyes, third a nose, etc. \citep{layers}.
     \item[\it Output Layer.] The final layer in the neural network is the output layer. This layer is responsible for holding the final result or output of the problem. Input, such as raw images, is fed into the input layer, and the output layer produces the corresponding result.
 \end{enumerate}
 
@@ -253,7 +253,7 @@ An activation function in neural networks is a smooth function applied to the ou
 The activation function determines whether a neuron should be activated or not based on the weighted sum of its inputs. In other words, it defines the output of a neuron given a set of inputs. Without activation functions, neural networks would be limited to linear transformations, and they wouldn't be able to capture the non-linearities present in many real-world datasets. 
 
 \vspace{5mm}
-\noindent \textbf{Desired Characteristics of Activation Functions} \cite{jagtap2022important}
+\noindent \textbf{Desired Characteristics of Activation Functions} \citep{jagtap2022important}
 
 \noindent There is no universal rule for choosing the best activation function, but there are some characteristics to look for, namely
 \begin{enumerate}
@@ -338,10 +338,10 @@ The following is a table summarizing the information above. \begin{figure*}
   \label{sec:Learning}
 \subsection{Loss Function}%
   \label{sub:Loss Function}
-  Here, we present some common loss functions\cite{ciampiconi2023survey}
+  Here, we present some common loss functions \citep{ciampiconi2023survey}.
 \subsection{BackPropagation}%
   \label{sub:BackPropagation}
-\textbf{Backpropagation} is a gradient estimation method used to train neural network models. The gradient estimate is used by the optimization algorithm to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
+\textbf{Backpropagation} is a gradient estimation method used to train neural network models. The gradient estimate is used by the optimization algorithm to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
 \begin{marginfigure}
   \includegraphics{simpleNet}
   \label{simpleNet}
@@ -359,7 +359,7 @@ The following is a table summarizing the information above. \begin{figure*}
   \end{equation*}
   And even with such a small network, we can already see how awkward it would be to compute the derivative of $a_5$ with respect to $w$. But an even bigger problem arises when we think of how we would compute the loss function in hidden layers. Whereas the error $y -h_w$\sidenote{$y$ is the target output, and $h_w$ the value computed by the network } at the output layer is clear, the error at the hidden layers seems mysterious because the training data do not say what value the hidden nodes should have.
 
-  Therefore, we need some kind of iterative approach to compute the derivatives, and a way to \textit{back-propagate} the error from the output layer to the hidden layers. The resulting iterative approach uses \textit{dynamic programming}, and the \textbf{weight update rule} is the \textit{chain rule} of differential calculus\cite{inbook:Aggarwal-3.2}.
+  Therefore, we need some kind of iterative approach to compute the derivatives, and a way to \textit{back-propagate} the error from the output layer to the hidden layers. The resulting iterative approach uses \textit{dynamic programming}, and the \textbf{weight update rule} is the \textit{chain rule} of differential calculus \citep{inbook:Aggarwal-3.2}.
 
 \text{\color{red} continue from p.733 of Russel, p.570 of Murphy, and p.109 of Charu}
 \begin{theorem}[Multivariate Chain Rule] \label{chain}
@@ -392,9 +392,62 @@ $$
     \item The \textbf{forward pass} propagates $x$ through the neural network, computing the values of all hidden neurons to reach the output $\hat y$ of the neural network, which corresponds to the predicted output. Then, $L = \operatorname{Loss}(\hat y, t)$  is computed.
     \item The derivative $\frac{\partial {L}}{\partial {\hat y}}$ at the output can be directly computed. Then, to compute the derivative of $L$ with respect to $o_j$ for an arbitrary neuron $j$, 
 
-    \item Define the following recurrence, 
-    $$\delta (v_{a_i}, \hat y) := \frac{\partial {L}}{\partial {v_{a_i}}} {} = \sum^{}_{} \frac{\partial {L}}{\partial {v_a}} \frac{\partial {v_{a}}}{\partial {v_{a_i}}} {}   $$
-  \end{enumerate}
+    \item Consider $L$ as a function of all neurons receiving input from $j$, and denote this set by $I_j =\{ i_1^{(j)}, ..., i_n^{(j)}\}$. Then, 
+    $$\frac{\partial {L(o_j)}}{\partial {o_j}} = \frac{\partial {L(\net_{i_1^{(j)}}, ..., \net_{i_n^{(j)}})}}{\partial {o_j}} {} $$
+    to obtain the following recurrence relation for the derivative of $L$ with respect to $o_j$, by the chain rule, 
+    \begin{equation}\label{deriv_o_j}
+      \begin{split}
+        \frac{\partial {L}}{\partial {o_j}} = \mathlarger{\mathlarger{\sum}}^{}_{i \in I_j} \left( \frac{\partial {L}}{\partial {\net_i}} \frac{\partial {\net_i}}{\partial {o_j}}  \right)  =&  \mathlarger{\mathlarger{\sum}}^{}_{i \in I_j} \left( \frac{\partial {L}}{\partial {o_i}} \frac{\partial {o_i}}{\partial {\net_i}} \frac{\partial {\net_i }}{\partial {o_j}} \right) \\ =&\mathlarger{\mathlarger{\sum}}^{}_{i \in I_j} \left( \frac{\partial {L}}{\partial {o_i}} \frac{\partial {o_i}}{\partial {\net_i}} w_{j,i}\right) 
+      \end{split}
+    \end{equation}
+    We can see that the derivative with respect to $o_j$ can be computed if those of the neurons on the next layer are already known, per the \textit{recurrent} behaviour of this algorithm. 
+    \item We now have all the necessary tools to compute the partial derivative of $L$ with respect to the weight $w_{i,j}$. Again, by applying the chain rule, we get
+    \begin{equation}\label{deriv_w}
+  \begin{split}
+    {\frac {\partial L}{\partial w_{i,j}}}={\frac {\partial L}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial w_{i,j}}}=&{\frac {\partial L}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}}{\frac {\partial {\text{net}}_{j}}{\partial w_{i,j}}}\\ 
+    =& {\frac {\partial L}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}} \left(\frac{\partial {}}{\partial {w_{ij}}} {\sum^{n}_{k=1} w_{k,j}o_k}\right) \\ 
+    =&{\frac {\partial L}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}} \left(\frac{\partial {w_{i,j} o_i}}{\partial {w_{i,j}}} \right)={\frac {\partial L}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}} o_i
+  \end{split}
+\end{equation}
+   and so, we may consider the following recursively defined function to simplify notation,
+
+\begin{equation*}
+  \begin{split}
+    \delta_j = {\frac {\partial L}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}}= 
+    \begin{cases}
+      \frac{\partial {L(t, o_j)}}{\partial {o_j}} \frac{d {\varphi (\net_j)}}{d {\net_j}}, &\text{ if } j \text{ is an output neuron, }\\
+      \left( \sum^{}_{i\in I_j} w_{j,i} \delta_i\right) \frac{d {\varphi (\net_j)}}{d {\net_j}} {}, &\text{ otherwise.} 
+    \end{cases}
+  \end{split}
+\end{equation*}
+to conclude that the partial derivative of $L$ with respect to the weight $w_{i,j}$ is given by 
+\begin{equation*}
+  \begin{split}
+    \frac{\partial {L}}{\partial {w_{i,j}}} = o_i \delta_j
+  \end{split}
+\end{equation*}
+      \end{enumerate}
+\subsection{Weight Update Rule}%
+  \label{sub:Weight Update Rule}
+  After having found the derivatives of the loss function with respect to the weights, one needs a way to update the weights. The goal is to modify the weights of the neural network so that given the input $(x,t)$, where $x$ is the input vector and $t$ the target output, it points more toward $t$. Then, in the future, it will have a better chance of classifying $x$ correctly \citep{Hagan_Martin}. The naive way would be to set the weights so that they point directly to $t$. Unfortunately, this leads to overfitting, which we'll address in the next chapter.
+  
+  To update the weight $w_{i,j}$ using backpropagation, we first choose a learning rate $\mu> 0$. We may then choose to update $w_{i,j}$ by adding $\Delta w_{i,j}$ to it, where
+  \begin{equation*}
+    \begin{split}
+      \Delta w_{i,j} = -\mu \frac{\partial {L}}{\partial {w_{i,j}}}  = - \mu  o_i \delta_j
+    \end{split}
+  \end{equation*}
+ Then, the weight update rule would be defined as, 
+ \begin{equation*}
+  \begin{split}
+    w_{i,j}^{(\text{updated})} =  w_{i,j}^{(\text{old})} - \mu  o_i \delta_j
+  \end{split}
+ \end{equation*}
+ We claim that this update rule decreases the loss $L$. 
+ \begin{proof} 
+  
+If ${\frac {\partial L}{\partial w_{i,j}}}>0$, an increase in $w_{i,j}$ increases $L$; conversely, if $\frac {\partial L}{\partial w_{i,j}}<0$, an increase in $w_{i,j}$ decreases $L$. The new $\Delta w_{i,j}$ is added to the old weight, and the product of the learning rate and the gradient, multiplied by $-1$ guarantees that $w_{i,j}$  changes in a way that always decreases $L$. 
+ \end{proof}
   \subsection{Overfitting}%
   \label{sub:Overfitting}
 \subsection{Cross-Validation}%
