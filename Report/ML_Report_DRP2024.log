@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  3 APR 2024 12:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  2 MAY 2024 12:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1031,12 +1031,12 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 179.
  [3]
-<graphics//SingleLayerP.jpg, id=103, 345.29pt x 273.02pt>
+<graphics//SingleLayerP.jpg, id=115, 345.29pt x 273.02pt>
 File: graphics//SingleLayerP.jpg Graphic file (type jpg)
 <use graphics//SingleLayerP.jpg>
 Package pdftex.def Info: graphics//SingleLayerP.jpg  used on input line 183.
 (pdftex.def)             Requested size: 143.99867pt x 113.85942pt.
-<graphics//Neuron.jpg, id=108, 616.704pt x 284.56313pt>
+<graphics//Neuron.jpg, id=120, 616.704pt x 284.56313pt>
 File: graphics//Neuron.jpg Graphic file (type jpg)
 <use graphics//Neuron.jpg>
 Package pdftex.def Info: graphics//Neuron.jpg  used on input line 209.
@@ -1047,7 +1047,7 @@ Overfull \hbox (85.3899pt too wide) in paragraph at lines 217--218
  []
 
 [5]
-<graphics//NeuralNetwork.jpg, id=137, 795.7471pt x 672.9658pt>
+<graphics//NeuralNetwork.jpg, id=149, 795.7471pt x 672.9658pt>
 File: graphics//NeuralNetwork.jpg Graphic file (type jpg)
 <use graphics//NeuralNetwork.jpg>
 Package pdftex.def Info: graphics//NeuralNetwork.jpg  used on input line 237.
@@ -1063,7 +1063,7 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 3
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-<graphics//ActFunTable.jpg, id=158, 1134.2375pt x 489.83pt>
+<graphics//ActFunTable.jpg, id=170, 1134.2375pt x 489.83pt>
 File: graphics//ActFunTable.jpg Graphic file (type jpg)
 <use graphics//ActFunTable.jpg>
 Package pdftex.def Info: graphics//ActFunTable.jpg  used on input line 333.
@@ -1079,7 +1079,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--335
  []
 
 [8]
-<graphics//simpleNet.jpg, id=167, 407.5225pt x 219.82124pt>
+<graphics//simpleNet.jpg, id=179, 407.5225pt x 219.82124pt>
 File: graphics//simpleNet.jpg Graphic file (type jpg)
 <use graphics//simpleNet.jpg>
 Package pdftex.def Info: graphics//simpleNet.jpg  used on input line 347.
@@ -1121,7 +1121,7 @@ Overfull \hbox (1.82477pt too wide) in paragraph at lines 367--368
 \T1/pplj/m/n/10 is a dif-fer-en-tiable func-tion of $\OML/zplm/m/it/10 n$ \T1/pplj/m/n/10 vari-ables. Then, for each $\OML/zplm/m/it/10 i \OT1/zplm/m/n/10 = \OT1/pplx/m/n/10 1, 2, [] , \OML/zplm/m/it/10 n$\T1/pplj/m/n/10 , 
  []
 
-<graphics//pre-post-neuron.jpg, id=179, 487.8225pt x 292.09125pt>
+<graphics//pre-post-neuron.jpg, id=191, 487.8225pt x 292.09125pt>
 File: graphics//pre-post-neuron.jpg Graphic file (type jpg)
 <use graphics//pre-post-neuron.jpg>
 Package pdftex.def Info: graphics//pre-post-neuron.jpg  used on input line 373.
@@ -1154,35 +1154,89 @@ Overfull \hbox (12.0pt too wide) detected at line 423
  []
 
 [12]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 466.
+<graphics//fitting.png, id=221, 729.72626pt x 357.335pt>
+File: graphics//fitting.png Graphic file (type png)
+<use graphics//fitting.png>
+Package pdftex.def Info: graphics//fitting.png  used on input line 461.
+(pdftex.def)             Requested size: 311.99463pt x 152.77866pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--463
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--463
+
+ []
+
+
+Overfull \hbox (3.21979pt too wide) in paragraph at lines 466--467
+\T1/pplj/b/n/10 Overfitting \T1/pplj/m/n/10 refers to the pro-cess of pro-duc-ing an anal-y-sis that matches 
+ []
+
+[13]
+<graphics//Overfitting.png, id=237, 1927.2pt x 1927.2pt>
+File: graphics//Overfitting.png Graphic file (type png)
+<use graphics//Overfitting.png>
+Package pdftex.def Info: graphics//Overfitting.png  used on input line 472.
+(pdftex.def)             Requested size: 143.97504pt x 143.97504pt.
+Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 477.
+ [14 <./graphics//fitting.png> <./graphics//Overfitting.png>]
+<graphics//capacity.png, id=257, 610.28pt x 403.5075pt>
+File: graphics//capacity.png Graphic file (type png)
+<use graphics//capacity.png>
+Package pdftex.def Info: graphics//capacity.png  used on input line 503.
+(pdftex.def)             Requested size: 144.00247pt x 95.21216pt.
+ [15 <./graphics//capacity.png>]
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 542.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 466.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+(Font)              scaled to size 8.50006pt on input line 542.
+ [16] (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 468.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 555.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 468.
- [13] [14] (./ML_Report_DRP2024.bbl) [15] (./ML_Report_DRP2024.aux)
+(Font)              scaled to size 6.80005pt on input line 555.
+ [17] [18] (./ML_Report_DRP2024.bbl
+Underfull \hbox (badness 3209) in paragraph at lines 27--31
+[]\T1/pplj/m/n/10 Jason Brown-lee.  How to con-trol neu-ral net-work 
+ []
+
+
+Underfull \hbox (badness 5563) in paragraph at lines 27--31
+\T1/pplj/m/n/10 model ca-pac-ity with nodes and lay-ers, 2020. 
+ []
+
+
+Underfull \hbox (badness 4660) in paragraph at lines 27--31
+\T1/pplj/m/n/10 URL []$\T1/fvm/m/n/10 https : / / machinelearningmastery . com / 
+ []
+
+
+Overfull \hbox (48.34134pt too wide) in paragraph at lines 27--31
+\T1/fvm/m/n/10 how-[]to-[]control-[]neural-[]network-[]model-[]capacity-[]with-[]nodes-[]and-[]layers/$[]\T1/pplj/m/n/10 . 
+ []
+
+[19]) [20] (./ML_Report_DRP2024.aux)
 Package rerunfilecheck Info: File `ML_Report_DRP2024.out' has not changed.
-(rerunfilecheck)             Checksum: D5890B5CFE50C316FCFBF1B263B453A9;461.
+(rerunfilecheck)             Checksum: 01A588735888D60F10DD7E7A5260ADBC;595.
  ) 
 Here is how much of TeX's memory you used:
- 38641 strings out of 476025
- 860768 string characters out of 5790018
- 2041388 words of memory out of 5000000
- 58187 multiletter control sequences out of 15000+600000
- 618193 words of font info for 208 fonts, out of 8000000 for 9000
+ 38775 strings out of 476025
+ 863112 string characters out of 5790018
+ 1997388 words of memory out of 5000000
+ 58274 multiletter control sequences out of 15000+600000
+ 627447 words of font info for 227 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,27n,94p,789b,2217s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ML_Report_DRP2024.pdf (15 pages, 963799 bytes).
+ 99i,27n,94p,785b,1380s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on ML_Report_DRP2024.pdf (20 pages, 1385912 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 109 named destinations out of 1000 (max. 500000)
- 2128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 376 compressed objects within 4 object streams
+ 146 named destinations out of 1000 (max. 500000)
+ 2151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

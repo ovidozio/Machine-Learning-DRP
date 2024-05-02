@@ -7,7 +7,7 @@
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e} %For pseudocode
 
 \usepackage{natbib}
-\setcitestyle{authoryear}
+%\setcitestyle{authoryear,open={[},close={]}} %Citation-related commands
 %For plots
 \usepackage{pgfplots}
 \pgfplotsset{compat = newest}
@@ -171,7 +171,7 @@ There are several types of Machine Learning algorithms. The main categories are 
 
 \text{\color{red} Structure of neural network.}
 \section{Neural Networks}
-Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}.They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
+Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}. They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
 \subsection{Single Layer Perceptron}%
 The simplest neural network is referred to as the perceptron. This neural network contains
 a single input layer and an output node \citep{inbook:Aggarwal-1.2}.
@@ -231,7 +231,8 @@ The overall network is a combination of function composition and matrix multipli
    Artificial neural networks are often refered to as \textbf{multi-layer perceptrons} (abbreviated to MLPs) for one simple reason: you can think of such an MLP as the composition of multiple perceptrons, where, in this case, the perceptron would be a synonym for artificial neuron, so the smallest computational unit of a neural network, which performs, for example, a linear combination of its inputs followed by the application of an activation function, which can be the sigmoid, tanh, ReLU, identity, or any other function that is differentiable, if you plan to train the neural network with gradient descent.
 \subsection{Layers}
 \label{sub:Layers}
-Feed-forward networks are usually arranged in layers, such that each unit receives inputonly from units in the immediately preceding layer. The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. See figure \ref{NeuralNetwork} for an image of the layers. Layers are a general term given to a grouping of neurons that act together in the neural network.
+Feed-forward networks are usually arranged in layers, such that each unit receives input
+only from units in the immediately preceding layer. The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. See figure \ref{NeuralNetwork} for an image of the layers. Layers are a general term given to a grouping of neurons that act together in the neural network.
 \begin{marginfigure}
   \includegraphics{NeuralNetwork}
   \label{NeuralNetwork}
@@ -376,9 +377,9 @@ $$
     \item Each node represents a neuron, and is denoted by a number $j$.
     \item The weight on the edge from neuron $i$ to $j$ is denoted $w_{i,j}$.
   \end{enumerate}
-  The algorithm can be divided in two phases: \textit{forward} and \textit{backward} phases.
+  The algorithm can be divided in two phases: \textit{forward} and \textit{backward}.
   \begin{enumerate}
-    \item[\bf Forward Phase.] The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The derivative of the loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. For the sake of simplicity, we will explore the case of a single output node $o$ for the time being. We will then talk about the simple generalisation to many outputs. 
+    \item[\bf Forward Phase.] The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The derivative of the loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. For the sake of simplicity, we will explore the case of a single output node for the time being. We will then talk about the simple generalization to many outputs. 
 
     \item[\bf Backward Phase.] In this phase, the gradient of the loss function with respect to different weights is calculated. First, the derivative $\frac{\partial {o}}{\partial {w}} {}$ is computed. This establishes the gradient computation's initialization. The multivariable chain rule is then used to propagate the derivatives in the opposite direction. Since we are focussing on the pre-activation approach, the gradients are computed with respect to the pre-activation values of the hidden variables, which are then propagated backwards.
   \end{enumerate}
@@ -448,16 +449,103 @@ to conclude that the partial derivative of $L$ with respect to the weight $w_{i,
   
 If ${\frac {\partial L}{\partial w_{i,j}}}>0$, an increase in $w_{i,j}$ increases $L$; conversely, if $\frac {\partial L}{\partial w_{i,j}}<0$, an increase in $w_{i,j}$ decreases $L$. The new $\Delta w_{i,j}$ is added to the old weight, and the product of the learning rate and the gradient, multiplied by $-1$ guarantees that $w_{i,j}$  changes in a way that always decreases $L$. 
  \end{proof}
+ \section{Fitting the model}
+ The main difficulty with machine learning is that we have to be able to learn from new, unknown inputs as well as those that our model was trained on. The capacity of a model to perform well on unseen data is called \textbf{Generalization}. When training a model, we want the error between the expected and predicted outputs to be as low as possible on the training data. This is referred to as the \textit{training error}. We could stop here, and we'd have an \textit{optimization} problem. But this is where the difference with machine learning is, we require that our model also predict new, unseen data with a low error. We call this error the \textbf{test error}. 
+When determining the quality of a ML algorithm, we look mainly at the two following attributes,
+\begin{enumerate}
+  \item How low is the training error? 
+  \item How small is the gap between the test and training errors?
+\end{enumerate}
+These correspond, respectively, to the two main challenges in Machine Learning: \textbf{Underfitting} and \textbf{Overfitting} \citep{Goodfellow-et-al-2016}.
+\begin{figure}
+\includegraphics{fitting}
+  \caption{Diagrams representing Underfitting, Appropriate, and Overfitting, from \citep{Goodfellow-et-al-2016}}
+\end{figure}
   \subsection{Overfitting}%
   \label{sub:Overfitting}
-\subsection{Cross-Validation}%
+\textbf{Overfitting} refers to the process of producing an analysis that matches a given set of data too closely, which can lead to problems when trying to fit new data or make reliable predictions about future events. That is, a mathematical model starts overfitting when it begins to memorize the data, rather than learn from it. 
+
+In the topic of machine learning, if we choose too large of a network, it will behave like a lookup table on the data it was trained with, but won't generalize well to new data. Put another way, when a neural network has an excessive number of parameters, it can overfit, just like any other statistical model \citep{book:AIModernApp}.
+
+As was hinted above, the degree of overfitting is influenced by the amount of data supplied, as well as the model's \textit{complexity}. The complexity of the model is determined by the number of underlying parameters that a neural network has. Additional degrees of freedom are the consequence of having more parameters, which can be utilized to explain certain training data points without making a strong generalization to new ones \citep{inbook:Aggarwal-4.1}.
+\begin{marginfigure}
+  \includegraphics{Overfitting}
+  \label{Overfitting}
+  \caption{A diagram showing overfitting (green line) of data from \citep{overfitting-img}}
+\end{marginfigure}
+\begin{example}
+  Suppose we have 5 training pairs $(x, t)$ available. Then, it can be shown that there exists a degree 4 polynomial that fits the 5 training points exactly with zero error. This does not mean, however, that the polynomial will approximate unseen data with zero error. 
+\end{example}
+As seen in figure \ref{Overfitting}, an overfit model will have low \textit{bias}, but high \textit{variance} on the training data. However, an overfit model will "have estimated (and actual) sampling variances that are needlessly large (the precision of the estimators is poor, relative to what could have been accomplished with a more parsimonious model) [...]. A best approximating model is achieved by properly balancing the errors of underfitting and overfitting." \citep{burnham2002model}.
+\begin{remark} 
+  In machine learning models, overfitting is more likely when learning is performed for too long, or when the training data set is small.
+\end{remark}
+\subsection{Underfitting}%
+  \label{sub:Underfitting}
+  Underfitting is essentially the inverse of overfitting. It occurs when a model is too basic, and lacks the complexity, i.e. the number of parameters, to explain the patterns in the data. An underfit model will have high bias and low variance on the training data, the exact opposite of an overfit model. In other words, underfitting is failing to learn enough from the training set. For instance, when fitting a linear model to non-linear data, under-fitting would happen. Such a model's predicting ability would be mediocre both for the training and testing data.
+
+  Underfitting is not as widely discussed as overfitting, since it can be detected easily by evaluating how well the model is performing on the training data. 
+
+ \subsection{Mastering the Fit}%
+  \label{sub:Mastering the Fit}
+  Now that we've shown how bad a Machine Learning algorithm can be, we'll show how to fix it. By changing a model's capacity, we may alter how likely it is to overfit, or underfit. 
+  \begin{definition}[Capacity]
+   We define the capacity of a model as its ability to fit a wide variety of
+functions. Models with low capacity may struggle to fit the training set, while models
+with high capacity can overfit by memorizing properties of the training set that do
+not serve them well on the test set. The capacity of a model is a way to measure its complexity.
+  \end{definition}
+
+  Before altering the capacity of a model, one must evaluate whether a model is overfitting or underfitting. This can be done with the help of cross-validation, which we'll discuss in the next chapter.
+
+  As long as the training error is low, one way to increase regularization without playing with capacity is to increase the amount of training data. If this is not possible, there are a number of components we can adjust in order to control the capacity of a model, such as \citep{capacity-Brownlee}, 
+\begin{marginfigure}
+  \includegraphics{capacity}
+  \label{capacity}
+  \caption{A diagram showing the capacity of a model, from \citep{capacity-Kowalik}}
+\end{marginfigure}
+
+  \begin{enumerate}
+    \item The number of nodes per layer (\textbf{width}) 
+    \item The number of layers (\textbf{depth})
+  \end{enumerate}
+  It makes sense that augmenting these would increase the capacity, as they clearly increase the complexity of the model, which we know is closely related its capacity. It should be noted, however, that increasing the number of nodes and layers in a model can also increase its running time and memory usage. 
+
+  Other ways to increase capacity include tuning the learning rate optimally, decreasing the \textit{weight decay coefficient}, and decreasing the \textit{dropout rate.} We refer the reader to chapter 11 of \cite{Goodfellow-et-al-2016} for more information on this topic.
+
+  \subsection{Cross-Validation}%
   \label{sub:Cross-Validation}
-  
+Cross-validation is a technique that aims to test the ML model's testing capabilities on unseen data. This helps identify issues such as \textit{overfitting}, discussed above, or \textit{selection bias}, which is the result of selecting training data in a non-random way which doesn't represent the population. Cross-validation provides insight into how well the model will generalize to a different dataset.
+
+The most common technique used is \textbf{k-fold cross-validation.} It allows one to repeatedly train and test the model $k$ times on various randomly chosen subsets of the training data. The average test error across $k$ trials can then be used to estimate the test error. In trial $i$, the $i^{th}$ subset of the data is used as the test set, and the remaining data is utilized as the training set. One issue is that there are no unbiased estimators of the variance of such average error estimators, but estimations are normally used \citep{Goodfellow-et-al-2016}.
+
+
+\begin{algorithm}[h!]
+  \SetKwProg{Fn}{Function }{\string:}{}
+  \SetKwFunction{KFoldXV}{KFoldXV}
+  \caption{$k$-fold cross-validation}\label{k-CrossVal} 
+  \Fn{\KFoldXV{$\mathbb{D}, A, L, k$}}{
+  \textbf {Require: } $\mathbb{D}$ \text {, the given dataset, with elements } $ \boldsymbol{z}^{(i)}$\\
+  \textbf {Require: } $A$, the learning algorithm, seen as a function that takes a dataset as input and outputs a learned function \\
+  \textbf {Require:} $L$, the loss function, seen as a function from a learned function $f$ and an example $\boldsymbol{z}^{(i)} \in \mathbb{D}$ to a scalar $\in \mathbb{R}$\\
+  \textbf {Require: } $k$ \text {, the number of folds }\\
+  \BlankLine
+  Split $\mathbb{D}$ into $k$ mutually exclusive subsets $\mathbb{D}_i$, whose union is $\mathbb{D}$\\
+  \For{$i$ from 1 to $k$ }{
+    $f_i = A(\mathbb{D}\ \mathbb{D}_i)$;\\
+    \For{$z^{(j)}$ in $\mathbb{D}_i$ }{
+      $e_j = L(f_i,z^{(j)} )$;
+    }
+  }
+  \Return $e$;
+  }
+\end{algorithm}
+
  \section{Example Using Pytorch} 
  \subsection{Introduction}%
   \label{sub:Introduction}
   
-In this example, we'll demonstrate how to use PyTorch to implement a Machine Learning model.\cite{brownlee_2023}
+In this example, we'll demonstrate how to use PyTorch to implement a Machine Learning model \citep{brownlee_2023}.
 
 \subsection{Importing the Data}
 The first step involves preparing and loading your data. Tabular data, such as CSV files, can be handled using common Python libraries. For instance, Pandas facilitates CSV loading, while tools from scikit-learn assist in encoding categorical data like class labels.

@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -17,10 +17,27 @@ Charu~C. Aggarwal.
 \newblock Springer Publishing Company, Incorporated, 1st edition, 2018{\natexlab{b}}.
 \newblock ISBN 3319944622.
 
+\bibitem[Aggarwal(2018{\natexlab{c}})]{inbook:Aggarwal-4.1}
+Charu~C. Aggarwal.
+\newblock \emph{Neural Networks and Deep Learning: A Textbook}, chapter 4.1.
+\newblock Springer Publishing Company, Incorporated, 1st edition, 2018{\natexlab{c}}.
+\newblock ISBN 3319944622.
+
+\bibitem[Brownlee(2020)]{capacity-Brownlee}
+Jason Brownlee.
+\newblock How to control neural network model capacity with nodes and layers, 2020.
+\newblock URL \url{https://machinelearningmastery.com/how-to-control-neural-network-model-capacity-with-nodes-and-layers/}.
+\newblock [Online; accessed April 30, 2024].
+
 \bibitem[Brownlee(2023)]{brownlee_2023}
 Jason Brownlee.
 \newblock Pytorch tutorial: How to develop deep learning models with python - machinelearningmastery.com, Apr 2023.
 \newblock URL \url{https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/}.
+
+\bibitem[Burnham and Anderson(2002)]{burnham2002model}
+K.P. Burnham and D.R. Anderson.
+\newblock \emph{Model selection and multimodel inference: a practical information-theoretic approach}.
+\newblock Springer Verlag, 2002.
 
 \bibitem[cdeterman()]{layers}
 cdeterman.
@@ -31,6 +48,12 @@ cdeterman.
 \bibitem[Ciampiconi et~al.(2023)Ciampiconi, Elwood, Leonardi, Mohamed, and Rozza]{ciampiconi2023survey}
 Lorenzo Ciampiconi, Adam Elwood, Marco Leonardi, Ashraf Mohamed, and Alessandro Rozza.
 \newblock A survey and taxonomy of loss functions in machine learning, 2023.
+
+\bibitem[Goodfellow et~al.(2016)Goodfellow, Bengio, and Courville]{Goodfellow-et-al-2016}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock \emph{Deep Learning}.
+\newblock MIT Press, 2016.
+\newblock \url{http://www.deeplearningbook.org}.
 
 \bibitem[Hagan et~al.(2014)Hagan, Demuth, Beale, and Orlando]{Hagan_Martin}
 Martin~T Hagan, Howard~B Demuth, Mark~H Beale, and Jesús Orlando, De.
@@ -49,9 +72,21 @@ IBM.
 Ameya~D. Jagtap and George~Em Karniadakis.
 \newblock How important are activation functions in regression and classification? a survey, performance comparison, and future directions, 2022.
 
-\bibitem[Stuart~Russel(2010)]{book:AIModernApp}
-Peter~Norvig Stuart~Russel.
+\bibitem[Kowalik(2023)]{capacity-Kowalik}
+Marek Kowalik.
+\newblock Capacities of quantum neural networks, part 1, 2023.
+\newblock URL \url{https://medium.com/@marekkowalik97/capacities-of-quantum-neural-networks-part-1-1a731f44be0}.
+\newblock [Online; accessed May 2, 2024].
+
+\bibitem[Russel and Norvig(2010)]{book:AIModernApp}
+Stuart Russel and Peter Norvig.
 \newblock \emph{Artificial Intelligence, A Modern Approach}, chapter~18.
 \newblock Pearson Education, New Jersey, 3rd edition, 2010.
+
+\bibitem[{Wikipedia, the free encyclopedia}()]{overfitting-img}
+{Wikipedia, the free encyclopedia}.
+\newblock Overfitting.
+\newblock URL \url{https://en.wikipedia.org/wiki/Overfitting}.
+\newblock [Online; accessed April 30, 2024].
 
 \end{thebibliography}

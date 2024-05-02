@@ -9,10 +9,13 @@
 \contentsline {subsection}{\numberline {3.1}Loss Function}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}BackPropagation}{9}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Weight Update Rule}{12}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Overfitting}{13}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Cross-Validation}{13}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Example Using Pytorch}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Introduction}{13}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Importing the Data}{13}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Defining the Model}{14}{subsection.4.3}%
+\contentsline {section}{\numberline {4}Fitting the model}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Overfitting}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Underfitting}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Mastering the Fit}{15}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Cross-Validation}{16}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Example Using Pytorch}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Introduction}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Importing the Data}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Defining the Model}{17}{subsection.5.3}%
 \contentsfinish 
