@@ -154,22 +154,30 @@
 \newpage
 
 \section{Introduction}
-There are several types of Machine Learning algorithms. The main categories are divided into \textit{Supervised learning, Semi-supervised learning, Unsupervised learning and Reinforcement learning.} Here, we will focus on \textit{Supervised learning.}
+ 
+Machine learning has surged in popularity due to its ability to tackle complex problems by discerning patterns in data, making accurate predictions, and informing decisions. Unlike traditional approaches, machine learning focuses not only on understanding data but also on inferring from it, allowing models to generalize knowledge and make predictions on unseen data. This emphasis on inference enables machine learning to transcend comprehension, driving innovation and progress across various domains. There are several types of Machine Learning algorithms. The main categories are divided into \textit{Supervised learning, Semi-supervised learning, Unsupervised learning and Reinforcement learning.}
 
-\text{\color{red} Introduce problems requiring machine learning, why it is so popular,}
+\vspace{4mm}
+  \noindent \textsc{Supervised learning} allows the machine to learn through examples. The machine learning algorithm is tasked with developing the strategy for achieving the specified outputs given some input.  To do so, a known dataset is supplied  that contains a set of inputs and associated target outputs in the form $(x, t)$. The algorithm finds patterns in the data and adjusts its parameters in order to predict more accurately future inputs. This kind of machine learning algorithm needs a developer to oversee it directly. The training data must be accurately labelled. 
 
-\text{\color{red}what's the goal. How ML is not about understanding the data but more }
+  The two main problems requiring Supervised learning are \textbf{Classification} and \textbf{Regression}. The former consists of classifying objects into their appropriate classes. A well known example is the MNIST data set, which is a set of images representing hand drawn numbers from 0 to 9. A classification ML algorithm will analyse each point $(x,t)$ of the data set during the \textit{training phase}, where $x$ is the image, and $t$ is the number it represents. Then, given an unseen image as input, the algorithm should predict which number it represents.
 
-\text{\color{red}about being able to infer about new data.}
+  Regression is the other common use of Supervised learning. It aims to predict a continuous output variable, rather than a discrete one (classification). An example would be to predict the cost of a house, given a set of training data consisting of characteristics of houses and their corresponding price.
 
-\begin{definition}[Supervised Learning]
-  In supervised learning, the machine learns through examples. The machine learning algorithm is tasked with developing the strategy for achieving the specified outputs given some input.  To do so, a known dataset is supplied  that contains a set of inputs and associated outputs. The algorithm finds patterns in the data, learns from observations, and makes predictions. At the end of the learning process, the algorithm can be tested on data that is unknown to it, but that the operator knows the answers to, in order to test its accuracy. Then, the algorithm is adjusted if needed, and the process continues in an iterated manner.
-\end{definition}
-\text{\color{red}Types of ML problems (classification, regression).}
 
-\text{\color{red} What is a neural network, quickly talk about components of neural network. }
+\vspace{4mm}
+\noindent\textsc{Semi-supervised learning} operates on a blend of labelled and unlabelled data, where labelled data contains meaningful tags for algorithmic comprehension, while unlabelled data lacks such information. By leveraging both types of data, semi-supervised learning algorithms can deduce labels for unlabelled data, enhancing their learning capability.
 
-\text{\color{red} Structure of neural network.}
+
+\vspace{4mm}
+\noindent\textsc{Unsupervised learning} algorithms discern patterns within data without predefined answers or human guidance. Through analysis, the algorithm identifies correlations and structures within datasets. Key steps in this process include clustering, which groups similar data sets, and dimension reduction, which simplifies variables to extract essential information.
+
+
+\vspace{4mm}
+\noindent\textsc{Reinforcement learning} involves a structured approach where algorithms are provided with actions, parameters, and goals. These algorithms explore various options, learn from trial and error, and adapt their strategies based on past experiences to optimize outcomes \citep{GuideML}.
+
+In this paper, we will focus on \textit{Supervised learning.} However, most of the basic concepts we'll cover, such as Neurons, Neural networks, Backpropagation, and Overfitting, are topics that apply to all spheres of machine learning. 
+
 \section{Neural Networks}
 Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}. They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
 \subsection{Single Layer Perceptron}%
@@ -199,22 +207,25 @@ The neuron is the smallest computational unit of a neural network. The single la
 \begin{definition}[Neurons]
   Neurons are made up of 4 elements: 
   \begin{enumerate}
-    \item The inputs, seen as \textit{nodes}, consist of either the input layer, or the outputs of the previous layer of the neural network. 
-    \item The weights and bias, seen as \textit{edges} will act on the inputs before they reach the input function of the neuron. 
+    \item The inputs, seen as \textit{nodes}, consist of either the input layer (\autoref{sub:Layers}), or the outputs of the previous layer of the neural network. 
+    \item The weights (\autoref{def:weight}) and biases (\autoref{def:bias}), seen as \textit{edges} will act on the outputs of previous neurons before they reach the input function of the neuron. 
     \item The input function takes a sum of the weighed inputs. 
-    \item The activation function acts on the input function and outputs the result to the following layers. 
+    \item The activation function (\autoref{sub:ActivationFunction}) acts on the input function and outputs the result to the following layers. 
   \end{enumerate}
-   receive an input, multiply it by a weight, and output it using an activation function. A simple mathematical model for a neuron's output activation is \citep{book:AIModernApp}
+   A simple mathematical model for a neuron's output activation is \citep{book:AIModernApp}
 \begin{marginfigure}
   \includegraphics{Neuron}
   \label{Neuron}
   \caption{A neuron and its inputs and outputs.}
 \end{marginfigure}
   $$o_j = f \left( \sum^{n}_{i=0}w_{i,j} o_i  \right)$$
-  where $f$ is the activation function (\ref{sub:ActivationFunction}), $o_i$ is the output activation of neuron $i$ and $w_{i,j}$ is the weight on the directed edge from neuron $i$ to the neuron $j$. We will explore activation functions in more depth shortly.  
+  where $f$ is the activation function, $o_i$ is the output activation of neuron $i$ and $w_{i,j}$ is the weight on the directed edge from neuron $i$ to the neuron $j$. 
 \end{definition}
-\begin{definition}[Weights]
-  \text{\color{red} FIND A DEFINITION (maybe relate it to the edge of a graph)}
+\begin{definition}[Weights]\label{def:weight}
+  A weight $w_{i,j} \in \mathbb{R}$ will multiply the output of neuron $i$ before giving it as input to neuron $j$. Weights are the moving parts of the neural network, as they get changed during each iteration of the learning step in order to optimize the output. They can be initialized to any random value, and after running the network on a pair $(x,t)$ from the \textit{training data}, the weight update rule (\autoref{sub:Weight Update Rule}) will alter them to minimize the error between the output $\hat y$ and the target $t.$ 
+\end{definition}
+\begin{definition}[Bias]\label{def:bias}
+  Biases are constant, they are an additional input into the next layer that will always have the value of 1. Bias units are not influenced by the previous layer but they do have outgoing connections with their own weights. The bias unit guarantees that even when all the inputs are zeros there will still be an activation in the neuron \citep{WeightsBias}. 
 \end{definition}
 \subsection{Feed-Forward Neural Networks}%
   \label{sub:Feed-Forward Neural Networks}
@@ -223,7 +234,7 @@ The neuron is the smallest computational unit of a neural network. The single la
 The overall network is a combination of function composition and matrix multiplication:
 
   $$g(x) = f^L (W^Lf^{L-1}(W^{L-1} \hdots f^1(W^1x)\hdots)), $$
-  where $L$ is the number of layers (\ref{sub:Layers}), $W$ is the weight matrix, and $f$ is the activation function (\ref{sub:ActivationFunction}).
+  where $L$ is the number of layers (\autoref{sub:Layers}), $W$ is the weight matrix, and $f$ is the activation function (\ref{sub:ActivationFunction}).
  \begin{definition}[Feed-forward Neural Network]
   A neural network is a \textit{computational directed acyclic graph,} in which a unit of computation is the neuron. Each directed edge in the graph represents a function passing the weighed output of a node in a layer to a node in the next layer.
  \end{definition} 
@@ -273,8 +284,7 @@ gradient-based optimization approaches is continuously
 differentiable activation functions. This ensures that the
 back-propagation algorithm works properly. 
 \end{enumerate}
-\begin{remark} 
-  The vanishing and exploding gradient problems: The variation
+\begin{remark}[The vanishing and exploding gradient problems] The variation
 of the inputs and outputs of some activation functions,
 such as the logistic function (Sigmoid), is extremely
 large. To put it another way, they reduce and transform
@@ -339,7 +349,9 @@ The following is a table summarizing the information above. \begin{figure*}
   \label{sec:Learning}
 \subsection{Loss Function}%
   \label{sub:Loss Function}
-  Here, we present some common loss functions \citep{ciampiconi2023survey}.
+  The attentive reader will have noticed that supervised machine learning revolves around optimizing the outputs of a loss function. This also applies to a wide range of other ML types. Thus, defining a good loss function is essential. We offer an overview of the most widely utilized loss functions for a variety of uses, from \citep{ciampiconi2023survey}.
+
+  \noindent \textbf{Regression Losses} are loss functions that are used to solve the regression problems of \textit{supervised ML}. Recall that regressions model predict the output of a continuous output variable. The regression losses are all based on residuals, namely the difference between the predicted and expected outputs. In the following, let $x_i$ be the $i^{th}$ element of input $x$, $f(x_i)$ the $i^{th}$ element of the predicted output, and $y_i$ the $i^{th}$ element of the expected output. 
 \subsection{BackPropagation}%
   \label{sub:BackPropagation}
 \textbf{Backpropagation} is a gradient estimation method used to train neural network models. The gradient estimate is used by the optimization algorithm to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
@@ -351,7 +363,7 @@ The following is a table summarizing the information above. \begin{figure*}
 
   Let us first begin by recalling that a neural network evaluates compositions of functions computed at individual nodes. Think of a neural network as a function $h_w(x)$ of the input, parametrized by the weights. Consider the network in Figure \ref{simpleNet}, let $\{x_1,x_2\}$ be the input vector, $f$ the activation function and $a_i$ denote the activated output at node $i$. Then, the output at node 3 is given by
   $$a_3 = f(w_{0, 3} + f(x_1)w_{1,3} + f(x_2)w_{2,3}), $$
-  where $w_{0,3}$ is the bias weight at node 3 \text{\color{red}(explain what a bias weight is)}. Similarly, the output at node 5 is
+  where $w_{0,3}$ is the bias weight (\autoref{def:bias}) at node 3. Similarly, the output at node 5 is
   \begin{equation*}
     \begin{split}
       a_5 &= f( w_{0,5} + f(a_3) w_{3,5} + f(a_4) w_{4,5}  )\\ 
@@ -362,7 +374,6 @@ The following is a table summarizing the information above. \begin{figure*}
 
   Therefore, we need some kind of iterative approach to compute the derivatives, and a way to \textit{back-propagate} the error from the output layer to the hidden layers. The resulting iterative approach uses \textit{dynamic programming}, and the \textbf{weight update rule} is the \textit{chain rule} of differential calculus \citep{inbook:Aggarwal-3.2}.
 
-\text{\color{red} continue from p.733 of Russel, p.570 of Murphy, and p.109 of Charu}
 \begin{theorem}[Multivariate Chain Rule] \label{chain}
     Let $z = f(y_1, y_2, \ldots, y_m)$ be a differentiable function of $m$ variables, where each $y_j = g_j(x_1, x_2, \ldots, x_n)$ is a differentiable function of $n$ variables. Then, for each $i = 1, 2, \ldots, n$, the partial derivative of $z$ with respect to $x_i$ is given by
 $$
@@ -517,7 +528,7 @@ not serve them well on the test set. The capacity of a model is a way to measure
   \label{sub:Cross-Validation}
 Cross-validation is a technique that aims to test the ML model's testing capabilities on unseen data. This helps identify issues such as \textit{overfitting}, discussed above, or \textit{selection bias}, which is the result of selecting training data in a non-random way which doesn't represent the population. Cross-validation provides insight into how well the model will generalize to a different dataset.
 
-The most common technique used is \textbf{k-fold cross-validation.} It allows one to repeatedly train and test the model $k$ times on various randomly chosen subsets of the training data. The average test error across $k$ trials can then be used to estimate the test error. In trial $i$, the $i^{th}$ subset of the data is used as the test set, and the remaining data is utilized as the training set. One issue is that there are no unbiased estimators of the variance of such average error estimators, but estimations are normally used \citep{Goodfellow-et-al-2016}.
+The most common technique used is \textbf{k-fold cross-validation.} It allows one to repeatedly train and test the model $k$ times on various randomly chosen subsets of the training data. The average test error across $k$ trials can then be used to estimate the test error. In trial $i$, the $i^{th}$ subset of the data is used as the test set, and the remaining data is utilized as the training set. One issue is that there are no unbiased estimators of the variance of such average error estimators, but estimations are normally used \citep{Goodfellow-et-al-2016}. The following is the pseudo-code for the k-fold cross validation algorithm.
 
 
 \begin{algorithm}[h!]
@@ -605,6 +616,10 @@ class MLP(Module):
         X = self.activation(X)
         return X
   \end{lstlisting}
+  \section{Conclusion}%
+    \label{sec:Conclusion}
+    \text{\color{red} Talk about how supervised ML is restrictive because we need a strong data set, with} \text{\color{red}inputs and desired outputs, which is not always possible. How RL solves this problem.}
+\text{\color{red} E.g. if we want to train a model to beat the best chess player, then by definition, we can't use supervised learning.}
 \newpage
     \bibliographystyle{plainnat}
 \bibliography{ML_Report_DRP2024}
