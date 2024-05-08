@@ -1759,12 +1759,12 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
 INPUT ./graphics//fitting.png
 INPUT graphics//fitting.png
 INPUT ./graphics//fitting.png
 INPUT ./graphics//fitting.png
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
 INPUT ./graphics//Overfitting.png
 INPUT graphics//Overfitting.png
 INPUT ./graphics//Overfitting.png
