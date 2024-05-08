@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  7 MAY 2024 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  8 MAY 2024 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1137,72 +1137,69 @@ Overfull \hbox (12.0pt too wide) detected at line 555
 [][][][]
  []
 
-<graphics//fitting.png, id=277, 729.72626pt x 357.335pt>
+[17]
+<graphics//fitting.png, id=288, 729.72626pt x 357.335pt>
 File: graphics//fitting.png Graphic file (type png)
 <use graphics//fitting.png>
-Package pdftex.def Info: graphics//fitting.png  used on input line 570.
+Package pdftex.def Info: graphics//fitting.png  used on input line 588.
 (pdftex.def)             Requested size: 311.99463pt x 152.77866pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--572
+Underfull \hbox (badness 10000) in paragraph at lines 588--590
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--572
+Underfull \hbox (badness 10000) in paragraph at lines 588--590
 
  []
 
 
-Overfull \hbox (3.21979pt too wide) in paragraph at lines 575--576
+Overfull \hbox (3.21979pt too wide) in paragraph at lines 593--594
 \T1/pplj/b/n/10 Overfitting \T1/pplj/m/n/10 refers to the pro-cess of pro-duc-ing an anal-y-sis that matches 
  []
 
-[17]
-<graphics//Overfitting.png, id=294, 1927.2pt x 1927.2pt>
+[18 <./graphics//fitting.png>]
+<graphics//Overfitting.png, id=303, 1927.2pt x 1927.2pt>
 File: graphics//Overfitting.png Graphic file (type png)
 <use graphics//Overfitting.png>
-Package pdftex.def Info: graphics//Overfitting.png  used on input line 581.
+Package pdftex.def Info: graphics//Overfitting.png  used on input line 599.
 (pdftex.def)             Requested size: 143.97504pt x 143.97504pt.
-Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 586.
- [18 <./graphics//fitting.png> <./graphics//Overfitting.png>]
-<graphics//capacity.png, id=312, 610.28pt x 403.5075pt>
+Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 604.
+ [19 <./graphics//Overfitting.png>]
+<graphics//capacity.png, id=324, 610.28pt x 403.5075pt>
 File: graphics//capacity.png Graphic file (type png)
 <use graphics//capacity.png>
-Package pdftex.def Info: graphics//capacity.png  used on input line 612.
+Package pdftex.def Info: graphics//capacity.png  used on input line 630.
 (pdftex.def)             Requested size: 144.00247pt x 95.21216pt.
- [19 <./graphics//capacity.png>]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 651.
+ [20 <./graphics//capacity.png>]
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 669.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 651.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+(Font)              scaled to size 8.50006pt on input line 669.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 664.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 682.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 664.
- [20] [21]
-Overfull \hbox (64.0797pt too wide) in paragraph at lines 719--721
+(Font)              scaled to size 6.80005pt on input line 682.
+ [21] [22]
+Overfull \hbox (64.0797pt too wide) in paragraph at lines 737--739
 [][] 
  []
 
 
-Overfull \hbox (76.94969pt too wide) in paragraph at lines 719--721
+Overfull \hbox (76.94969pt too wide) in paragraph at lines 737--739
 [][] 
  []
 
 
-Overfull \hbox (195.54965pt too wide) in paragraph at lines 719--721
+Overfull \hbox (195.54965pt too wide) in paragraph at lines 737--739
 [][]  
  []
 
-[22] (./ML_Report_DRP2024.bbl
+[23] (./ML_Report_DRP2024.bbl
 Underfull \hbox (badness 3209) in paragraph at lines 33--37
 []\T1/pplj/m/n/10 Jason Brown-lee.  How to con-trol neu-ral net-work 
  []
@@ -1222,23 +1219,23 @@ Overfull \hbox (48.34134pt too wide) in paragraph at lines 33--37
 \T1/fvm/m/n/10 how-[]to-[]control-[]neural-[]network-[]model-[]capacity-[]with-[]nodes-[]and-[]layers/$[]\T1/pplj/m/n/10 . 
  []
 
-[23]) [24] (./ML_Report_DRP2024.aux)
+[24]) [25] (./ML_Report_DRP2024.aux)
 Package rerunfilecheck Info: File `ML_Report_DRP2024.out' has not changed.
 (rerunfilecheck)             Checksum: D7D0939C2743325282F1E3BB86B90D46;688.
  ) 
 Here is how much of TeX's memory you used:
- 38808 strings out of 476025
- 863513 string characters out of 5790018
- 1987388 words of memory out of 5000000
+ 38811 strings out of 476025
+ 863534 string characters out of 5790018
+ 2055388 words of memory out of 5000000
  58288 multiletter control sequences out of 15000+600000
  629246 words of font info for 229 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,27n,94p,897b,2211s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ML_Report_DRP2024.pdf (24 pages, 1403099 bytes).
+Output written on ML_Report_DRP2024.pdf (25 pages, 1404844 bytes).
 PDF statistics:
- 538 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
- 164 named destinations out of 1000 (max. 500000)
+ 547 PDF objects out of 1000 (max. 8388607)
+ 443 compressed objects within 5 object streams
+ 167 named destinations out of 1000 (max. 500000)
  2159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

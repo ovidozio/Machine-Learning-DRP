@@ -142,7 +142,7 @@
 % Book metadata
 \title{An Introduction to Machine Learning}
 \date{\today}
-\publisher{Alexandre St-Aubin, Mentored by Yanees Dobberstein}
+\publisher{Alexandre St-Aubin, mentored by Yanees Dobberstein}
 \author{McGill University -- Directed Reading Program}
 
 \begin{document}
@@ -554,10 +554,28 @@ The squared term makes all the biases positive and magnifies the contribution ma
       \end{split}
     \end{equation}
     The hyperparameter $\gamma$ gives the degree of smoothing. As $\gamma \to 0,$  $\mathcal{L}_{QSmoothedHinge}(y, f(x)) \to \mathcal{L}_{Hinge}(y, f(x)) $.
-
+    \item[\it Modified Huber Loss.][\textit{Lipschitz-continuous, Differentiable, Strictly convex}] The Modified Huber loss is a version for classification. It is a special case of the Quadratically Smoothed Hinge Loss with $\gamma =2$. We define it as,
+\begin{equation}
+      \begin{split}
+        \mathcal{L}_{ModHuber}(y, f(x)) = 
+        \begin{cases}
+          \frac{1}{4} \max (0, -(f(x) \cdot y))^2 , &\text{ if } f(x)\cdot y \geq -1 \\
+         -(f(x) \cdot y), &\text{ otherwise.}  
+        \end{cases}
+      \end{split}
+    \end{equation}
+    \item[\it Ramp Loss.][\textit{Continuous, Convex}] The Ramp loss is more robust to outliers than the Hinge loss. It is given by,
+    \begin{equation}
+      \begin{split}
+        \mathcal{L}_{Ramp}(y, f(x)) = 
+        \begin{cases}
+         \mathcal{L}_{Hinge}(y, f(x)), &\text{ if } f(x)\cdot y \leq 1 \\
+         1, &\text{ otherwise.}  
+        \end{cases}
+      \end{split}
+    \end{equation}
   \end{enumerate}
-
-
+Other loss functions based on \textit{Information Theory}, such as the \textit{Cross-Entropy loss}, and the \textit{Kullback-Leiber divergence} are widely used in classification problems, and we refer the reader to \citep{ciampiconi2023survey} for more information.
  \section{Fitting the model}
  The main difficulty with machine learning is that we have to be able to learn from new, unknown inputs as well as those that our model was trained on. The capacity of a model to perform well on unseen data is called \textbf{Generalization}. When training a model, we want the error between the expected and predicted outputs to be as low as possible on the training data. This is referred to as the \textit{training error}. We could stop here, and we'd have an \textit{optimization} problem. But this is where the difference with machine learning is, we require that our model also predict new, unseen data with a low error. We call this error the \textbf{test error}. 
 When determining the quality of a ML algorithm, we look mainly at the two following attributes,
