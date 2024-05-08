@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{16}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -34,11 +34,6 @@ Jason Brownlee.
 \newblock How to control neural network model capacity with nodes and layers, 2020.
 \newblock URL \url{https://machinelearningmastery.com/how-to-control-neural-network-model-capacity-with-nodes-and-layers/}.
 \newblock [Online; accessed April 30, 2024].
-
-\bibitem[Brownlee(2023)]{brownlee_2023}
-Jason Brownlee.
-\newblock Pytorch tutorial: How to develop deep learning models with python - machinelearningmastery.com, Apr 2023.
-\newblock URL \url{https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/}.
 
 \bibitem[Burnham and Anderson(2002)]{burnham2002model}
 K.P. Burnham and D.R. Anderson.

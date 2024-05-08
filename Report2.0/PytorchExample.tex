@@ -1,0 +1,64 @@
+\section{Example Using Pytorch} 
+ \subsection{Introduction}%
+  \label{sub:Introduction}
+  
+In this example, we'll demonstrate how to use PyTorch to implement a Machine Learning model \citep{brownlee_2023}.
+
+\subsection{Importing the Data}
+The first step involves preparing and loading your data. Tabular data, such as CSV files, can be handled using common Python libraries. For instance, Pandas facilitates CSV loading, while tools from scikit-learn assist in encoding categorical data like class labels.
+
+PyTorch offers the \texttt{Dataset} class, which permits customization for data loading. Below is a skeletal outline of a custom Dataset class.
+
+\begin{lstlisting}[language=Python, caption=Python code for a PyTorch Dataset class]
+class CSVDataset(Dataset):
+    # load the dataset
+    def __init__(self, path):
+        # store the inputs and outputs
+        self.X = ...
+        self.y = ...
+ 
+    # number of rows in the dataset
+    def __len__(self):
+        return len(self.X)
+ 
+    # get a row at an index
+    def __getitem__(self, idx):
+        return [self.X[idx], self.y[idx]]
+\end{lstlisting}
+Once the data is loaded, PyTorch offers the \texttt{DataLoader} class for navigating a \texttt{Dataset} instance during model training and evaluation. 
+
+The \texttt{random\_split()} function splits a dataset into \textit{train} and \textit{test} sets. After splitting, a subset of rows from the Dataset can be supplied to a \texttt{DataLoader}, along with parameters such as batch size and whether data should be shuffled every \textit{epoch}.
+
+For instance, a \texttt{DataLoader} can be defined by providing a chosen sample of rows from the dataset.
+\begin{lstlisting}[language=Python, caption=Python code for creating a DataLoader instance]
+...
+# create the dataset
+dataset = CSVDataset(...)
+# select rows from the dataset
+train, test = random_split(dataset, [[...], [...]])
+# create a data loader for train and test sets
+train_dl = DataLoader(train, batch_size=32, shuffle=True)
+test_dl = DataLoader(test, batch_size=1024, shuffle=False)
+\end{lstlisting}
+\subsection{Defining the Model}%
+  \label{sub:Defining the Model}
+  To define a model in PyTorch we define a class that extends the PyTorch \texttt{Module} class. In the constructor, we will set the layers and the \texttt{forward()} function, which defines the behaviour of the \textit{forward} step of the backprop algorithm.
+
+  In the following code, we define the layers of the NN using the function \texttt{nn.Linear(in, out, bias)}, where \texttt{in} and \texttt{out} represent the size of each input and output sample, respectively. 
+\begin{lstlisting}[language=python]
+  # model definition
+class MLP(Module):
+    # define model elements
+    def __init__(self, n_inputs):
+        super(MLP, self).__init__()
+        # define the layers
+        self.layer = Linear(n_inputs, 1)
+        # define the activation function 
+        self.activation = Sigmoid()
+ 
+    # forward propagate input
+    def forward(self, X):
+        X = self.layer(X)
+        X = self.activation(X)
+        return X
+  \end{lstlisting}

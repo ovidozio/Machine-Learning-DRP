@@ -1,8 +1,62 @@
-\documentclass[nobib]{tufte-handout} % nobib to have normal citation behaviour 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% ICML 2009 EXAMPLE LATEX SUBMISSION FILE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{amsmath, amsthm, amssymb}
-\usepackage{xcolor} %for heading colors
-\usepackage{titling}
+% Deep Network Guided Proof Search
+
+% Use the following line _only_ if you're still using LaTeX 2.09.
+%\documentstyle[icml2009,epsf,mlapa]{article}
+% If you rely on Latex2e packages, like most moden people use this:
+\documentclass{article}
+
+% Employ the following version of the ``usepackage'' statement fors
+% submitting the draft version of the paper for review.  This will set
+% the note in the first column to ``Under review.  Do not distribute.''
+\usepackage{iclr2017_arXiv,times}
+\usepackage{hyperref}
+\usepackage{url}
+
+%{\"a} {\^e} {\`i} {\.I} {\o} {\'u} {\aa} {\c c} {\u g} {\l} {\~n} {\H o} {\v r} {\ss}
+% & % $ # _ { } ~ ^ \
+% \& \% \$ \# \_ \{ \}
+% \textasciitilde
+% \textasciicircum
+% \textbackslash
+
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\usepackage{graphicx} % Allows including images
+
+\usepackage{bm}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{multirow}
+
+\usepackage{amssymb} % for checkmark
+\usepackage{rotating} % for vertical text
+
+\usepackage{lipsum}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%% Alex's Commands and packages %%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
 \usepackage{thmtools}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e} %For pseudocode
 
@@ -11,26 +65,6 @@
 %For plots
 \usepackage{pgfplots}
 \pgfplotsset{compat = newest}
-
-\newtheoremstyle{mytheoremstyle}
-    {6pt} % space above
-    {6pt} % space below
-    {\normalfont} % body font
-    {} % indent amount
-    {\bfseries} % theorem head font
-    {.} % punctuation after theorem head
-    {1em} % space after theorem head
-    {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} % theorem head spec
-
-\newtheoremstyle{corlstyle}
-    {6pt} % space above
-    {6pt} % space below
-    {\normalfont} % body font
-    {} % indent amount
-    {\textit{}} % theorem head font
-    {.} % punctuation after theorem head
-    {1em} % space after theorem head
-    {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} % theorem head spec
 
 % Define the theorem environment
 \declaretheorem[style=mytheoremstyle,name=Theorem,numberwithin=section]{theorem}
@@ -51,43 +85,10 @@
 % Define the definition environment linked to the theorem
 \declaretheorem[style=mytheoremstyle,name=Definition,numberlike=theorem]{definition}
 
-\newcommand\sol{%
-  \\ 
-  \\
-  \textit{Solution:}\\%
-}
-
-% --- shortcuts --- %
-\newcommand{\indep}{\perp \!\!\! \perp}
-\DeclareMathOperator{\var}{Var}
-\DeclareMathOperator{\cov}{Cov}
-\DeclareMathOperator{\net}{net}
-
-%\geometry{showframe} % display margins for debugging page layout
-
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
   \graphicspath{{graphics/}} % set of paths to search for images
 
-\usepackage{booktabs} % book-quality tables
-\usepackage{units}    % non-stacked fractions and better unit spacing
-\usepackage{multicol} % multiple column layout facilities
-\usepackage{lipsum}   % filler text
-\usepackage{fancyvrb} % extended verbatim environments
-  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
-%\begin{marginfigure}
-%  \includegraphics{nonConvex}
-%  \label{ConvexExamples2015}
-%  \caption{A nonconvex function does not lie below all of its secants.}
-%\end{marginfigure}
-
-
-\usepackage{hyperref}% for better handling of links 
-
-% Prints a trailing space in a smart way.
-\usepackage{xspace}
-
-%---- Code ----%
 \usepackage{listings}
 \usepackage{xcolor}
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -112,45 +113,63 @@
     showtabs=false,                  
     tabsize=2
 }
-\lstset{style=mystyle}
-%/---- Code ----/%
-\setcounter{secnumdepth}{4} %to set the section numbering
 
-\newsavebox{\titleimage}
-\savebox{\titleimage}{\includegraphics[height=15\baselineskip]{cover.jpg}}
+\usepackage{wrapfig}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\makeatletter
-\renewcommand{\maketitlepage}{%
-\begingroup%
-\setlength{\parindent}{0pt}
+%%       End Alex's Commands and packages        %%
 
-{\fontsize{24}{24}\selectfont\textit{\@author}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\vspace{1.75in}{\fontsize{36}{54}\selectfont\@title\par}
-
-\vspace{0.5in}{\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}\par}
-
-\vspace{0.5in}\usebox{\titleimage}
-
-\vfill{\fontsize{14}{14}\selectfont\textit{\@publisher}\par}
-
-\thispagestyle{empty}
-\endgroup
-\newpage
-}
-\makeatother
-% Book metadata
 \title{An Introduction to Machine Learning}
-\date{\today}
-\publisher{Alexandre St-Aubin, mentored by Yanees Dobberstein}
-\author{McGill University -- Directed Reading Program}
 
-\begin{document}
+% The \author macro works with any number of authors. There are two
+% commands used to separate the names and addresses of multiple
+% authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to
+% break the lines. Using \AND forces a line break at that point. So,
+% if LaTeX puts 3 of 4 authors names on the first line, and the last
+% on the second line, try using \AND instead of \And before the third
+% author name.
 
-\maketitlepage% this prints the handout title, author, and date
+\author{
+  Alexandre St-Aubin \\
+  %\hspace{0.5mm} attain.ai \\
+  %\hspace{0.5mm} yuxili@gmail.com \\
+  %\texttt{yuxili@gmail.com} \\
+  }
 
-% r.5 contents
+
+\begin{document} 
+\maketitle
+
+\begin{abstract} 
+
+\noindent
+We discuss Machine Learning on a high level.
+
+  \footnote{Work in progress.}
+
+\vspace{5mm}
+
+
+\textbf{Keywords:} Machine Learning
+
+
+\textbf{}
+
+\end{abstract} 
+
+
+\vfill
+
+\clearpage
+
+\newpage
+
 \tableofcontents
+
 \newpage
 
 \section{Introduction}
@@ -166,7 +185,7 @@ Machine learning has surged in popularity due to its ability to tackle complex p
 
 
 \vspace{4mm}
-\noindent\textsc{Semi-supervised learning} operates on a blend of labelled and unlabelled data, where labelled data contains meaningful tags for algorithmic comprehension, while unlabelled data lacks such information. By leveraging both types of data, semi-supervised learning algorithms can deduce labels for unlabelled data, enhancing their learning capability.
+\noindent\textsc{Semi-supervised learning} operates on a blend of labelled and unlabelled data, where labelled data contains meaningful tags for algorithmic comprehension, while unlabelled data lacks such information. By leveraging both types of data, semi-supervised learning algorithms can deduce labels for unlabelled data, enhancing their learning capability. 
 
 
 \vspace{4mm}
@@ -180,26 +199,30 @@ In this paper, we will focus on \textit{Supervised learning.} However, most of t
 
 \section{Neural Networks}
 Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}. They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
-\subsection{Single Layer Perceptron}%
+\subsection{Single Layer Perceptron} \label{sub:Single Layer Perceptron}
 The simplest neural network is referred to as the perceptron. This neural network contains
 a single input layer and an output node \citep{inbook:Aggarwal-1.2}.
 
 Consider a situation where each \textit{training instance} is of the form $(\overline{X}, y)$, where each $\overline{X} = [x_1,..., x_d]$ contains $d$ feature variables, and $y \in [-1, +1]$ contains the observed value of the binary class variable. By “observed value” we refer to the fact that it is given to us as a part of the training data, and our goal is to predict the class variable for cases in which it is not observed.
 
+%\begin{minipage}[t]{0.5\textwidth}
+\begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
+    \centering
+    \includegraphics[width=0.4\textwidth]{SingleLayerP}
+    
+    \caption{A single layer perceptron.}
+\end{wrapfigure}
+
 The input layer of the \textbf{perceptron} contains $d$ nodes that transmit the $d$ features $\overline{X} = [x_1, . . . x_d]$ with \textbf{edges} of \textbf{weight} $\overline{W} = [w_1, . . . w_d]$  to an output node. The input \textbf{layer} does not perform any computation in its own right. The linear function $\overline{W} \cdot \overline{X} =\sum^{d}_{i=1}  w_ix_i$ is computed at the output node. Subsequently, the sign of this real value is used in order to predict the dependent variable of $\overline{X}$. Therefore, the prediction $\hat y$ is computed as follows:
-\begin{marginfigure}
-  \includegraphics{SingleLayerP}
-  \label{SingleLayerP}
-  \caption{A single layer perceptron.}
-\end{marginfigure}
-  \label{sub:Single Layer Perceptron}
- $$\hat y = \text{sign}[\overline{X} \cdot \overline{W}] =\text{sign}\left[\sum^{d}_{i=1}  w_ix_i\right] $$ 
- Here, the sign function serves the role of an activation function (\ref{sub:ActivationFunction}). The goal of the \textbf{perceptron} algorithm with respect to all training instances in a data set $\mathcal{D} = \{(\overline{X_1}, y_1 ), \cdots,(\overline{X_n}, y_n )\}$ is to minimize the loss function (\ref{sub:Loss Function}). We shall learn more about loss functions in a following section, but an example would be to minimize the least-squares function: 
+    $$\hat y = \text{sign}[\overline{X} \cdot \overline{W}] =\text{sign}\left[\sum^{d}_{i=1}  w_ix_i\right] $$
+
+Here, the sign function serves the role of an activation function (\ref{sub:ActivationFunction}). The goal of the \textbf{perceptron} algorithm with respect to all training instances in a data set $\mathcal{D} = \{(\overline{X_1}, y_1 ), \cdots,(\overline{X_n}, y_n )\}$ is to minimize the loss function (\ref{sub:Loss Function}). We shall learn more about loss functions in a following section, but an example would be to minimize the least-squares function: 
  \begin{equation*}
   \begin{split}
     \sum^{n}_{i=1} (\hat y_i - y_i)^2 =\sum^{n}_{i=1} \left(\text{sign}[\overline{X_i} \cdot \overline{W}] -y_i \right)
   \end{split}
  \end{equation*}
+
  To optimize the loss function, the perceptron will use a \textit{gradient descent} method, which we will see later.
  \subsection{Neurons}%
   \label{sub:Neurons}
@@ -213,11 +236,12 @@ The neuron is the smallest computational unit of a neural network. The single la
     \item The activation function (\autoref{sub:ActivationFunction}) acts on the input function and outputs the result to the following layers. 
   \end{enumerate}
    A simple mathematical model for a neuron's output activation is \citep{book:AIModernApp}
-\begin{marginfigure}
-  \includegraphics{Neuron}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{Neuron}
   \label{Neuron}
   \caption{A neuron and its inputs and outputs.}
-\end{marginfigure}
+\end{figure}
   $$o_j = f \left( \sum^{n}_{i=0}w_{i,j} o_i  \right)$$
   where $f$ is the activation function, $o_i$ is the output activation of neuron $i$ and $w_{i,j}$ is the weight on the directed edge from neuron $i$ to the neuron $j$. 
 \end{definition}
@@ -244,18 +268,14 @@ The overall network is a combination of function composition and matrix multipli
 \label{sub:Layers}
 Feed-forward networks are usually arranged in layers, such that each unit receives input
 only from units in the immediately preceding layer. The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. Layers are a general term given to a grouping of neurons that act together in the neural network.
-\begin{marginfigure}\label{this}
-  \includegraphics{NeuralNetwork}
-  \caption{A graph representation of a Neural Network.}
-\end{marginfigure}
-\begin{definition}[Layers] $  $
-  \begin{enumerate}
-    \item[\it Input Layer.] The first layer in a neural network, it receives the initial data for the network from the outside world. The "Entry point" of the neural network.
-    \item[\it Hidden layers.] The hidden layer(s) are where the magic happens in neural networks. Each layer is trying to learn different aspects about the data by minimizing the \textbf{cost function}. The most intuitive way to understand these layers is in the context of image recognition such as a face. The first layer may learn edge detection, the second may detect eyes, third a nose, etc. \citep{layers}.
-    \item[\it Output Layer.] The final layer in the neural network is the output layer. This layer is responsible for holding the final result or output of the problem. Input, such as raw images, is fed into the input layer, and the output layer produces the corresponding result.
-\end{enumerate}
+  \begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
+    \centering
+    \includegraphics[width=0.4\textwidth]{NeuralNetwork}
+    \caption{A graph representation of a Neural Network.}
+\end{wrapfigure}
 
-\end{definition}
+The first layer in a neural network is the \textbf{Input Layer}, it receives the initial data for the network from the outside world. The "Entry point" of the neural network. Then, come the \textbf{hidden layer(s)}, which are where the magic happens in neural networks. Each layer is trying to learn different aspects about the data by minimizing the \textbf{cost function}. The most intuitive way to understand these layers is in the context of image recognition such as a face. The first layer may learn edge detection, the second may detect eyes, third a nose, etc. \citep{layers}. The final layer in the neural network is the \textbf{output layer}. This layer is responsible for holding the final result or output of the problem. Input, such as raw images, is fed into the input layer, and the output layer produces the corresponding result.
+
 
 \subsection{Activation Function}%
   \label{sub:ActivationFunction}
@@ -268,19 +288,19 @@ The activation function determines whether a neuron should be activated or not b
 
 \noindent There is no universal rule for choosing the best activation function, but there are some characteristics to look for, namely
 \begin{enumerate}
-  \item[\it Nonlinearity] One of the most essential characteristics
+  \item \textbf{Nonlinearity} is one of the most essential characteristics
 of an activation function is nonlinearity. In comparison
 to linear activation functions, the non-linearity of the
 activation function significantly improves the learning
 capability of neural networks. 
-\item[\it Computationally Cheap] The activation function must
-be easy to evaluate in terms of computation. This has
+\item The activation function must
+  be \textbf{computationally cheap}. This has
 the potential to greatly improve network efficiency.
-\item[\it Finite Range/Boundedness] Gradient-based training approaches are more stable when the range of the activation function is finite, because pattern presentations
+  \item It must be \textbf{bounded}, as gradient-based training approaches are more stable when the range of the activation function is finite, because pattern presentations
 significantly affect only limited weights. 
-\item[\it Differentiability] The most desirable quality for using
-gradient-based optimization approaches is continuously
-differentiable activation functions. This ensures that the
+\item The most desirable quality for using
+gradient-based optimization approaches is \textbf{continuously
+  differentiable} activation functions. This ensures that the
 back-propagation algorithm works properly. 
 \end{enumerate}
 \begin{remark}[The vanishing and exploding gradient problems] The variation
@@ -303,18 +323,18 @@ functions, such as ReLU.
 \end{remark}
 We present some commonly used activation functions.
 \begin{enumerate}
-  \item[\it Sigmoid Function.] Its range is $[0,1]$, and is defined as,
+  \item \textit{Sigmoid Function.} Its range is $[0,1]$, and is defined as,
 $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 Advantage: boundedness. \\ Disadvantages:
 the vanishing gradient problem, the output not being zerocentered, and the saturation for large input values. 
-  \item[\it Hyperbolic Tangent Function.] It is mostly used for
+  \item \textit{Hyperbolic Tangent Function.} It is mostly used for
 regression problems, has a range of $[-1,1]$, and is defined as,
 $$\tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}$$
 Advantage: zerocentered structure. \\
 Disadvantage: the vanishing gradient problem, i.e. once saturated, it is really challenging
 for the learning algorithm to adapt the parameters and learn
 faster.
-  \item[\it ReLU Function.] ReLU was primarily used to overcome the vanishing gradient problem. ReLU is the most common activation function used for \textit{classification problems}. Its range is $[0, \infty)$, and is defined as
+  \item \textit{ReLU Function.} ReLU was primarily used to overcome the vanishing gradient problem. ReLU is the most common activation function used for \textit{classification problems}. Its range is $[0, \infty)$, and is defined as
   $$\text{ReLU}(x) = \max(0, x)$$
 Advantages: Apart from overcoming the vanishing gradient problem, the
 implementation of ReLU is very easy and thus cheaper, unlike
@@ -326,9 +346,9 @@ the negative values, which makes the neurons stop responding to
 the gradient-based optimizer. This problem is known as \textit{dead
 or dying ReLU problem}, meaning the neurons stop
 outputting other than zero. 
-\item[\it Softplus Function.] It approximates the ReLU activation function in a smooth way, with a range of $(0, \infty)$, and it is defined as
+  \item \textit{Softplus Function.} It approximates the ReLU activation function in a smooth way, with a range of $(0, \infty)$, and it is defined as
 $$\text{Softplus}(x) = \ln (1+ e^x) $$
-\item[\it Softmax.] It is a generalization of logistic
+  \item \textit{Softmax.} It is a generalization of logistic
 function in high dimensions. It normalizes the output and
 divides it by its sum, which forms a probability distribution. The standard softmax function Softmax$: \mathbb{R}^k \to (0,1)^k$ is defined as 
 $$\text{Softmax}(x_i) = \frac{e^{x_i}}{\sum^{k}_{j=1} e^{x_j}} \quad \text{for } i= 1,...,k   $$
@@ -336,27 +356,30 @@ In other words, it applies
 the standard exponential function to each element $x_i$
 of the input vector $x$ and normalizes these values by
 dividing them by the sum of all these exponentials, which ensures that the sum of the components of the output vector is 1.
-
 \end{enumerate}
-Figure \ref{actfun} summarizes the information above. \begin{figure*}\label{actfun}
-\includegraphics{ActFunTable}
+\begin{figure}[b]
+  \label{actfun}
+  \includegraphics{ActFunTable}
 \caption{Common activation functions, their derivatives, range, and order of continuity.}
-\end{figure*}
+\end{figure}
 
 \newpage
 \section{Learning}
   \label{sec:Learning}
-  \text{\color{red} WHAT IS LEARNING???}
-\subsection{BackPropagation}%
+  At the core of machine learning lies the art of learning itself. In this section, we delve into the essential components that drive this process forward: backpropagation, loss functions, and the delicate balance of model fitting.
+
+Backpropagation serves as the engine of learning in neural networks, refining model parameters through the propagation of error starting from the output, all the way to the first hidden layer. Accompanying this is the concept of loss functions, which quantify the disparity between predicted and actual outcomes, guiding the learning trajectory towards convergence.
+
+In the subsections ahead, we dissect each facet of learning, providing insights into backpropagation, weight update rules, and unraveling the nuances of loss functions.\subsection{BackPropagation}%
   \label{sub:BackPropagation}
 \textbf{Backpropagation} is a gradient estimation method used to train neural network models. The gradient estimate is used by the optimization algorithm to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
-\begin{marginfigure}
-  \includegraphics{simpleNet}
-  \label{simpleNet}
-  \caption{A simple network with 2 inputs, one hidden layer, and two outputs.}
-\end{marginfigure}
-
-  Let us first begin by recalling that a neural network evaluates compositions of functions computed at individual nodes. Think of a neural network as a function $h_w(x)$ of the input, parametrized by the weights. Consider the network in Figure \ref{simpleNet}, let $\{x_1,x_2\}$ be the input vector, $f$ the activation function and $a_i$ denote the activated output at node $i$. Then, the output at node 3 is given by
+\begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
+    \centering
+    \label{simpleNet}
+    \includegraphics[width=0.4\textwidth]{simpleNet}
+    \caption{A simple network with 2 inputs, one hidden layer, and two outputs.}
+\end{wrapfigure}
+  Let us first begin by recalling that a neural network evaluates compositions of functions computed at individual nodes. Think of a neural network as a function $h_w(x)$ of the input, parametrized by the weights. Consider the network in Figure 5, let $\{x_1,x_2\}$ be the input vector, $f$ the activation function and $a_i$ denote the activated output at node $i$. Then, the output at node 3 is given by
   $$a_3 = f(w_{0, 3} + f(x_1)w_{1,3} + f(x_2)w_{2,3}), $$
   where $w_{0,3}$ is the bias weight (\autoref{def:bias}) at node 3. Similarly, the output at node 5 is
   \begin{equation*}
@@ -366,6 +389,12 @@ Figure \ref{actfun} summarizes the information above. \begin{figure*}\label{actf
     \end{split}
   \end{equation*}
   And even with such a small network, we can already see how awkward it would be to compute the derivative of $a_5$ with respect to $w$. But an even bigger problem arises when we think of how we would compute the loss function in hidden layers. Whereas the error $y -h_w$\sidenote{$y$ is the target output, and $h_w$ the value computed by the network } at the output layer is clear, the error at the hidden layers seems mysterious because the training data do not say what value the hidden nodes should have.
+\begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
+    \centering
+    \label{simpleNet}
+    \includegraphics[width=0.4\textwidth]{pre-post-neuron}
+    \caption{Pre and Post activation values of a neuron.}
+\end{wrapfigure}
 
   Therefore, we need some kind of iterative approach to compute the derivatives, and a way to \textit{back-propagate} the error from the output layer to the hidden layers. The resulting iterative approach uses \textit{dynamic programming}, and the \textbf{weight update rule} is the \textit{chain rule} of differential calculus \citep{inbook:Aggarwal-3.2}.
 
@@ -375,19 +404,15 @@ $$
 \frac{\partial z}{\partial x_i} = \sum_{j=1}^{m} \frac{\partial z}{\partial y_j} \frac{\partial y_j}{\partial x_i}.$$
   \end{theorem}
   We note that backpropagation can be implemented by using either the \textit{pre-activation}, or \textit{post-activation} values at each neuron. Here, we'll focus on the method that acts on the pre activation values neurons. For the sake of simplicity, we view the neural network as a \textit{Directed Acyclic Graph} $G$, where 
-  \begin{marginfigure}
-    \includegraphics{pre-post-neuron}  
-    \caption{Pre and Post activation values of a neuron.}
-  \end{marginfigure}
   \begin{enumerate}
     \item Each node represents a neuron, and is denoted by a number $j$.
     \item The weight on the edge from neuron $i$ to $j$ is denoted $w_{i,j}$.
   \end{enumerate}
   The algorithm can be divided in two phases: \textit{forward} and \textit{backward}.
   \begin{enumerate}
-    \item[\bf Forward Phase.] The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The derivative of the loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. For the sake of simplicity, we will explore the case of a single output node for the time being. We will then talk about the simple generalization to many outputs. 
+    \item \textbf{Forward Phase.} The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The derivative of the loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. For the sake of simplicity, we will explore the case of a single output node for the time being. We will then talk about the simple generalization to many outputs. 
 
-    \item[\bf Backward Phase.] In this phase, the gradient of the loss function with respect to different weights is calculated. First, the derivative $\frac{\partial {o}}{\partial {w}} {}$ is computed. This establishes the gradient computation's initialization. The multivariable chain rule is then used to propagate the derivatives in the opposite direction. Since we are focussing on the pre-activation approach, the gradients are computed with respect to the pre-activation values of the hidden variables, which are then propagated backwards.
+    \item \textbf{Backward Phase.} In this phase, the gradient of the loss function with respect to different weights is calculated. First, the derivative $\frac{\partial {o}}{\partial {w}} {}$ is computed. This establishes the gradient computation's initialization. The multivariable chain rule is then used to propagate the derivatives in the opposite direction. Since we are focussing on the pre-activation approach, the gradients are computed with respect to the pre-activation values of the hidden variables, which are then propagated backwards.
   \end{enumerate}
   More precisely, the process can be described as follows. Let $(x,t)$ be the input to our algorithm, where $t$ is the target output of the input vector $x.$ Define the value
   $$L = \operatorname{Loss}(y,t),$$
@@ -458,40 +483,40 @@ If ${\frac {\partial L}{\partial w_{i,j}}}>0$, an increase in $w_{i,j}$ increase
 
 \subsection{Regression Loss Functions}%
   \label{sub:Loss Function}
-  The attentive reader will have noticed that supervised machine learning revolves around optimizing the outputs of a loss function. This also applies to a wide range of other ML types. Thus, defining a good loss function is essential. We offer an overview of the most widely utilized loss functions for a variety of uses, starting with \textbf{Regression Losses}.
+  The attentive reader will have noticed that supervised machine learning revolves around optimizing the outputs of a loss function. This also applies to a wide range of other machine learning strategies. Thus, defining a good loss function is essential. We offer an overview of the most widely utilized loss functions for a variety of uses, starting with \textbf{Regression Losses}.
 
 
   Regression losses are loss functions used to solve the regression problems of \textit{supervised ML}. Recall that regressions model predict the output of a continuous output variable. The regression losses are all based on residuals, namely the difference between the predicted and expected outputs. In the following, let $x_i$ be the $i^{th}$ element of input $x$, $f(x_i)$ the $i^{th}$ element of the predicted output, and $y_i$ the $i^{th}$ element of the expected output. The following represent commonly used regression losses,
   \begin{enumerate}
-    \item[\it Mean Bias Error Loss.][\textit{Continuous, Differentiable}] The Mean Bias Error loss is the most basic loss function, it is given by,
+    \item \textit{Mean Bias Error Loss [Continuous, Differentiable]}. The Mean Bias Error loss is the most basic loss function, it is given by,
     \begin{equation}
       \begin{split}
         \mathcal{L}_{MBE} (y_i, f(x_i))= \frac{1}{n} \sum^{n}_{i=1} [y_i-f(x_i)]
       \end{split}
     \end{equation}
  It measures the average bias in the prediction, but because positive errors have the ability to cancel out negative ones and create an incorrect parameter estimate, it is rarely used as the loss function to train regression models. However, it serves as the foundation for the ensuing loss functions and is frequently employed to assess the models' performances \citep{ciampiconi2023survey}.
-    \item[\it Mean Absolute Error Loss (L1).][\textit{Lipschitz-Continuous, Convex}] The Mean Absolute Error loss is one of the most fundamental loss functions for regression; it measures the average of the absolute bias in the prediction. The absolute value overcomes the problem of the MBE by ensuring that positive errors do not cancel the negative ones. It is defined as, 
-\begin{equation}
+    \item \textit{Mean Absolute Error Loss (L1) [Lipschitz-Continuous, Convex].} The Mean Absolute Error loss is one of the most fundamental loss functions for regression; it measures the average of the absolute bias in the prediction. The absolute value overcomes the problem of the MBE by ensuring that positive errors do not cancel the negative ones. It is defined as, 
+    \begin{equation}
       \begin{split}
         \mathcal{L}_{MAE}(y_i, f(x_i)) = \frac{1}{n} \sum^{n}_{i=1} |y_i-f(x_i)|
       \end{split}
     \end{equation}
 
     Notice that the contribution of the errors follows a linear behaviour, implying that many small errors have as much impact as a big one. This implies that the gradient magnitude is not dependent on the error size, thus leading to convergence problems when the error is small. A model trained to minimize the MAE performs well when the target data conditioned on the input is symmetric \citep{ciampiconi2023survey}.
-    \item[\it Mean Squared Error Loss (L2).][\textit{Continuous, Differentiable, Convex}] The Mean Squared Error loss is a well-known and simple loss function for regression. It is given by 
+    \item \textit{Mean Squared Error Loss (L2) [Continuous, Differentiable, Convex].} The Mean Squared Error loss is a well-known and simple loss function for regression. It is given by 
     \begin{equation}
       \begin{split}
         \mathcal{L}_{MSE}(y_i, f(x_i)) = \frac{1}{n} \sum^{n}_{i=1} (y_i-f(x_i))^2
       \end{split}
     \end{equation}
 The squared term makes all the biases positive and magnifies the contribution made by outliers, making it more suitable for problems where noise in the observations follows a normal distribution. The sensitivity to the outliers is the primary disadvantage \citep{ciampiconi2023survey}.
-    \item[\it Root Mean Squared Error Loss.][\textit{Continuous, Differentiable, Convex}] The Root Mean Squared Error loss is, apart from the square root term, identical to MSE. It main benefit is that the loss has the same units and scale as the relevant variable. The minimization procedure converges to the same optimal value as MSE. However, the RMSE may take different gradient steps depending on the optimization method employed \citep{ciampiconi2023survey}. It is defined as, 
+    \item \textit{Root Mean Squared Error Loss [Continuous, Differentiable, Convex].} The Root Mean Squared Error loss is, apart from the square root term, identical to MSE. It main benefit is that the loss has the same units and scale as the relevant variable. The minimization procedure converges to the same optimal value as MSE. However, the RMSE may take different gradient steps depending on the optimization method employed \citep{ciampiconi2023survey}. It is defined as, 
     \begin{equation}
       \begin{split}
         \mathcal{L}_{RMSE}(y_i, f(x_i)) = \sqrt{\frac{1}{n} \sum^{n}_{i=1} (y_i-f(x_i))^2}
       \end{split}
     \end{equation}
-    \item[\it Huber Loss.][\textit{Lipschitz-Continuous, Differentiable, Strictly Convex}] Huber loss is a mix of MAE and MSE. When the residuals are sufficiently small, it goes from MAE to MSE. It is parameterized by $\delta$, which indicates the point at which MAE and MSE transition. This enables it to combine the benefits of the MAE and the MSE. When there is a significant discrepancy between the model's output and prediction, the Huber loss becomes less susceptible to outliers since the errors are linear. On the other hand, if the error is tiny, it follows the MSE, which accelerates convergence and makes it differentiable at $0$. A crucial decision is which $\delta$ to use, which may be modified often throughout the training process depending on what constitutes an outlier \citep{ciampiconi2023survey}. The Huber loss is given by,
+    \item \textit{Huber Loss [Lipschitz-Continuous, Differentiable, Strictly Convex].} Huber loss is a mix of MAE and MSE. When the residuals are sufficiently small, it goes from MAE to MSE. It is parameterized by $\delta$, which indicates the point at which MAE and MSE transition. This enables it to combine the benefits of the MAE and the MSE. When there is a significant discrepancy between the model's output and prediction, the Huber loss becomes less susceptible to outliers since the errors are linear. On the other hand, if the error is tiny, it follows the MSE, which accelerates convergence and makes it differentiable at $0$. A crucial decision is which $\delta$ to use, which may be modified often throughout the training process depending on what constitutes an outlier \citep{ciampiconi2023survey}. The Huber loss is given by,
 \begin{equation}
       \begin{split}
         \mathcal{L}_{Huber}(y_i, f(x_i)) = \sum^{n}_{i=1} \alpha_i(y_i, f(x_i)),
@@ -506,13 +531,13 @@ The squared term makes all the biases positive and magnifies the contribution ma
         \end{cases}
       \end{split}
     \end{equation*}
-    \item[\it Log-cosh Loss.][\textit{Continuous, Differentiable}] The Log-cosh loss is given by the logarithm of the \textit{hyperbolic cosine} of the residuals between the actual value $y$ and the forecasted value $f(y_i)$. It is more computationally demanding than \textit{Huber loss}, but it provides all the same benefits without the need to establish a hyperparameter. Moreover, the log-cosh loss has the advantage of being twice differentiable, which makes it appropriate for techniques that need to solve the second derivative \citep{ciampiconi2023survey}. It is defined as, 
+    \item \textit{Log-cosh Loss [Continuous, Differentiable].} The Log-cosh loss is given by the logarithm of the \textit{hyperbolic cosine} of the residuals between the actual value $y$ and the forecasted value $f(y_i)$. It is more computationally demanding than \textit{Huber loss}, but it provides all the same benefits without the need to establish a hyperparameter. Moreover, the log-cosh loss has the advantage of being twice differentiable, which makes it appropriate for techniques that need to solve the second derivative \citep{ciampiconi2023survey}. It is defined as, 
   \begin{equation}
       \begin{split}
         \mathcal{L}_{Logcosh}(y_i, f(x_i)) = \frac{1}{n} \sum^{n}_{i=1} \log[\cosh(y_i-f(x_i))]
       \end{split}
     \end{equation}
-    \item[\it Root Mean Squared Logarithmic Error Loss.][\textit{Continuous, Differentiable, Convex}] The Root Mean Squared Logarithmic Error (RMSLE) loss is given by,
+    \item \textit{Root Mean Squared Logarithmic Error Loss [Continuous, Differentiable, Convex].} The Root Mean Squared Logarithmic Error (RMSLE) loss is given by,
 \begin{equation}
       \begin{split}
         \mathcal{L}_{RMSLE}(y_i, f(x_i)) = \sqrt{\frac{1}{n} \sum^{n}_{i=1} [\log (y_i + 1) - \log(f(x_i)+1)]^2 }
@@ -525,7 +550,7 @@ The squared term makes all the biases positive and magnifies the contribution ma
   \label{sub:Classification Loss Functions}
   The second subset of supervised ML, \textit{Classification}, also has its own set of loss functions. The following consists of the most commonly used \textit{Margin-based} Classification losses. 
   \begin{enumerate}
-    \item[\it Zero-one Loss.] The Zero-one loss is the most basic classification loss function. It is defined as, 
+    \item \textit{Zero-one Loss.} The Zero-one loss is the most basic classification loss function. It is defined as, 
     \begin{equation}
       \begin{split}
         \mathcal{L}_{Zero-One}(y, f(x)) = 
@@ -536,14 +561,14 @@ The squared term makes all the biases positive and magnifies the contribution ma
       \end{split}
     \end{equation}
     In practice, the Zero-one loss can't be used since it is not convex, nor differentiable.
-    \item[\it Hinge Loss.][\textit{Lipschitz-continuous, Convex}] The Hinge loss is among the most famous loss functions for classification. It is given by, 
+    \item \textit{Hinge Loss [Lipschitz-continuous, Convex].} The Hinge loss is among the most famous loss functions for classification. It is given by, 
  \begin{equation}
       \begin{split}
         \mathcal{L}_{Hinge}(y, f(x)) = \max(0, 1-f(x)\cdot y)
       \end{split}
     \end{equation}
     The two main drawbacks of Hinge loss are that it is sensible to outliers, and that its derivative is discontinuous at $f(x)\cdot y = 1$. The latter makes it harder to optimise.
-    \item[\it Quadratically Smoothed Hinge Loss.][\textit{Lipschitz-continuous, Convex, Differentiable}] The Quadratically Smoothed Hinge loss is a smoothed version of the Hinge loss, making it easier to optimize.
+    \item \textit{Quadratically Smoothed Hinge Loss [Lipschitz-continuous, Convex, Differentiable].} The Quadratically Smoothed Hinge loss is a smoothed version of the Hinge loss, making it easier to optimize.
 \begin{equation}
       \begin{split}
         \mathcal{L}_{QSmoothedHinge}(y, f(x)) = 
@@ -554,7 +579,7 @@ The squared term makes all the biases positive and magnifies the contribution ma
       \end{split}
     \end{equation}
     The hyperparameter $\gamma$ gives the degree of smoothing. As $\gamma \to 0,$  $\mathcal{L}_{QSmoothedHinge}(y, f(x)) \to \mathcal{L}_{Hinge}(y, f(x)) $.
-    \item[\it Modified Huber Loss.][\textit{Lipschitz-continuous, Differentiable, Strictly convex}] The Modified Huber loss is a version for classification. It is a special case of the Quadratically Smoothed Hinge Loss with $\gamma =2$. We define it as,
+    \item \textit{Modified Huber Loss [Lipschitz-continuous, Differentiable, Strictly convex].} The Modified Huber loss is a version for classification. It is a special case of the Quadratically Smoothed Hinge Loss with $\gamma =2$. We define it as,
 \begin{equation}
       \begin{split}
         \mathcal{L}_{ModHuber}(y, f(x)) = 
@@ -564,7 +589,7 @@ The squared term makes all the biases positive and magnifies the contribution ma
         \end{cases}
       \end{split}
     \end{equation}
-    \item[\it Ramp Loss.][\textit{Continuous, Convex}] The Ramp loss is more robust to outliers than the Hinge loss. It is given by,
+    \item \textit{Ramp Loss [Continuous, Convex].} The Ramp loss is more robust to outliers than the Hinge loss. It is given by,
     \begin{equation}
       \begin{split}
         \mathcal{L}_{Ramp}(y, f(x)) = 
@@ -577,6 +602,9 @@ The squared term makes all the biases positive and magnifies the contribution ma
   \end{enumerate}
 Other loss functions based on \textit{Information Theory}, such as the \textit{Cross-Entropy loss}, and the \textit{Kullback-Leiber divergence} are widely used in classification problems, and we refer the reader to \citep{ciampiconi2023survey} for more information.
  \section{Fitting the model}
+
+Amidst the pursuit of learning, lurk the pitfalls of overfitting and underfitting. Overfitting occurs when a model becomes overly tailored to the training data, while underfitting results in oversimplified representations. Finding the right balance between generality and complexity is essential, achieved through techniques like regularization and cross-validation.
+
  The main difficulty with machine learning is that we have to be able to learn from new, unknown inputs as well as those that our model was trained on. The capacity of a model to perform well on unseen data is called \textbf{Generalization}. When training a model, we want the error between the expected and predicted outputs to be as low as possible on the training data. This is referred to as the \textit{training error}. We could stop here, and we'd have an \textit{optimization} problem. But this is where the difference with machine learning is, we require that our model also predict new, unseen data with a low error. We call this error the \textbf{test error}. 
 When determining the quality of a ML algorithm, we look mainly at the two following attributes,
 \begin{enumerate}
@@ -595,11 +623,12 @@ These correspond, respectively, to the two main challenges in Machine Learning: 
 In the topic of machine learning, if we choose too large of a network, it will behave like a lookup table on the data it was trained with, but won't generalize well to new data. Put another way, when a neural network has an excessive number of parameters, it can overfit, just like any other statistical model \citep{book:AIModernApp}.
 
 As was hinted above, the degree of overfitting is influenced by the amount of data supplied, as well as the model's \textit{complexity}. The complexity of the model is determined by the number of underlying parameters that a neural network has. Additional degrees of freedom are the consequence of having more parameters, which can be utilized to explain certain training data points without making a strong generalization to new ones \citep{inbook:Aggarwal-4.1}.
-\begin{marginfigure}
-  \includegraphics{Overfitting}
-  \label{Overfitting}
-  \caption{A diagram showing overfitting (green line) of data from \citep{overfitting-img}}
-\end{marginfigure}
+\begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
+    \centering
+    \label{Overfitting}
+    \includegraphics[width=0.4\textwidth]{Overfitting}
+    \caption{A diagram showing overfitting (green line) of data from \citep{overfitting-img}}
+\end{wrapfigure}
 \begin{example}
   Suppose we have 5 training pairs $(x, t)$ available. Then, it can be shown that there exists a degree 4 polynomial that fits the 5 training points exactly with zero error. This does not mean, however, that the polynomial will approximate unseen data with zero error. 
 \end{example}
@@ -626,12 +655,12 @@ not serve them well on the test set. The capacity of a model is a way to measure
   Before altering the capacity of a model, one must evaluate whether a model is overfitting or underfitting. This can be done with the help of cross-validation, which we'll discuss in the next chapter.
 
   As long as the training error is low, one way to increase regularization without playing with capacity is to increase the amount of training data. If this is not possible, there are a number of components we can adjust in order to control the capacity of a model, such as \citep{capacity-Brownlee}, 
-\begin{marginfigure}
-  \includegraphics{capacity}
-  \label{capacity}
-  \caption{A diagram showing the optimal capacity of a model and its relation with the \textit{bias-variance trade-off}, from \citep{capacity-Kowalik}}
-\end{marginfigure}
-
+\begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
+    \centering
+    \label{capacity}
+    \includegraphics[width=0.4\textwidth]{capacity}
+    \caption{A diagram showing the optimal capacity of a model and its relation with the \textit{bias-variance trade-off}, from \citep{capacity-Kowalik}}
+\end{wrapfigure}
   \begin{enumerate}
     \item The number of nodes per layer (\textbf{width}) 
     \item The number of layers (\textbf{depth})
@@ -668,76 +697,37 @@ The most common technique used is \textbf{k-fold cross-validation.} It allows on
   }
 \end{algorithm}
 
- \section{Example Using Pytorch} 
- \subsection{Introduction}%
-  \label{sub:Introduction}
-  
-In this example, we'll demonstrate how to use PyTorch to implement a Machine Learning model \citep{brownlee_2023}.
+\subsection{Regularization Techniques}%
+  \label{sub:Regularization Techniques}
 
-\subsection{Importing the Data}
-The first step involves preparing and loading your data. Tabular data, such as CSV files, can be handled using common Python libraries. For instance, Pandas facilitates CSV loading, while tools from scikit-learn assist in encoding categorical data like class labels.
+ \subsubsection{Early Stopping}%
+  \label{sub:Early Stopping}
 
-PyTorch offers the \texttt{Dataset} class, which permits customization for data loading. Below is a skeletal outline of a custom Dataset class.
+\subsubsection{L1 and L2 Regularization}    \label{sub:L1 and L2 Regularization}
 
-\begin{lstlisting}[language=Python, caption=Python code for a PyTorch Dataset class]
-class CSVDataset(Dataset):
-    # load the dataset
-    def __init__(self, path):
-        # store the inputs and outputs
-        self.X = ...
-        self.y = ...
- 
-    # number of rows in the dataset
-    def __len__(self):
-        return len(self.X)
- 
-    # get a row at an index
-    def __getitem__(self, idx):
-        return [self.X[idx], self.y[idx]]
-\end{lstlisting}
-Once the data is loaded, PyTorch offers the \texttt{DataLoader} class for navigating a \texttt{Dataset} instance during model training and evaluation. 
-
-The \texttt{random\_split()} function splits a dataset into \textit{train} and \textit{test} sets. After splitting, a subset of rows from the Dataset can be supplied to a \texttt{DataLoader}, along with parameters such as batch size and whether data should be shuffled every \textit{epoch}.
-
-For instance, a \texttt{DataLoader} can be defined by providing a chosen sample of rows from the dataset.
-\begin{lstlisting}[language=Python, caption=Python code for creating a DataLoader instance]
-...
-# create the dataset
-dataset = CSVDataset(...)
-# select rows from the dataset
-train, test = random_split(dataset, [[...], [...]])
-# create a data loader for train and test sets
-train_dl = DataLoader(train, batch_size=32, shuffle=True)
-test_dl = DataLoader(test, batch_size=1024, shuffle=False)
-\end{lstlisting}
-\subsection{Defining the Model}%
-  \label{sub:Defining the Model}
-  To define a model in PyTorch we define a class that extends the PyTorch \texttt{Module} class. In the constructor, we will set the layers and the \texttt{forward()} function, which defines the behaviour of the \textit{forward} step of the backprop algorithm.
-
-  In the following code, we define the layers of the NN using the function \texttt{nn.Linear(in, out, bias)}, where \texttt{in} and \texttt{out} represent the size of each input and output sample, respectively. 
-\begin{lstlisting}[language=python]
-  # model definition
-class MLP(Module):
-    # define model elements
-    def __init__(self, n_inputs):
-        super(MLP, self).__init__()
-        # define the layers
-        self.layer = Linear(n_inputs, 1)
-        # define the activation function 
-        self.activation = Sigmoid()
- 
-    # forward propagate input
-    def forward(self, X):
-        X = self.layer(X)
-        X = self.activation(X)
-        return X
-  \end{lstlisting}
-  \section{Conclusion}%
+\subsubsection{Dropout}%
+  \label{sub:Dropout}
+    \section{Conclusion}%
     \label{sec:Conclusion}
-    \text{\color{red} Talk about how supervised ML is restrictive because we need a strong data set, with} \text{\color{red}inputs and desired outputs, which is not always possible. How RL solves this problem.}
-\text{\color{red} E.g. if we want to train a model to beat the best chess player, then by definition, we can't use supervised learning.}
+  As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be, from the basic concept of neural networks, all the way to the more advanced method of backpropagation. It becomes evident, however, that the reliance of supervised learning on meticulously labeled datasets poses a significant limitation. The need for abundant, high-quality data, paired with corresponding inputs and desired outputs, can be restrictive and often impractical in real-world scenarios. This limitation becomes particularly apparent when faced with complex tasks where defining the desired outputs may be challenging or even impossible.
+
 \newpage
-    \bibliographystyle{plainnat}
-\bibliography{ML_Report_DRP2024}
-  
+
+ 
+
+ 
+
+{\footnotesize
+  \bibliography{ML_Report_DRP2024}
+}
+%\bibliographystyle{apa} 
+\bibliographystyle{plainnat}
+
+
+%\bibliography{DeepRL}
+%\bibliographystyle{iclr2017_conference}
+%\bibliographystyle{apa}
+
 \end{document} 
+
+%ArXiv e-prints
