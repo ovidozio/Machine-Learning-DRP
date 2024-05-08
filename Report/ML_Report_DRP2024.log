@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  5 MAY 2024 13:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  7 MAY 2024 20:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1032,139 +1032,140 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 2
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 ) [5 <./graphics//Neuron.jpg>] [6]
-<graphics//NeuralNetwork.jpg, id=169, 795.7471pt x 672.9658pt>
+<graphics//NeuralNetwork.jpg, id=168, 795.7471pt x 672.9658pt>
 File: graphics//NeuralNetwork.jpg Graphic file (type jpg)
 <use graphics//NeuralNetwork.jpg>
 Package pdftex.def Info: graphics//NeuralNetwork.jpg  used on input line 248.
 (pdftex.def)             Requested size: 143.99324pt x 121.77553pt.
- [7 <./graphics//NeuralNetwork.jpg>]
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 287.
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+[] 
+ []
+
+[7 <./graphics//NeuralNetwork.jpg>]
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 286.
  [8]
 <graphics//ActFunTable.jpg, id=191, 1134.2375pt x 489.83pt>
 File: graphics//ActFunTable.jpg Graphic file (type jpg)
 <use graphics//ActFunTable.jpg>
-Package pdftex.def Info: graphics//ActFunTable.jpg  used on input line 343.
+Package pdftex.def Info: graphics//ActFunTable.jpg  used on input line 342.
 (pdftex.def)             Requested size: 479.99368pt x 207.28929pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--345
+Underfull \hbox (badness 10000) in paragraph at lines 342--344
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--345
+Underfull \hbox (badness 10000) in paragraph at lines 342--344
 
  []
 
-[9] [10 <./graphics//ActFunTable.jpg>]
-<graphics//simpleNet.jpg, id=206, 407.5225pt x 219.82124pt>
+[9] [10 <./graphics//ActFunTable.jpg>] [11]
+<graphics//simpleNet.jpg, id=221, 407.5225pt x 219.82124pt>
 File: graphics//simpleNet.jpg Graphic file (type jpg)
 <use graphics//simpleNet.jpg>
-Package pdftex.def Info: graphics//simpleNet.jpg  used on input line 359.
+Package pdftex.def Info: graphics//simpleNet.jpg  used on input line 414.
 (pdftex.def)             Requested size: 143.99681pt x 77.67314pt.
-
-
-LaTeX Warning: Marginpar on page 11 moved.
-
-
-Overfull \hbox (77.65584pt too wide) detected at line 372
+ [12 <./graphics//simpleNet.jpg>]
+Overfull \hbox (77.65584pt too wide) detected at line 427
 []
  []
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 373.
+(Font)              scaled to size 8.33606pt on input line 428.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 373.
+(Font)              scaled to size 5.21004pt on input line 428.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 373.
+(Font)              scaled to size 8.33606pt on input line 428.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 373.
+(Font)              scaled to size 5.21004pt on input line 428.
 
-LaTeX Warning: Marginpar on page 11 moved.
+LaTeX Warning: Marginpar on page 13 moved.
 
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 377.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 432.
 
-Overfull \hbox (13.98746pt too wide) in paragraph at lines 378--379
+Overfull \hbox (13.98746pt too wide) in paragraph at lines 433--434
 \T1/pplj/m/n/10 a dif-fer-en-tiable func-tion of $\OML/zplm/m/it/10 m$ \T1/pplj/m/n/10 vari-ables, where each $\OML/zplm/m/it/10 y[] \OT1/zplm/m/n/10 = \OML/zplm/m/it/10 g[]\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x[]\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 x[]\OT1/pplx/m/n/10 , [] , \OML/zplm/m/it/10 x[]\OT1/zplm/m/n/10 )$ 
  []
 
 
-Overfull \hbox (1.82477pt too wide) in paragraph at lines 378--379
+Overfull \hbox (1.82477pt too wide) in paragraph at lines 433--434
 \T1/pplj/m/n/10 is a dif-fer-en-tiable func-tion of $\OML/zplm/m/it/10 n$ \T1/pplj/m/n/10 vari-ables. Then, for each $\OML/zplm/m/it/10 i \OT1/zplm/m/n/10 = \OT1/pplx/m/n/10 1, 2, [] , \OML/zplm/m/it/10 n$\T1/pplj/m/n/10 , 
  []
 
-<graphics//pre-post-neuron.jpg, id=211, 487.8225pt x 292.09125pt>
+<graphics//pre-post-neuron.jpg, id=233, 487.8225pt x 292.09125pt>
 File: graphics//pre-post-neuron.jpg Graphic file (type jpg)
 <use graphics//pre-post-neuron.jpg>
-Package pdftex.def Info: graphics//pre-post-neuron.jpg  used on input line 384.
+Package pdftex.def Info: graphics//pre-post-neuron.jpg  used on input line 439.
 (pdftex.def)             Requested size: 143.99571pt x 86.21965pt.
-[11 <./graphics//simpleNet.jpg> <./graphics//pre-post-neuron.jpg>] [12]
+[13 <./graphics//pre-post-neuron.jpg>] [14]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 413.
+(Font)              scaled to size 12.50409pt on input line 468.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 413.
+(Font)              scaled to size 9.37807pt on input line 468.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 413.
+(Font)              scaled to size 7.29405pt on input line 468.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 413.
+(Font)              scaled to size 12.50409pt on input line 468.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 413.
+(Font)              scaled to size 9.37807pt on input line 468.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 413.
+(Font)              scaled to size 7.29405pt on input line 468.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 413.
+(Font)              scaled to size 15.0049pt on input line 468.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 413.
+(Font)              scaled to size 15.0049pt on input line 468.
 
-Overfull \hbox (0.61565pt too wide) detected at line 434
+Overfull \hbox (0.61565pt too wide) detected at line 489
 []
  []
 
 
-Overfull \hbox (12.0pt too wide) detected at line 434
+Overfull \hbox (12.0pt too wide) detected at line 489
 []
  []
 
-[13]
-<graphics//fitting.png, id=242, 729.72626pt x 357.335pt>
+[15]
+<graphics//fitting.png, id=263, 729.72626pt x 357.335pt>
 File: graphics//fitting.png Graphic file (type png)
 <use graphics//fitting.png>
-Package pdftex.def Info: graphics//fitting.png  used on input line 472.
+Package pdftex.def Info: graphics//fitting.png  used on input line 527.
 (pdftex.def)             Requested size: 311.99463pt x 152.77866pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--474
+Underfull \hbox (badness 10000) in paragraph at lines 527--529
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--474
+Underfull \hbox (badness 10000) in paragraph at lines 527--529
 
  []
 
 
-Overfull \hbox (3.21979pt too wide) in paragraph at lines 477--478
+Overfull \hbox (3.21979pt too wide) in paragraph at lines 532--533
 \T1/pplj/b/n/10 Overfitting \T1/pplj/m/n/10 refers to the pro-cess of pro-duc-ing an anal-y-sis that matches 
  []
 
-[14]
-<graphics//Overfitting.png, id=258, 1927.2pt x 1927.2pt>
+[16]
+<graphics//Overfitting.png, id=279, 1927.2pt x 1927.2pt>
 File: graphics//Overfitting.png Graphic file (type png)
 <use graphics//Overfitting.png>
-Package pdftex.def Info: graphics//Overfitting.png  used on input line 483.
+Package pdftex.def Info: graphics//Overfitting.png  used on input line 538.
 (pdftex.def)             Requested size: 143.97504pt x 143.97504pt.
-Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 488.
- [15 <./graphics//fitting.png> <./graphics//Overfitting.png>]
-<graphics//capacity.png, id=275, 610.28pt x 403.5075pt>
+Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 543.
+ [17 <./graphics//fitting.png> <./graphics//Overfitting.png>]
+<graphics//capacity.png, id=296, 610.28pt x 403.5075pt>
 File: graphics//capacity.png Graphic file (type png)
 <use graphics//capacity.png>
-Package pdftex.def Info: graphics//capacity.png  used on input line 514.
+Package pdftex.def Info: graphics//capacity.png  used on input line 569.
 (pdftex.def)             Requested size: 144.00247pt x 95.21216pt.
- [16 <./graphics//capacity.png>]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 553.
+ [18 <./graphics//capacity.png>]
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 608.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 553.
+(Font)              scaled to size 8.50006pt on input line 608.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1172,25 +1173,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 566.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 621.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 566.
- [17] [18]
-Overfull \hbox (64.0797pt too wide) in paragraph at lines 621--623
+(Font)              scaled to size 6.80005pt on input line 621.
+ [19] [20]
+Overfull \hbox (64.0797pt too wide) in paragraph at lines 676--678
 [][] 
  []
 
 
-Overfull \hbox (76.94969pt too wide) in paragraph at lines 621--623
+Overfull \hbox (76.94969pt too wide) in paragraph at lines 676--678
 [][] 
  []
 
 
-Overfull \hbox (195.54965pt too wide) in paragraph at lines 621--623
+Overfull \hbox (195.54965pt too wide) in paragraph at lines 676--678
 [][]  
  []
 
-[19] (./ML_Report_DRP2024.bbl
+[21] (./ML_Report_DRP2024.bbl
 Underfull \hbox (badness 3209) in paragraph at lines 33--37
 []\T1/pplj/m/n/10 Jason Brown-lee.  How to con-trol neu-ral net-work 
  []
@@ -1210,23 +1211,23 @@ Overfull \hbox (48.34134pt too wide) in paragraph at lines 33--37
 \T1/fvm/m/n/10 how-[]to-[]control-[]neural-[]network-[]model-[]capacity-[]with-[]nodes-[]and-[]layers/$[]\T1/pplj/m/n/10 . 
  []
 
-[20]) [21] (./ML_Report_DRP2024.aux)
+[22]) [23] (./ML_Report_DRP2024.aux)
 Package rerunfilecheck Info: File `ML_Report_DRP2024.out' has not changed.
 (rerunfilecheck)             Checksum: D7D0939C2743325282F1E3BB86B90D46;688.
  ) 
 Here is how much of TeX's memory you used:
- 38790 strings out of 476025
- 863352 string characters out of 5790018
+ 38801 strings out of 476025
+ 863429 string characters out of 5790018
  1987388 words of memory out of 5000000
- 58285 multiletter control sequences out of 15000+600000
- 627447 words of font info for 227 fonts, out of 8000000 for 9000
+ 58287 multiletter control sequences out of 15000+600000
+ 629246 words of font info for 229 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,27n,94p,785b,2211s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,27n,94p,892b,2211s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ML_Report_DRP2024.pdf (21 pages, 1391676 bytes).
+Output written on ML_Report_DRP2024.pdf (23 pages, 1398415 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
- 400 compressed objects within 4 object streams
- 150 named destinations out of 1000 (max. 500000)
+ 522 PDF objects out of 1000 (max. 8388607)
+ 421 compressed objects within 5 object streams
+ 158 named destinations out of 1000 (max. 500000)
  2159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

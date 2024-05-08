@@ -142,8 +142,8 @@
 % Book metadata
 \title{An Introduction to Machine Learning}
 \date{\today}
-\author{Alexandre St-Aubin}
-\publisher{McGill University -- Directed Reading Program}
+\publisher{Alexandre St-Aubin, Mentored by Yanees Dobberstein}
+\author{McGill University -- Directed Reading Program}
 
 \begin{document}
 
@@ -243,10 +243,9 @@ The overall network is a combination of function composition and matrix multipli
 \subsection{Layers}
 \label{sub:Layers}
 Feed-forward networks are usually arranged in layers, such that each unit receives input
-only from units in the immediately preceding layer. The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. See figure \ref{NeuralNetwork} for an image of the layers. Layers are a general term given to a grouping of neurons that act together in the neural network.
-\begin{marginfigure}
+only from units in the immediately preceding layer. The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. Layers are a general term given to a grouping of neurons that act together in the neural network.
+\begin{marginfigure}\label{this}
   \includegraphics{NeuralNetwork}
-  \label{NeuralNetwork}
   \caption{A graph representation of a Neural Network.}
 \end{marginfigure}
 \begin{definition}[Layers] $  $
@@ -304,18 +303,18 @@ functions, such as ReLU.
 \end{remark}
 We present some commonly used activation functions.
 \begin{enumerate}
-  \item[\bf Sigmoid Function.] Its range is $[0,1]$, and is defined as,
+  \item[\it Sigmoid Function.] Its range is $[0,1]$, and is defined as,
 $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 Advantage: boundedness. \\ Disadvantages:
 the vanishing gradient problem, the output not being zerocentered, and the saturation for large input values. 
-  \item[\bf Hyperbolic Tangent Function.] It is mostly used for
+  \item[\it Hyperbolic Tangent Function.] It is mostly used for
 regression problems, has a range of $[-1,1]$, and is defined as,
 $$\tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}$$
 Advantage: zerocentered structure. \\
 Disadvantage: the vanishing gradient problem, i.e. once saturated, it is really challenging
 for the learning algorithm to adapt the parameters and learn
 faster.
-  \item[\bf ReLU Function.] ReLU was primarily used to overcome the vanishing gradient problem. ReLU is the most common activation function used for \textit{classification problems}. Its range is $[0, \infty)$, and is defined as
+  \item[\it ReLU Function.] ReLU was primarily used to overcome the vanishing gradient problem. ReLU is the most common activation function used for \textit{classification problems}. Its range is $[0, \infty)$, and is defined as
   $$\text{ReLU}(x) = \max(0, x)$$
 Advantages: Apart from overcoming the vanishing gradient problem, the
 implementation of ReLU is very easy and thus cheaper, unlike
@@ -327,9 +326,9 @@ the negative values, which makes the neurons stop responding to
 the gradient-based optimizer. This problem is known as \textit{dead
 or dying ReLU problem}, meaning the neurons stop
 outputting other than zero. 
-\item[\bf Softplus Function.] It approximates the ReLU activation function in a smooth way, with a range of $(0, \infty)$, and it is defined as
+\item[\it Softplus Function.] It approximates the ReLU activation function in a smooth way, with a range of $(0, \infty)$, and it is defined as
 $$\text{Softplus}(x) = \ln (1+ e^x) $$
-\item[\bf Softmax] It is a generalization of logistic
+\item[\it Softmax.] It is a generalization of logistic
 function in high dimensions. It normalizes the output and
 divides it by its sum, which forms a probability distribution. The standard softmax function Softmax$: \mathbb{R}^k \to (0,1)^k$ is defined as 
 $$\text{Softmax}(x_i) = \frac{e^{x_i}}{\sum^{k}_{j=1} e^{x_j}} \quad \text{for } i= 1,...,k   $$
@@ -339,7 +338,7 @@ of the input vector $x$ and normalizes these values by
 dividing them by the sum of all these exponentials, which ensures that the sum of the components of the output vector is 1.
 
 \end{enumerate}
-The following is a table summarizing the information above. \begin{figure*}
+Figure \ref{actfun} summarizes the information above. \begin{figure*}\label{actfun}
 \includegraphics{ActFunTable}
 \caption{Common activation functions, their derivatives, range, and order of continuity.}
 \end{figure*}
@@ -349,9 +348,65 @@ The following is a table summarizing the information above. \begin{figure*}
   \label{sec:Learning}
 \subsection{Loss Function}%
   \label{sub:Loss Function}
-  The attentive reader will have noticed that supervised machine learning revolves around optimizing the outputs of a loss function. This also applies to a wide range of other ML types. Thus, defining a good loss function is essential. We offer an overview of the most widely utilized loss functions for a variety of uses, from \citep{ciampiconi2023survey}.
+  The attentive reader will have noticed that supervised machine learning revolves around optimizing the outputs of a loss function. This also applies to a wide range of other ML types. Thus, defining a good loss function is essential. We offer an overview of the most widely utilized loss functions for a variety of uses.
 
-  \noindent \textbf{Regression Losses} are loss functions that are used to solve the regression problems of \textit{supervised ML}. Recall that regressions model predict the output of a continuous output variable. The regression losses are all based on residuals, namely the difference between the predicted and expected outputs. In the following, let $x_i$ be the $i^{th}$ element of input $x$, $f(x_i)$ the $i^{th}$ element of the predicted output, and $y_i$ the $i^{th}$ element of the expected output. 
+
+\vspace{5mm}
+  \noindent \textbf{Regression Losses}\newline \vspace{2mm}\noindent  They are loss functions used to solve the regression problems of \textit{supervised ML}. Recall that regressions model predict the output of a continuous output variable. The regression losses are all based on residuals, namely the difference between the predicted and expected outputs. In the following, let $x_i$ be the $i^{th}$ element of input $x$, $f(x_i)$ the $i^{th}$ element of the predicted output, and $y_i$ the $i^{th}$ element of the expected output. The following represent commonly used regression losses,
+  \begin{enumerate}
+    \item[\it Mean Bias Error Loss.][\textit{Continuous, Differentiable}] The Mean Bias Error loss is the most basic loss function, it is given by,
+    \begin{equation}
+      \begin{split}
+        \mathcal{L}_{MBE} (y_i, f(x_i))= \frac{1}{n} \sum^{n}_{i=1} [y_i-f(x_i)]
+      \end{split}
+    \end{equation}
+ It measures the average bias in the prediction, but because positive errors have the ability to cancel out negative ones and create an incorrect parameter estimate, it is rarely used as the loss function to train regression models. However, it serves as the foundation for the ensuing loss functions and is frequently employed to assess the models' performances \citep{ciampiconi2023survey}.
+    \item[\it Mean Absolute Error Loss (L1).][\textit{Lipschitz-Continuous, Convex}] The Mean Absolute Error loss is one of the most fundamental loss functions for regression; it measures the average of the absolute bias in the prediction. The absolute value overcomes the problem of the MBE by ensuring that positive errors do not cancel the negative ones. It is defined as, 
+\begin{equation}
+      \begin{split}
+        \mathcal{L}_{MAE}(y_i, f(x_i)) = \frac{1}{n} \sum^{n}_{i=1} |y_i-f(x_i)|
+      \end{split}
+    \end{equation}
+
+    Notice that the contribution of the errors follows a linear behaviour, implying that many small errors have as much impact as a big one. This implies that the gradient magnitude is not dependent on the error size, thus leading to convergence problems when the error is small. A model trained to minimize the MAE performs well when the target data conditioned on the input is symmetric \citep{ciampiconi2023survey}.
+    \item[\it Mean Squared Error Loss (L2).][\textit{Continuous, Differentiable, Convex}] The Mean Squared Error loss is a well-known and simple loss function for regression. It is given by 
+    \begin{equation}
+      \begin{split}
+        \mathcal{L}_{MSE}(y_i, f(x_i)) = \frac{1}{n} \sum^{n}_{i=1} (y_i-f(x_i))^2
+      \end{split}
+    \end{equation}
+The squared term makes all the biases positive and magnifies the contribution made by outliers, making it more suitable for problems where noise in the observations follows a normal distribution. The sensitivity to the outliers is the primary disadvantage \citep{ciampiconi2023survey}.
+    \item[\it Root Mean Squared Error Loss.][\textit{Continuous, Differentiable, Convex}] The Root Mean Squared Error loss is, apart from the square root term, identical to MSE. It main benefit is that the loss has the same units and scale as the relevant variable. The minimization procedure converges to the same optimal value as MSE. However, the RMSE may take different gradient steps depending on the optimization method employed \citep{ciampiconi2023survey}. It is defined as, 
+    \begin{equation}
+      \begin{split}
+        \mathcal{L}_{RMSE}(y_i, f(x_i)) = \sqrt{\frac{1}{n} \sum^{n}_{i=1} (y_i-f(x_i))^2}
+      \end{split}
+    \end{equation}
+    \item[\it Huber Loss.][\textit{Lipschitz-Continuous, Differentiable, Strictly Convex}] Huber loss is a mix of MAE and MSE. When the residuals are sufficiently small, it goes from MAE to MSE. It is parameterized by $\delta$, which indicates the point at which MAE and MSE transition. This enables it to combine the benefits of the MAE and the MSE. When there is a significant discrepancy between the model's output and prediction, the Huber loss becomes less susceptible to outliers since the errors are linear. On the other hand, if the error is tiny, it follows the MSE, which accelerates convergence and makes it differentiable at $0$. A crucial decision is which $\delta$ to use, which may be modified often throughout the training process depending on what constitutes an outlier \citep{ciampiconi2023survey}. The Huber loss is given by,
+\begin{equation}
+      \begin{split}
+        \mathcal{L}_{Huber}(y_i, f(x_i)) = \sum^{n}_{i=1} \alpha_i(y_i, f(x_i)),
+      \end{split}
+    \end{equation}
+    where, 
+    \begin{equation*}
+      \begin{split}
+        \alpha_i(y_i, f(x_i)) =\begin{cases}
+          \frac{1}{2} (y_i-f(x_i))^2, &\text{ if } |y_i -f(x_i) | \leq \delta \\  
+          \delta\left( |y_i -f(x_i)| -\frac{1}{2}\delta \right), &\text{ otherwise.} 
+        \end{cases}
+      \end{split}
+    \end{equation*}
+    \item[\it Log-cosh Loss.][\textit{Continuous, Differentiable}] The Log-cosh loss is given by the logarithm of the \textit{hyperbolic cosine} of the residuals between the actual value $y$ and the forecasted value $f(y_i)$. It is more computationally demanding than \textit{Huber loss}, but it provides all the same benefits without the need to establish a hyperparameter. Moreover, the log-cosh loss has the advantage of being twice differentiable, which makes it appropriate for techniques that need to solve the second derivative. It is defined as, 
+  \begin{equation}
+      \begin{split}
+        \mathcal{L}_{Logcosh}(y_i, f(x_i)) = \frac{1}{n} \sum^{n}_{i=1} \log[\cosh(y_i-f(x_i))]
+      \end{split}
+    \end{equation}
+
+
+  \end{enumerate}
+
 \subsection{BackPropagation}%
   \label{sub:BackPropagation}
 \textbf{Backpropagation} is a gradient estimation method used to train neural network models. The gradient estimate is used by the optimization algorithm to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
@@ -513,7 +568,7 @@ not serve them well on the test set. The capacity of a model is a way to measure
 \begin{marginfigure}
   \includegraphics{capacity}
   \label{capacity}
-  \caption{A diagram showing the capacity of a model, from \citep{capacity-Kowalik}}
+  \caption{A diagram showing the optimal capacity of a model and its relation with the \textit{bias-variance trade-off}, from \citep{capacity-Kowalik}}
 \end{marginfigure}
 
   \begin{enumerate}

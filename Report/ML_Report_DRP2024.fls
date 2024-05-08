@@ -1773,6 +1773,9 @@ INPUT ./graphics//capacity.png
 INPUT graphics//capacity.png
 INPUT ./graphics//capacity.png
 INPUT ./graphics//capacity.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri9d.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplri9d.vf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplrij8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplb9d.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
