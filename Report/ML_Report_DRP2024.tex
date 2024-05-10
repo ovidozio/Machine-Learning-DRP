@@ -667,7 +667,7 @@ not serve them well on the test set. The capacity of a model is a way to measure
   \end{enumerate}
   It makes sense that augmenting these would increase the capacity, as they clearly increase the complexity of the model, which we know is closely related its capacity. It should be noted, however, that increasing the number of nodes and layers in a model can also increase its running time and memory usage. 
 
-  Other ways to increase capacity include tuning the learning rate optimally, decreasing the \textit{weight decay coefficient}, and decreasing the \textit{dropout rate.} We refer the reader to chapter 11 of \cite{Goodfellow-et-al-2016} for more information on this topic.
+  Other ways to increase tune the model optimally are part of a subset of ML called \textit{Regularization}, that we'll cover in the following sections. 
 
   \subsection{Cross-Validation}%
   \label{sub:Cross-Validation}
@@ -699,23 +699,51 @@ The most common technique used is \textbf{k-fold cross-validation.} It allows on
 
 \subsection{Regularization Techniques}%
   \label{sub:Regularization Techniques}
+Regularization is defined as any change we make to a
+learning algorithm with the goal of lowering its generalization error but not its training error. Regularization is one of the central concerns of the field of machine
+learning, rivaled in its importance only by optimization \citep{Goodfellow-et-al-2016}. Finding effective regularization methods is a hot research area in the field.
 
- \subsubsection{Early Stopping}%
+A significant portion of machine learning involves creating various models and algorithms tailored to suit them. Techniques like cross validation help us empirically determine the most suitable approach for our specific problem. Yet, there isn't one "best" model universally applicable, this concept is often referred to as the "no free lunch theorem". The rationale behind this theorem lies in the fact that assumptions effective in one domain may not perform well in another \citep{MurphyML}.
+
+In light of this theorem, it becomes imperative to develop diverse models to accommodate the wide array of real-world data. Additionally, for each model, there exists a multitude of algorithms offering different tradeoffs between speed, accuracy, and complexity \citep{MurphyML}.
+
+\subsubsection{L2 Parameter Norm Penalty (Weight Decay)}    \label{sub:L1 and L2 Regularization}
+Real-world data possesses intricate attributes, requiring equally intricate models to address them. While reducing parameters represents one approach to mitigate model complexity, it remains a rather restrictive tactic, since the more parameters our model has, the more interconnections within our neural network, thereby greater non-linearities, crucial for representing complex data.
+
+Yet, we must exercise caution to prevent these interconnections from spiraling out of control. Thus, the notion of penalizing complexity emerges as a solution. By employing weight decay, we retain our many parameters while imposing constraints to prevent excessive model complexity.
+
+A method to impose a penalty on complexity involves adding all parameters (weights) into our loss function. However, a straightforward addition isn't viable due to the mix of positive and negative parameters. Thus, we resort to adding the squares of these parameters to the loss function. Although effective, this approach might inflate the loss to an extent where the optimal solution would entail setting all parameters to zero. To avert this scenario, we scale down the sum of squares by a smaller factor, termed \textit{weight decay} \citep{Vasani_2019}. Weight decay stands out as a widely adopted technique in training numerous cutting-edge deep networks, including prominent models like \textbf{GPT-3} \citep{andriushchenko2023need}.
+
+We provide the definition from \cite{andriushchenko2023need}. Let $(x_i,y_i)_{i = 1}^{n}$ be the training inputs and labels where $x_i \in \mathcal{D},~y_i \in \mathbb{R}^{c}$, and $c$ the number of classes. Let $h: \mathbb{R}^{p} \times \mathcal{D} \to \mathbb{R}^{c}$ be the hypothesis class of neural network and for any parameter $w \in \mathbb{R}^{p}$ where the function $h(w, \cdot): \mathcal{D} \to \mathbb{R}^{c}$ represents the network predictions. The training loss $\mathcal{L}$ and the $\ell_2$-regularized training loss $\mathcal{L}_{\lambda}$ are given as: 
+\begin{align}
+\label{eq:general_loss}
+    \mathcal{L}(w):= \frac{1}{N} \sum_{i=1}^{N} \ell \left(y_i, h({w}, x_i)\right), \quad \mathcal{L}_{\lambda}(w) := \mathcal{L}(w) + \frac{\lambda}{2} \nor{w}^2 \, ,
+\end{align}
+where $\ell(\cdot,\cdot):\mathbb{R}^c \times \mathbb{R}^c \to \mathbb{R}^p$ denotes the chosen loss function, such as cross-entropy loss. Then, simply use gradient descent with respect to $\mathcal{L}_{\lambda}.$
+
+We note that choosing an appropriate $\lambda$ is a difficult problem. No exact method exists as of today. Reasonable values, however, lie between $0$ and $0.1$ \citep{Kuhn_13}. 
+\subsubsection{Data Augmentation}%
+  \label{sub:Data Augmentation}
+  While weight decay was a regularization method that focussed on altering the model, we now see a technique that alters the data instead, to achieve similar results. Optimizing a machine learning model's ability to generalize is often best achieved by training it on a larger dataset. However, practical constraints limit the amount of available data. To address this limitation, one strategy involves augmenting the training set with "fake" data. This approach is straightforward for classification tasks, by generating new $(x, y)$ pairs through transformations of existing input data in the training set, we can effectively expand the dataset.
+
+Dataset augmentation has demonstrated particular effectiveness in certain classification tasks, notably object recognition. Images, being high-dimensional, encompass a wide array of variation factors, many of which can be simulated easily. Operations such as translating, rotating, or scaling images have proven beneficial, even when the model is designed with partial translation invariance through convolution and pooling techniques.
+
+It's important to be careful when applying transformations to data. For instance, in optical character recognition tasks, correctly identifying distinctions like 'b' versus 'd' and '6' versus '9' is essential. Therefore, transformations like horizontal flips are inappropriate for augmenting datasets in these cases, clearly \citep{Goodfellow-et-al-2016}. 
+\subsubsection{Early Stopping}%
   \label{sub:Early Stopping}
-
-\subsubsection{L1 and L2 Regularization}    \label{sub:L1 and L2 Regularization}
+When training large models with great complexity, it's common to observe a phenomenon where \textit{training error} steadily decreases over time, while \textit{validation set} error starts to rise again. Consequently, it's possible to achieve a model with improved validation set error (and ideally, better test set error) by reverting to the parameter setting at the point when validation set error was lowest. To implement this, we save a copy of the model parameters each time validation set error improves. Upon termination of the training algorithm, we return these parameters instead of the latest ones. The algorithm concludes when no parameters show improvement over the best recorded validation error for a specified number of iterations \citep{Goodfellow-et-al-2016}. 
+\begin{figure}
+\includegraphics{augmentData}
+  \caption{Graph from \cite{Goodfellow-et-al-2016}. The curves depict the evolution of the negative log-likelihood loss over the number of training iterations or epochs. Initially, the training objective steadily decreases over time as the model learns from the data. However, a notable observation is that the validation set average loss eventually starts to rise again after reaching a minimum, resulting in an asymmetric U-shaped curve. This pattern indicates that despite improvements in the training loss, the model's performance on unseen data begins to degrade over time, highlighting the phenomenon of overfitting.}
+\end{figure}
 
 \subsubsection{Dropout}%
   \label{sub:Dropout}
+  Dropout is yet another technique to address the regularization problem. The core concept is to randomly deactivate units, along with their connections, within the neural network during training. This prevents units from becoming overly reliant on each other. Throughout training, dropout samples from an array of "thinned" networks. At the testing phase, approximating the ensemble effect of these thinned networks can be achieved by utilizing a single unthinned network with reduced weights. This approach significantly mitigates overfitting and surpasses other regularization techniques. Dropout has demonstrated its efficacy in enhancing the performance of neural networks across various supervised learning tasks, including vision, speech recognition, document classification, and computational biology. Notably, it has achieved state-of-the-art results on numerous benchmark data sets \citep{JMLR:v15:srivastava14a}.
     \section{Conclusion}%
     \label{sec:Conclusion}
-  As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be, from the basic concept of neural networks, all the way to the more advanced method of backpropagation. It becomes evident, however, that the reliance of supervised learning on meticulously labeled datasets poses a significant limitation. The need for abundant, high-quality data, paired with corresponding inputs and desired outputs, can be restrictive and often impractical in real-world scenarios. This limitation becomes particularly apparent when faced with complex tasks where defining the desired outputs may be challenging or even impossible.
+  As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be, from the basic concept of neural networks, all the way to the more advanced method of backpropagation. It becomes evident, however, that the reliance of supervised learning on meticulously labeled datasets poses a significant limitation. The need for abundant, high-quality data, paired with corresponding inputs and desired outputs, can be restrictive and often impractical in real-world scenarios. This limitation becomes particularly apparent when faced with complex tasks where defining the desired outputs may be challenging or even impossible. 
 
-\newpage
-
- 
-
- 
 
 {\footnotesize
   \bibliography{ML_Report_DRP2024}

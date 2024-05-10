@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex ML_Report_DRP2024"] 1715203673 "ML_Report_DRP2024.aux" "ML_Report_DRP2024.bbl" "ML_Report_DRP2024" 1715204248 0
-  "./ML_Report_DRP2024.bib" 1715197873 4601 bb256a4364801ad7a08f0af39ee5ea7a ""
+["bibtex ML_Report_DRP2024"] 1715310220 "ML_Report_DRP2024.aux" "ML_Report_DRP2024.bbl" "ML_Report_DRP2024" 1715310220 0
+  "./ML_Report_DRP2024.bib" 1715310076 5947 ba675e6d764c876aa1fdb6c64fe5e944 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "ML_Report_DRP2024.aux" 1715204248 11058 1ca40345fa33b3a9dd809daaa075a4a5 "pdflatex"
+  "ML_Report_DRP2024.aux" 1715310217 12850 4c7f72cd724b3bf11339225fba61b45c "pdflatex"
   (generated)
   "ML_Report_DRP2024.bbl"
   "ML_Report_DRP2024.blg"
   (rewritten before read)
-["pdflatex"] 1715204246 "ML_Report_DRP2024.tex" "ML_Report_DRP2024.pdf" "ML_Report_DRP2024" 1715204248 2
+["pdflatex"] 1715310214 "ML_Report_DRP2024.tex" "ML_Report_DRP2024.pdf" "ML_Report_DRP2024" 1715310220 2
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -281,16 +281,17 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1693683507 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1693683423 7883466 0daf13f68d70d6b799279728d2d79159 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "ML_Report_DRP2024.aux" 1715204248 11058 1ca40345fa33b3a9dd809daaa075a4a5 "pdflatex"
-  "ML_Report_DRP2024.bbl" 1715203673 4385 0f4830643eaeaa2e0ed68d14aeca3703 "bibtex ML_Report_DRP2024"
-  "ML_Report_DRP2024.out" 1715204248 3080 f4096b82c434e013ad4961cb3c9de27e "pdflatex"
-  "ML_Report_DRP2024.tex" 1715204245 54606 5fd3ace7186e1daa180c7d6e12c007a4 ""
-  "ML_Report_DRP2024.toc" 1715204248 1803 b0b933894eef4d8461ee70054204863e "pdflatex"
+  "ML_Report_DRP2024.aux" 1715310217 12850 4c7f72cd724b3bf11339225fba61b45c "pdflatex"
+  "ML_Report_DRP2024.bbl" 1715310220 5688 88dea2fb529efa3456acdcf3005e3969 "bibtex ML_Report_DRP2024"
+  "ML_Report_DRP2024.out" 1715310217 3328 ef44f4fdd5771e34de06e49ce616ab5e "pdflatex"
+  "ML_Report_DRP2024.tex" 1715310214 62143 81b3a8055b578c748c7edf1d9eee5bd0 ""
+  "ML_Report_DRP2024.toc" 1715310217 1913 cd388ef6c5fa4da1f18285953a1b1bf1 "pdflatex"
   "graphics//ActFunTable.jpg" 1707891071 121740 b41e76938ce6a55a9816b50ca1932cfd ""
   "graphics//NeuralNetwork.jpg" 1707316820 103561 649d8c0299c4cc5bf362e07c31a5dcf1 ""
   "graphics//Neuron.jpg" 1707320985 170194 9f9208a880413f1aee05f7bb4acd548f ""
   "graphics//Overfitting.png" 1714509342 234362 4a5b73a2a8bbcdfc4296dfc24453f508 ""
   "graphics//SingleLayerP.jpg" 1708529435 166669 431743f6ab1a7331844c6f788865c14f ""
+  "graphics//augmentData.png" 1715309209 128398 6b46dfc16e2517e4b8d1f9c839503adf ""
   "graphics//capacity.png" 1714663412 45795 0b7c7266a9655ecef25918de8a3d7536 ""
   "graphics//fitting.png" 1714591790 419795 dff260251c9cce94fc07f71364734f28 ""
   "graphics//pre-post-neuron.jpg" 1710512236 213338 c51bbbef25ef26295ae1cab31f2f6c92 ""

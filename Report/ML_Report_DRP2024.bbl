@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -28,6 +28,10 @@ AI-Wiki.
 \newblock Weights and biases.
 \newblock URL \url{https://machine-learning.paperspace.com/wiki/weights-and-biases}.
 \newblock [Online; accessed April 30, 2024].
+
+\bibitem[Andriushchenko et~al.(2023)Andriushchenko, D'Angelo, Varre, and Flammarion]{andriushchenko2023need}
+Maksym Andriushchenko, Francesco D'Angelo, Aditya Varre, and Nicolas Flammarion.
+\newblock Why do we need weight decay in modern deep learning?, 2023.
 
 \bibitem[Brownlee(2020)]{capacity-Brownlee}
 Jason Brownlee.
@@ -79,10 +83,33 @@ Marek Kowalik.
 \newblock URL \url{https://medium.com/@marekkowalik97/capacities-of-quantum-neural-networks-part-1-1a731f44be0}.
 \newblock [Online; accessed May 2, 2024].
 
+\bibitem[Kuhn and Johnson(2013)]{Kuhn_13}
+Max Kuhn and Kjell Johnson.
+\newblock \emph{Applied Predictive Modeling}.
+\newblock Springer, 2013.
+\newblock ISBN 978-1-4614-6848-6.
+
+\bibitem[Murphy(2012)]{MurphyML}
+Kevin~P. Murphy.
+\newblock \emph{Machine Learning: A Probabilistic Perspective}.
+\newblock MIT Press, 2012.
+\newblock URL \url{https://probml.github.io/pml-book/book0.html}.
+
 \bibitem[Russel and Norvig(2010)]{book:AIModernApp}
 Stuart Russel and Peter Norvig.
 \newblock \emph{Artificial Intelligence, A Modern Approach}, chapter~18.
 \newblock Pearson Education, New Jersey, 3rd edition, 2010.
+
+\bibitem[Srivastava et~al.(2014)Srivastava, Hinton, Krizhevsky, Sutskever, and Salakhutdinov]{JMLR:v15:srivastava14a}
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov.
+\newblock Dropout: A simple way to prevent neural networks from overfitting.
+\newblock \emph{Journal of Machine Learning Research}, 15\penalty0 (56):\penalty0 1929--1958, 2014.
+\newblock URL \url{http://jmlr.org/papers/v15/srivastava14a.html}.
+
+\bibitem[Vasani(2019)]{Vasani_2019}
+Dipam Vasani.
+\newblock This thing called weight decay, Nov 2019.
+\newblock URL \url{https://towardsdatascience.com/this-thing-called-weight-decay-a7cd4bcfccab}.
 
 \bibitem[Wakefield()]{GuideML}
 Katrina Wakefield.

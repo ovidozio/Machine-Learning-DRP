@@ -1,4 +1,4 @@
-PWD /Users/alexst-aubin/Library/CloudStorage/OneDrive-McGillUniversity/McGill_Win24/DRP_ML/Report2.0
+PWD /Users/alexst-aubin/Library/CloudStorage/OneDrive-McGillUniversity/McGill_Win24/DRP_ML/Report
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -1324,6 +1324,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
+INPUT ./graphics//augmentData.png
+INPUT graphics//augmentData.png
+INPUT ./graphics//augmentData.png
+INPUT ./graphics//augmentData.png
 INPUT ./ML_Report_DRP2024.bbl
 INPUT ML_Report_DRP2024.bbl
 INPUT ./ML_Report_DRP2024.bbl

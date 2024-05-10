@@ -16,7 +16,8 @@
 \contentsline {subsection}{\numberline {4.3}Mastering the Fit}{14}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Cross-Validation}{15}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Regularization Techniques}{16}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Early Stopping}{16}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}L1 and L2 Regularization}{16}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}Dropout}{16}{subsubsection.4.5.3}%
-\contentsline {section}{\numberline {5}Conclusion}{16}{section.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}L2 Parameter Norm Penalty (Weight Decay)}{16}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Data Augmentation}{16}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Early Stopping}{17}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Dropout}{17}{subsubsection.4.5.4}%
+\contentsline {section}{\numberline {5}Conclusion}{18}{section.5}%

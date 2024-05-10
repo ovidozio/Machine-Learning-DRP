@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  8 MAY 2024 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  9 MAY 2024 23:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -757,19 +757,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-<graphics//SingleLayerP.jpg, id=145, 345.29pt x 273.02pt>
+<graphics//SingleLayerP.jpg, id=150, 345.29pt x 273.02pt>
 File: graphics//SingleLayerP.jpg Graphic file (type jpg)
 <use graphics//SingleLayerP.jpg>
 Package pdftex.def Info: graphics//SingleLayerP.jpg  used on input line 211.
 (pdftex.def)             Requested size: 158.99338pt x 125.7157pt.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 230.
-<graphics//Neuron.jpg, id=155, 616.704pt x 284.56313pt>
+<graphics//Neuron.jpg, id=160, 616.704pt x 284.56313pt>
 File: graphics//Neuron.jpg Graphic file (type jpg)
 <use graphics//Neuron.jpg>
 Package pdftex.def Info: graphics//Neuron.jpg  used on input line 241.
 (pdftex.def)             Requested size: 298.113pt x 137.55702pt.
  [4 <./graphics//SingleLayerP.jpg>]
-<graphics//NeuralNetwork.jpg, id=184, 795.7471pt x 672.9658pt>
+<graphics//NeuralNetwork.jpg, id=189, 795.7471pt x 672.9658pt>
 File: graphics//NeuralNetwork.jpg Graphic file (type jpg)
 <use graphics//NeuralNetwork.jpg>
 Package pdftex.def Info: graphics//NeuralNetwork.jpg  used on input line 273.
@@ -777,13 +777,13 @@ Package pdftex.def Info: graphics//NeuralNetwork.jpg  used on input line 273.
  [5 <./graphics//Neuron.jpg>]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 306.
  [6 <./graphics//NeuralNetwork.jpg>]
-<graphics//ActFunTable.jpg, id=213, 1134.2375pt x 489.83pt>
+<graphics//ActFunTable.jpg, id=218, 1134.2375pt x 489.83pt>
 File: graphics//ActFunTable.jpg Graphic file (type jpg)
 <use graphics//ActFunTable.jpg>
 Package pdftex.def Info: graphics//ActFunTable.jpg  used on input line 362.
 (pdftex.def)             Requested size: 397.47368pt x 171.65234pt.
  [7 <./graphics//ActFunTable.jpg>]
-<graphics//simpleNet.jpg, id=227, 407.5225pt x 219.82124pt>
+<graphics//simpleNet.jpg, id=232, 407.5225pt x 219.82124pt>
 File: graphics//simpleNet.jpg Graphic file (type jpg)
 <use graphics//simpleNet.jpg>
 Package pdftex.def Info: graphics//simpleNet.jpg  used on input line 379.
@@ -815,7 +815,7 @@ and I'll forget about whatever was undefined.
 
 Package wrapfig Warning: Collision between wrapping environments on input line 392.
 
-<graphics//pre-post-neuron.jpg, id=229, 487.8225pt x 292.09125pt>
+<graphics//pre-post-neuron.jpg, id=234, 487.8225pt x 292.09125pt>
 File: graphics//pre-post-neuron.jpg Graphic file (type jpg)
 <use graphics//pre-post-neuron.jpg>
 Package pdftex.def Info: graphics//pre-post-neuron.jpg  used on input line 395.
@@ -1078,12 +1078,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 580--582
  []
 
 [12]
-<graphics//fitting.png, id=317, 729.72626pt x 357.335pt>
+<graphics//fitting.png, id=322, 729.72626pt x 357.335pt>
 File: graphics//fitting.png Graphic file (type png)
 <use graphics//fitting.png>
 Package pdftex.def Info: graphics//fitting.png  used on input line 616.
 (pdftex.def)             Requested size: 397.48694pt x 194.64284pt.
-<graphics//Overfitting.png, id=326, 1927.2pt x 1927.2pt>
+<graphics//Overfitting.png, id=331, 1927.2pt x 1927.2pt>
 File: graphics//Overfitting.png Graphic file (type png)
 <use graphics//Overfitting.png>
 Package pdftex.def Info: graphics//Overfitting.png  used on input line 629.
@@ -1095,7 +1095,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 630--630
 
 Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 633.
 [13] [14 <./graphics//fitting.png> <./graphics//Overfitting.png>]
-<graphics//capacity.png, id=365, 610.28pt x 403.5075pt>
+<graphics//capacity.png, id=370, 610.28pt x 403.5075pt>
 File: graphics//capacity.png Graphic file (type png)
 <use graphics//capacity.png>
 Package pdftex.def Info: graphics//capacity.png  used on input line 661.
@@ -1153,66 +1153,98 @@ Package relsize Warning: Font size 6.94446pt is too small.
 Package relsize Warning: Font size 6.94446pt is too small.
 (relsize)                Using 7.0pt instead on input line 698.
 
-[15 <./graphics//capacity.png>] [16] (./ML_Report_DRP2024.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 33--37
+
+Underfull \vbox (badness 2689) has occurred while \output is active []
+
+ [15 <./graphics//capacity.png>]
+./ML_Report_DRP2024.tex:721: Undefined control sequence.
+<argument> ...l {L}(w) + \frac {\lambda }{2} \nor 
+                                                  {w}^2 \, , 
+l.721 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ML_Report_DRP2024.tex:721: Undefined control sequence.
+<argument> ...l {L}(w) + \frac {\lambda }{2} \nor 
+                                                  {w}^2 \, , 
+l.721 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[16]
+<graphics//augmentData.png, id=430, 620.3175pt x 288.07625pt>
+File: graphics//augmentData.png Graphic file (type png)
+<use graphics//augmentData.png>
+Package pdftex.def Info: graphics//augmentData.png  used on input line 736.
+(pdftex.def)             Requested size: 397.48457pt x 184.59233pt.
+ [17 <./graphics//augmentData.png>] (./ML_Report_DRP2024.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 37--41
 []\OT1/ptm/m/n/9 Jason Brown-lee.  How to con-trol neu-ral net-work model ca-pac-ity with nodes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--37
+Underfull \hbox (badness 10000) in paragraph at lines 37--41
 \OT1/ptm/m/n/9 and lay-ers, 2020.  URL [][]$\OT1/pcr/m/n/9 https : / / machinelearningmastery . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--37
+Underfull \hbox (badness 10000) in paragraph at lines 37--41
 \OT1/pcr/m/n/9 how-[]to-[]control-[]neural-[]network-[]model-[]capacity-[]with-[]nodes-[]and-[]layers/$[][]\OT1/ptm/m/n/9 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--48
+Underfull \hbox (badness 10000) in paragraph at lines 48--52
 \OT1/pcr/m/n/9 com / questions / 35345191 / what-[]is-[]a-[]layer-[]in-[]a-[]neural-[]network / 35347548 #
  []
 
 
-Overfull \hbox (7.06459pt too wide) in paragraph at lines 77--81
+Overfull \hbox (7.06459pt too wide) in paragraph at lines 81--85
 \OT1/pcr/m/n/9 @marekkowalik97 / capacities-[]of-[]quantum-[]neural-[]networks-[]part-[]1-[]1a731f44be0$[][]\OT1/ptm/m/n/9 .
  []
 
-
-Underfull \hbox (badness 4660) in paragraph at lines 88--92
+[18]
+Underfull \hbox (badness 4660) in paragraph at lines 115--119
 []\OT1/ptm/m/n/9 Katrina Wake-field.  A guide to the types of ma-chine learn-ing al-go-rithms and their ap-pli-ca-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--92
+Underfull \hbox (badness 10000) in paragraph at lines 115--119
 \OT1/ptm/m/n/9 tions.  URL [][]$\OT1/pcr/m/n/9 https : / / www . sas . com / en _ gb / insights / articles / analytics /
  []
 
 
-Underfull \hbox (badness 3364) in paragraph at lines 94--98
+Underfull \hbox (badness 3364) in paragraph at lines 121--125
 []\OT1/ptm/m/n/9 Wikipedia, the free en-cy-clo-pe-dia.  Over-fit-ting.  URL [][]$\OT1/pcr/m/n/9 https : / / en . wikipedia . org / wiki /
  []
 
-) [17] (./ML_Report_DRP2024.aux)
+) [19] (./ML_Report_DRP2024.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `ML_Report_DRP2024.out' has not changed.
-(rerunfilecheck)             Checksum: F4096B82C434E013AD4961CB3C9DE27E;3080.
+(rerunfilecheck)             Checksum: EF44F4FDD5771E34DE06E49CE616AB5E;3328.
  ) 
 Here is how much of TeX's memory you used:
- 35055 strings out of 476025
- 801533 string characters out of 5790018
+ 35095 strings out of 476025
+ 802365 string characters out of 5790018
  1872388 words of memory out of 5000000
- 54731 multiletter control sequences out of 15000+600000
+ 54761 multiletter control sequences out of 15000+600000
  552428 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,27n,94p,920b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,27n,94p,972b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ML_Report_DRP2024.pdf (17 pages, 1196103 bytes).
+Output written on ML_Report_DRP2024.pdf (19 pages, 1295322 bytes).
 PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 456 compressed objects within 5 object streams
- 150 named destinations out of 1000 (max. 500000)
- 234 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 590 PDF objects out of 1000 (max. 8388607)
+ 502 compressed objects within 6 object streams
+ 160 named destinations out of 1000 (max. 500000)
+ 247 words of extra memory for PDF output out of 10000 (max. 10000000)
 
