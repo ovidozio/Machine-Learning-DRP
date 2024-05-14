@@ -370,9 +370,11 @@ dividing them by the sum of all these exponentials, which ensures that the sum o
 
 Backpropagation serves as the engine of learning in neural networks, refining model parameters through the propagation of error starting from the output, all the way to the first hidden layer. Accompanying this is the concept of loss functions, which quantify the disparity between predicted and actual outcomes, guiding the learning trajectory towards convergence.
 
-In the subsections ahead, we dissect each facet of learning, providing insights into backpropagation, weight update rules, and unraveling the nuances of loss functions.\subsection{BackPropagation}%
+In the subsections ahead, we dissect each facet of learning, providing insights into backpropagation, weight update rules, and unraveling the nuances of loss functions.
+  
+\subsection{BackPropagation}%
   \label{sub:BackPropagation}
-\textbf{Backpropagation} is a gradient estimation method used to train neural network models. The gradient estimate is used by the optimization algorithm to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
+\textbf{Backpropagation} is an algorithm for automatic differentiation that calculates the gradients of parameters in neural networks. The gradient estimate is used by optimization algorithms such as \textit{Stochastic Gradient Descent} (\autoref{sub:Stochastic Gradient Descent}) to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
 \begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
     \centering
     \label{simpleNet}
@@ -479,7 +481,35 @@ to conclude that the partial derivative of $L$ with respect to the weight $w_{i,
  \begin{proof} 
   
 If ${\frac {\partial L}{\partial w_{i,j}}}>0$, an increase in $w_{i,j}$ increases $L$; conversely, if $\frac {\partial L}{\partial w_{i,j}}<0$, an increase in $w_{i,j}$ decreases $L$. The new $\Delta w_{i,j}$ is added to the old weight, and the product of the learning rate and the gradient, multiplied by $-1$ guarantees that $w_{i,j}$  changes in a way that always decreases $L$. 
- \end{proof}
+\subsection{Gradient Descent}%
+  \label{sub:Gradient Descent}
+  
+Gradient descent is a method for minimizing an \textbf{objective function} \( J(\theta) \) parameterized by a model's parameters \( \theta \in \mathbb{R}^d \). This is achieved by updating the parameters in the opposite direction of the gradient of the objective function \( \nabla_{\theta} J(\theta) \) with respect to the parameters. The \textbf{learning rate} \( \eta \) (see \autoref{sub:Weight Update Rule}) determines the size of the steps taken towards a (potentially local) minimum. Essentially, we move in the direction of the slope of the surface defined by the objective function, descending until we reach a valley \citep{ruder2017overview}. 
+
+In the context of neural networks, the objective function would be the \textit{loss function}, and in order to find the gradient, one would use \textit{backpropagation}. 
+\subsubsection{Vanilla Gradient Descent}
+  \label{subsub:Vanilla Gradient Descent}
+Vanilla gradient descent computes the gradient of the loss function with respect to the parameters (i.e. the weights and biases) for the whole training set.
+
+
+Since calculating the gradients for the entire dataset to perform a single update can be very slow, vanilla gradient descent is impractical for large data sets. The code for vanilla gradient descent might look like this \citep{ruder2017overview}:
+\begin{verbatim}
+for i in range(nb_epochs):
+    params_grad = evaluate_gradient(loss_function, data, params)
+    params = params - learning_rate * params_grad
+\end{verbatim}
+For a pre-defined number of epochs, we first compute the gradient vector \texttt{params\_grad} of the loss function for the entire dataset with respect to our parameter vector \texttt{params} using, say, \textit{backpropagation}. 
+We then update our parameters in the direction of the gradients, with the learning rate determining the size of each update. Batch gradient descent is guaranteed to converge to the global minimum for convex error surfaces and to a local minimum for non-convex surfaces \citep{ruder2017overview}.
+\subsubsection{Stochastic Gradient Descent}%
+  \label{subsub:Stochastic Gradient Descent}
+
+The volume of data has grown so much in recent years that the processing power available is insufficient to train neural networks by performing gradient descent on each individual data. As a result, neural networks employ \textbf{stochastic gradient descent} (SGD), which reduces machine computation time. 
+
+SGD is an optimization algorithm used to train neural network models. More precisely, SGD is a method that optimizes gradient descent, making it less costly. By combining the back-propagation algorithm to acquire gradients with the SGD algorithm, one can effectively train a neural network. This combined approach can be referred to as "Stochastic Gradient Descent with Back-propagation."
+
+It is common for developers to say they trained their model using back-propagation, but technically, this is incorrect. Back-propagation is not an optimization algorithm and cannot be used to train a model by itself. The term back-propagation is often misunderstood as the entire learning algorithm for multi-layer neural networks. In reality, back-propagation only refers to the gradient computation method, while another algorithm, like SGD, performs the learning using these gradients \citep{Goodfellow-et-al-2016}.
+
+However, different algorithms, such as genetic algorithms that do not require gradients, can be used to optimize neural network parameters. But despite the existence of other methods, the combination of SGD with Back-propagation remains the most efficient and effective general approach developed so far for fitting neural network models \citep{SGD-BP}.
 
 \subsection{Regression Loss Functions}%
   \label{sub:Loss Function}

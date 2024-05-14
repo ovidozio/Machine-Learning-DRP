@@ -8,16 +8,19 @@
 \contentsline {section}{\numberline {3}Learning}{8}{section.3}%
 \contentsline {subsection}{\numberline {3.1}BackPropagation}{8}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Weight Update Rule}{10}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Regression Loss Functions}{10}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Classification Loss Functions}{12}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Fitting the model}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Overfitting}{13}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Underfitting}{14}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Mastering the Fit}{14}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Cross-Validation}{15}{subsection.4.4}%
+\contentsline {subsection}{\numberline {3.3}Gradient Descent}{10}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Vanilla Gradient Descent}{11}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Stochastic Gradient Descent}{11}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Regression Loss Functions}{11}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Classification Loss Functions}{13}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Fitting the model}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Overfitting}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Underfitting}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Mastering the Fit}{15}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Cross-Validation}{16}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Regularization Techniques}{16}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}L2 Parameter Norm Penalty (Weight Decay)}{16}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Data Augmentation}{16}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}Early Stopping}{17}{subsubsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.4}Dropout}{17}{subsubsection.4.5.4}%
-\contentsline {section}{\numberline {5}Conclusion}{18}{section.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}L2 Parameter Norm Penalty (Weight Decay)}{17}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Data Augmentation}{18}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Early Stopping}{18}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Dropout}{19}{subsubsection.4.5.4}%
+\contentsline {section}{\numberline {5}Conclusion}{19}{section.5}%
