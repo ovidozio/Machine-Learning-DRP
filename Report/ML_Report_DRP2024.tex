@@ -13,7 +13,6 @@
 % submitting the draft version of the paper for review.  This will set
 % the note in the first column to ``Under review.  Do not distribute.''
 \usepackage{iclr2017_arXiv,times}
-\usepackage{hyperref}
 \usepackage{url}
 
 %{\"a} {\^e} {\`i} {\.I} {\o} {\'u} {\aa} {\c c} {\u g} {\l} {\~n} {\H o} {\v r} {\ss}
@@ -30,15 +29,16 @@
 
 \usepackage{bm}
 \usepackage{amsmath}
-\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmin}{arg\,min} % the * allows subscripts below the text (same behaviour as \lim_{n \to \infty})
 \DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\net}{net}
 
 \usepackage{xcolor}
 
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
-    citecolor=black,
+    citecolor=green,
     filecolor=black,
     linkcolor=black,
     urlcolor=black
@@ -61,6 +61,7 @@
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e} %For pseudocode
 
 \usepackage{natbib}
+\setcitestyle{square}
 %\setcitestyle{authoryear,open={[},close={]}} %Citation-related commands
 %For plots
 \usepackage{pgfplots}
@@ -121,7 +122,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{An Introduction to Machine Learning}
+\title{An Introduction to Supervised Machine Learning}
 
 % The \author macro works with any number of authors. There are two
 % commands used to separate the names and addresses of multiple
@@ -135,9 +136,9 @@
 
 \author{
   Alexandre St-Aubin \\
-  %\hspace{0.5mm} attain.ai \\
-  %\hspace{0.5mm} yuxili@gmail.com \\
-  %\texttt{yuxili@gmail.com} \\
+  \hspace{0.5mm} McGill University \\
+  \hspace{0.5mm} alexandre.st-aubin2@mail.mcgill.ca\\
+  %\texttt{alexandre.st-aubin2@mail.mcgill.ca} \\
   }
 
 
@@ -147,14 +148,13 @@
 \begin{abstract} 
 
 \noindent
-We discuss Machine Learning on a high level.
-
+  We discuss neural networks (NN), the classical approach to supervised learning. We first cover the components of a NN, such as its neurons, weights, edges, and activation functions. We explain how a NN can learn information and infer about new, unseen data. We then discuss the problem of overfitting a model, as well as techniques to avoid it.
   \footnote{Work in progress.}
 
 \vspace{5mm}
 
 
-\textbf{Keywords:} Machine Learning
+\textbf{Keywords:} Machine Learning, Supervised Learning, Neural Networks, Backpropagation, Overfitting.
 
 
 \textbf{}
@@ -173,7 +173,6 @@ We discuss Machine Learning on a high level.
 \newpage
 
 \section{Introduction}
- 
 Machine learning has surged in popularity due to its ability to tackle complex problems by discerning patterns in data, making accurate predictions, and informing decisions. Unlike traditional approaches, machine learning focuses not only on understanding data but also on inferring from it, allowing models to generalize knowledge and make predictions on unseen data. This emphasis on inference enables machine learning to transcend comprehension, driving innovation and progress across various domains. There are several types of Machine Learning algorithms. The main categories are divided into \textit{Supervised learning, Semi-supervised learning, Unsupervised learning and Reinforcement learning.}
 
 \vspace{4mm}
@@ -195,8 +194,13 @@ Machine learning has surged in popularity due to its ability to tackle complex p
 \vspace{4mm}
 \noindent\textsc{Reinforcement learning} involves a structured approach where algorithms are provided with actions, parameters, and goals. These algorithms explore various options, learn from trial and error, and adapt their strategies based on past experiences to optimize outcomes \citep{GuideML}.
 
-In this paper, we will focus on \textit{Supervised learning.} However, most of the basic concepts we'll cover, such as Neurons, Neural networks, Backpropagation, and Overfitting, are topics that apply to all spheres of machine learning. 
 
+In this paper, we will focus on \textit{Supervised learning}, in particular, the \textit{Neural Network} approach. However, most of the basic concepts we'll cover, such as Neurons, Backpropagation, and Overfitting, are topics that apply to all spheres of machine learning. 
+\begin{figure}
+  \label{ML}
+  \includegraphics{MachineLearning}
+  \caption{Classification of Machine Learning Algorithms from \cite{SurveyML}}
+\end{figure}
 \section{Neural Networks}
 Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}. They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
 \subsection{Single Layer Perceptron} \label{sub:Single Layer Perceptron}
@@ -815,7 +819,13 @@ When training large models with great complexity, it's common to observe a pheno
   Dropout is yet another technique to address the regularization problem. The core concept is to randomly deactivate units, along with their connections, within the neural network during training. This prevents units from becoming overly reliant on each other. Throughout training, dropout samples from an array of "thinned" networks. At the testing phase, approximating the ensemble effect of these thinned networks can be achieved by utilizing a single unthinned network with reduced weights. This approach significantly mitigates overfitting and surpasses other regularization techniques. Dropout has demonstrated its efficacy in enhancing the performance of neural networks across various supervised learning tasks, including vision, speech recognition, document classification, and computational biology. Notably, it has achieved state-of-the-art results on numerous benchmark data sets \citep{JMLR:v15:srivastava14a}.
     \section{Conclusion}%
     \label{sec:Conclusion}
-  As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be, from the basic concept of neural networks, all the way to the more advanced method of backpropagation. It becomes evident, however, that the reliance of supervised learning on meticulously labeled datasets poses a significant limitation. The need for abundant, high-quality data, paired with corresponding inputs and desired outputs, can be restrictive and often impractical in real-world scenarios. This limitation becomes particularly apparent when faced with complex tasks where defining the desired outputs may be challenging or even impossible. 
+As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be, from the basic concept of neural networks, all the way to the more advanced method of backpropagation. It becomes evident, however, that the reliance of supervised learning on carefully labeled datasets poses a significant limitation. The need for abundant, high-quality data, paired with corresponding inputs and desired outputs, can be restrictive and often impractical in real-world scenarios. This limitation becomes particularly apparent when faced with complex tasks where defining the desired outputs may be challenging or even impossible. 
+
+This is the basis of the power of reinforcement learning (RL), an approach that learns from interacting directly with the environment, surpassing the limitations of supervised learning. In RL, agents move through a set of options, learning the best methods by making mistakes and getting feedback in the form of rewards. Due to its self-learning mechanism, RL can now address issues for which explicit supervision is impractical, providing access to previously uncharted territory for conventional machine learning techniques.
+
+Consider, for instance, the task of training a model to beat the world's best chess player. In such a scenario, the sheer complexity of the game and the infinite array of possible moves render the notion of a predefined dataset ridiculous to even think about. Supervised learning falls short in this context, as the desired optimal moves to win the game are elusive and ever-changing. Here, RL emerges as the preferred approach, empowering agents to learn from experience, adapt strategies in real-time, and ultimately, achieve superhuman performance.
+
+
 
 
 {\footnotesize
