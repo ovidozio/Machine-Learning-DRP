@@ -6,10 +6,10 @@
 
 % Use the following line _only_ if you're still using LaTeX 2.09.
 %\documentstyle[icml2009,epsf,mlapa]{article}
-% If you rely on Latex2e packages, like most moden people use this:
+% If you rely on Latex2e packages, like most modern people, use this:
 \documentclass{article}
 
-% Employ the following version of the ``usepackage'' statement fors
+% Employ the following version of the ``usepackage'' statement for
 % submitting the draft version of the paper for review.  This will set
 % the note in the first column to ``Under review.  Do not distribute.''
 \usepackage{iclr2017_arXiv,times}
@@ -390,7 +390,7 @@ In the subsections ahead, we dissect each facet of learning, providing insights 
       &= f[w_{0,5} + f(w_{0, 3} + f(x_1)w_{1,3} + f(x_2)w_{2,3})w_{3,5} +f(w_{0, 4} + f(x_1)w_{1,4} + f(x_2)w_{2,4})w_{4,5} ]
     \end{split}
   \end{equation*}
-  And even with such a small network, we can already see how awkward it would be to compute the derivative of $a_5$ with respect to $w$. But an even bigger problem arises when we think of how we would compute the loss function in hidden layers. Whereas the error $y -h_w$\sidenote{$y$ is the target output, and $h_w$ the value computed by the network } at the output layer is clear, the error at the hidden layers seems mysterious because the training data do not say what value the hidden nodes should have.
+  And even with such a small network, we can already see how awkward it would be to compute the derivative of $a_5$ with respect to $w$. But an even bigger problem arises when we think of how we would compute the loss function in hidden layers. Whereas the error $y -h_w$ at the output layer is clear, the error at the hidden layers seems mysterious because the training data do not say what value the hidden nodes should have. Note that here, $y$ is the target output, and $h_w$ the value computed by the network.
 \begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
     \centering
     \label{simpleNet}
@@ -481,35 +481,67 @@ to conclude that the partial derivative of $L$ with respect to the weight $w_{i,
  \begin{proof} 
   
 If ${\frac {\partial L}{\partial w_{i,j}}}>0$, an increase in $w_{i,j}$ increases $L$; conversely, if $\frac {\partial L}{\partial w_{i,j}}<0$, an increase in $w_{i,j}$ decreases $L$. The new $\Delta w_{i,j}$ is added to the old weight, and the product of the learning rate and the gradient, multiplied by $-1$ guarantees that $w_{i,j}$  changes in a way that always decreases $L$. 
+
+ \end{proof}
 \subsection{Gradient Descent}%
   \label{sub:Gradient Descent}
   
 Gradient descent is a method for minimizing an \textbf{objective function} \( J(\theta) \) parameterized by a model's parameters \( \theta \in \mathbb{R}^d \). This is achieved by updating the parameters in the opposite direction of the gradient of the objective function \( \nabla_{\theta} J(\theta) \) with respect to the parameters. The \textbf{learning rate} \( \eta \) (see \autoref{sub:Weight Update Rule}) determines the size of the steps taken towards a (potentially local) minimum. Essentially, we move in the direction of the slope of the surface defined by the objective function, descending until we reach a valley \citep{ruder2017overview}. 
 
-In the context of neural networks, the objective function would be the \textit{loss function}, and in order to find the gradient, one would use \textit{backpropagation}. 
-\subsubsection{Vanilla Gradient Descent}
+   In the context of neural networks, the objective function would be the \textit{loss function}, and in order to find the gradient, one would use \textit{backpropagation}. It is common for developers to say they trained their model using back-propagation, but technically, this is incorrect. Back-propagation is not an optimization algorithm and cannot be used to train a model by itself. The term back-propagation is often misunderstood as the entire learning algorithm for multi-layer neural networks. In reality, back-propagation only refers to the gradient computation method, while another algorithm, like SGD, performs the learning using these gradients \citep{Goodfellow-et-al-2016}. Before exploring the different gradient descent algorithms, we define some terminology from \cite{batchvsEpoch}. 
+
+\begin{definition}[Sample]
+  A sample is a single row of data containing inputs for the algorithm and an output for error calculation. A training dataset consists of many samples, also known as instances, observations, input vectors, or feature vectors.
+\end{definition}
+\begin{definition}[Batch]
+  The batch size is a hyperparameter defining the number of samples processed before updating the model parameters. A batch iterates over samples, makes predictions, calculates errors, and updates the model. 
+\end{definition}
+
+Common mini-batch sizes are 32, 64, and 128. If the dataset size is not divisible by the batch size, the final batch will have fewer samples.
+\begin{definition}[Epoch]
+  An epoch is a hyperparameter defining the number of times the entire training dataset is processed. Each epoch ensures all samples have an opportunity to update the model parameters. An epoch consists of one or more batches.
+\end{definition}
+   The number of epochs is typically large, often in the hundreds or thousands, to minimize the model error sufficiently. Running too many epochs may lead to overfitting, as we'll see in \autoref{sub:Overfitting}.
+
+   \subsubsection{Vanilla Gradient Descent}
   \label{subsub:Vanilla Gradient Descent}
-Vanilla gradient descent computes the gradient of the loss function with respect to the parameters (i.e. the weights and biases) for the whole training set.
-
-
+Vanilla gradient descent computes the gradient of the loss function with respect to the parameters (i.e. the weights and biases) for the whole training set. In other words, the \textit{batch size} is the size of the entire training set. So for each parameter $\theta$, the update would be, 
+   $$ \theta =\theta - \eta \cdot \nabla_{\theta}J(\theta) $$
 Since calculating the gradients for the entire dataset to perform a single update can be very slow, vanilla gradient descent is impractical for large data sets. The code for vanilla gradient descent might look like this \citep{ruder2017overview}:
 \begin{verbatim}
 for i in range(nb_epochs):
-    params_grad = evaluate_gradient(loss_function, data, params)
-    params = params - learning_rate * params_grad
+  params_grad = evaluate_gradient(loss_function, data, params)
+  params = params - learning_rate * params_grad
 \end{verbatim}
-For a pre-defined number of epochs, we first compute the gradient vector \texttt{params\_grad} of the loss function for the entire dataset with respect to our parameter vector \texttt{params} using, say, \textit{backpropagation}. 
-We then update our parameters in the direction of the gradients, with the learning rate determining the size of each update. Batch gradient descent is guaranteed to converge to the global minimum for convex error surfaces and to a local minimum for non-convex surfaces \citep{ruder2017overview}.
+For a pre-defined number of \textit{epochs}, we first compute the gradient vector \texttt{params\_grad} of the loss function for the entire dataset with respect to our parameter vector \texttt{params} using, say, \textit{backpropagation}. 
+
+   We then update our parameters in the direction of the gradients, with the learning rate determining the size of each update. Batch gradient descent is guaranteed to converge to the global minimum for convex error surfaces and to a local minimum for non-convex surfaces \citep{ruder2017overview}.
 \subsubsection{Stochastic Gradient Descent}%
   \label{subsub:Stochastic Gradient Descent}
 
-The volume of data has grown so much in recent years that the processing power available is insufficient to train neural networks by performing gradient descent on each individual data. As a result, neural networks employ \textbf{stochastic gradient descent} (SGD), which reduces machine computation time. 
+The volume of data has grown so much in recent years that the processing power available is insufficient to train neural networks by performing gradient descent on the entire training set at each epoch. As a result, neural networks employ \textbf{stochastic gradient descent} (SGD), which reduces machine computation time. 
 
-SGD is an optimization algorithm used to train neural network models. More precisely, SGD is a method that optimizes gradient descent, making it less costly. By combining the back-propagation algorithm to acquire gradients with the SGD algorithm, one can effectively train a neural network. This combined approach can be referred to as "Stochastic Gradient Descent with Back-propagation."
+   SGD is a method that optimizes gradient descent, making it less costly. By combining the back-propagation algorithm to acquire gradients with the SGD algorithm, one can effectively train a neural network.
 
-It is common for developers to say they trained their model using back-propagation, but technically, this is incorrect. Back-propagation is not an optimization algorithm and cannot be used to train a model by itself. The term back-propagation is often misunderstood as the entire learning algorithm for multi-layer neural networks. In reality, back-propagation only refers to the gradient computation method, while another algorithm, like SGD, performs the learning using these gradients \citep{Goodfellow-et-al-2016}.
+ Despite the existence of other methods, the combination of SGD with Back-propagation remains the most efficient and effective general approach developed so far for fitting neural network models \citep{SGD-BP}.
 
-However, different algorithms, such as genetic algorithms that do not require gradients, can be used to optimize neural network parameters. But despite the existence of other methods, the combination of SGD with Back-propagation remains the most efficient and effective general approach developed so far for fitting neural network models \citep{SGD-BP}.
+   SGD alters the batch gradient descent algorithm by computing the gradient for just one training example in each iteration. We define an example as a pair $(x^{(i)}, y^{(i)})$ where $x^{(i)}$ is the training input and $y^{(i)}$ the label. The update is then,
+   $$\theta = \theta - \eta \cdot \nabla_\theta J(\theta :(x^{(i)}, y^{(i)}) ) $$
+
+   The steps for performing SGD are as follows:
+
+\begin{verbatim}
+for i in range(nb_epochs): 
+  np.random.shuffle(data) 
+  for example in data:
+    params_grad = evaluate_gradient(loss_function, example, params) 
+    params = params - learning_rate * params_grad
+\end{verbatim}
+
+
+
+
+
 
 \subsection{Regression Loss Functions}%
   \label{sub:Loss Function}
@@ -747,7 +779,7 @@ A method to impose a penalty on complexity involves adding all parameters (weigh
 We provide the definition from \cite{andriushchenko2023need}. Let $(x_i,y_i)_{i = 1}^{n}$ be the training inputs and labels where $x_i \in \mathcal{D},~y_i \in \mathbb{R}^{c}$, and $c$ the number of classes. Let $h: \mathbb{R}^{p} \times \mathcal{D} \to \mathbb{R}^{c}$ be the hypothesis class of neural network and for any parameter $w \in \mathbb{R}^{p}$ where the function $h(w, \cdot): \mathcal{D} \to \mathbb{R}^{c}$ represents the network predictions. The training loss $\mathcal{L}$ and the $\ell_2$-regularized training loss $\mathcal{L}_{\lambda}$ are given as: 
 \begin{align}
 \label{eq:general_loss}
-    \mathcal{L}(w):= \frac{1}{N} \sum_{i=1}^{N} \ell \left(y_i, h({w}, x_i)\right), \quad \mathcal{L}_{\lambda}(w) := \mathcal{L}(w) + \frac{\lambda}{2} \nor{w}^2 \, ,
+    \mathcal{L}(w):= \frac{1}{N} \sum_{i=1}^{N} \ell \left(y_i, h({w}, x_i)\right), \quad \mathcal{L}_{\lambda}(w) := \mathcal{L}(w) + \frac{\lambda}{2} {w}^2 \, ,
 \end{align}
 where $\ell(\cdot,\cdot):\mathbb{R}^c \times \mathbb{R}^c \to \mathbb{R}^p$ denotes the chosen loss function, such as cross-entropy loss. Then, simply use gradient descent with respect to $\mathcal{L}_{\lambda}.$
 
