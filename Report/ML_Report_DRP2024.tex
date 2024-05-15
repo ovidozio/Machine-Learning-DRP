@@ -40,7 +40,7 @@
     colorlinks,
     citecolor=green,
     filecolor=black,
-    linkcolor=black,
+    linkcolor=red,
     urlcolor=black
 }
 
@@ -262,7 +262,7 @@ The neuron is the smallest computational unit of a neural network. The single la
 The overall network is a combination of function composition and matrix multiplication:
 
   $$g(x) = f^L (W^Lf^{L-1}(W^{L-1} \hdots f^1(W^1x)\hdots)), $$
-  where $L$ is the number of layers (\autoref{sub:Layers}), $W$ is the weight matrix, and $f$ is the activation function (\ref{sub:ActivationFunction}).
+  where $L$ is the number of layers (\autoref{sub:Layers}), $W$ is the weight matrix, and $f$ is the activation function (\autoref{sub:ActivationFunction}).
  \begin{definition}[Feed-forward Neural Network]
   A neural network is a \textit{computational directed acyclic graph,} in which a unit of computation is the neuron. Each directed edge in the graph represents a function passing the weighed output of a node in a layer to a node in the next layer.
  \end{definition} 
@@ -378,7 +378,7 @@ In the subsections ahead, we dissect each facet of learning, providing insights 
   
 \subsection{BackPropagation}%
   \label{sub:BackPropagation}
-\textbf{Backpropagation} is an algorithm for automatic differentiation that calculates the gradients of parameters in neural networks. The gradient estimate is used by optimization algorithms such as \textit{Stochastic Gradient Descent} (\autoref{subsub:Stochastic Gradient Descent}) to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
+\textbf{Backpropagation} is an algorithm for automatic differentiation that calculates the gradients of parameters in neural networks. The gradient estimate is used by optimization algorithms such as \textit{Stochastic Gradient Descent} (\autoref{subsub:Stochastic Gradient Descent}) to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} (\autoref{sub:Weight Update Rule}). Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
 \begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
     \centering
     \label{simpleNet}
