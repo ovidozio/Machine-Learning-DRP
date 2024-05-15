@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -38,12 +38,6 @@ Jason Brownlee.
 \newblock How to control neural network model capacity with nodes and layers, 2020.
 \newblock URL \url{https://machinelearningmastery.com/how-to-control-neural-network-model-capacity-with-nodes-and-layers/}.
 \newblock [Online; accessed April 30, 2024].
-
-\bibitem[Brownlee(2021)]{SGD-BP}
-Jason Brownlee.
-\newblock Difference between backpropagation and stochastic gradient descent, 2021.
-\newblock URL \url{https://machinelearningmastery.com/difference-between-backpropagation-and-stochastic-gradient-descent/}.
-\newblock [Online; accessed May 14, 2024].
 
 \bibitem[Brownlee(2022)]{batchvsEpoch}
 Jason Brownlee.

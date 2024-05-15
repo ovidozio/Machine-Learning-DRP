@@ -366,7 +366,7 @@ dividing them by the sum of all these exponentials, which ensures that the sum o
 \newpage
 \section{Learning}
   \label{sec:Learning}
-  At the core of machine learning lies the art of learning itself. In this section, we delve into the essential components that drive this process forward: backpropagation, loss functions, and the delicate balance of model fitting.
+  At the core of machine learning lies the art of learning itself. In this section, we delve into the essential components that drive this process forward: backpropagation, weight updates, gradient descent, and loss functions.
 
 Backpropagation serves as the engine of learning in neural networks, refining model parameters through the propagation of error starting from the output, all the way to the first hidden layer. Accompanying this is the concept of loss functions, which quantify the disparity between predicted and actual outcomes, guiding the learning trajectory towards convergence.
 
@@ -374,7 +374,7 @@ In the subsections ahead, we dissect each facet of learning, providing insights 
   
 \subsection{BackPropagation}%
   \label{sub:BackPropagation}
-\textbf{Backpropagation} is an algorithm for automatic differentiation that calculates the gradients of parameters in neural networks. The gradient estimate is used by optimization algorithms such as \textit{Stochastic Gradient Descent} (\autoref{sub:Stochastic Gradient Descent}) to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
+\textbf{Backpropagation} is an algorithm for automatic differentiation that calculates the gradients of parameters in neural networks. The gradient estimate is used by optimization algorithms such as \textit{Stochastic Gradient Descent} (\autoref{subsub:Stochastic Gradient Descent}) to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} \ref{sub:Weight Update Rule}. Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
 \begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
     \centering
     \label{simpleNet}
@@ -486,7 +486,7 @@ If ${\frac {\partial L}{\partial w_{i,j}}}>0$, an increase in $w_{i,j}$ increase
 \subsection{Gradient Descent}%
   \label{sub:Gradient Descent}
   
-Gradient descent is a method for minimizing an \textbf{objective function} \( J(\theta) \) parameterized by a model's parameters \( \theta \in \mathbb{R}^d \). This is achieved by updating the parameters in the opposite direction of the gradient of the objective function \( \nabla_{\theta} J(\theta) \) with respect to the parameters. The \textbf{learning rate} \( \eta \) (see \autoref{sub:Weight Update Rule}) determines the size of the steps taken towards a (potentially local) minimum. Essentially, we move in the direction of the slope of the surface defined by the objective function, descending until we reach a valley \citep{ruder2017overview}. 
+Gradient descent is a method for minimizing an \textbf{objective function} \( J(\theta) \) parameterized by a model's parameters \( \theta \in \mathbb{R}^d \), namely, the weights and biases. This is achieved by updating the parameters in the opposite direction of the gradient of the objective function \( \nabla_{\theta} J(\theta) \) with respect to the parameters. The \textbf{learning rate} \( \eta \) (see \autoref{sub:Weight Update Rule}) determines the size of the steps taken towards a (potentially local) minimum. Essentially, we move in the direction of the slope of the surface defined by the objective function, descending until we reach a valley \citep{ruder2017overview}. 
 
    In the context of neural networks, the objective function would be the \textit{loss function}, and in order to find the gradient, one would use \textit{backpropagation}. It is common for developers to say they trained their model using back-propagation, but technically, this is incorrect. Back-propagation is not an optimization algorithm and cannot be used to train a model by itself. The term back-propagation is often misunderstood as the entire learning algorithm for multi-layer neural networks. In reality, back-propagation only refers to the gradient computation method, while another algorithm, like SGD, performs the learning using these gradients \citep{Goodfellow-et-al-2016}. Before exploring the different gradient descent algorithms, we define some terminology from \cite{batchvsEpoch}. 
 
@@ -521,15 +521,10 @@ For a pre-defined number of \textit{epochs}, we first compute the gradient vecto
 
 The volume of data has grown so much in recent years that the processing power available is insufficient to train neural networks by performing gradient descent on the entire training set at each epoch. As a result, neural networks employ \textbf{stochastic gradient descent} (SGD), which reduces machine computation time. 
 
-   SGD is a method that optimizes gradient descent, making it less costly. By combining the back-propagation algorithm to acquire gradients with the SGD algorithm, one can effectively train a neural network.
-
- Despite the existence of other methods, the combination of SGD with Back-propagation remains the most efficient and effective general approach developed so far for fitting neural network models \citep{SGD-BP}.
-
-   SGD alters the batch gradient descent algorithm by computing the gradient for just one training example in each iteration. We define an example as a pair $(x^{(i)}, y^{(i)})$ where $x^{(i)}$ is the training input and $y^{(i)}$ the label. The update is then,
+   SGD is a method that optimizes gradient descent, making it less costly. SGD alters the batch gradient descent algorithm by computing the gradient for just one training sample in each iteration before updating the parameters. Equivalently, the batch size for SGD is equal to 1. We define an example as a pair $(x^{(i)}, y^{(i)})$ where $x^{(i)}$ is the training input and $y^{(i)}$ the label. The update is then \citep{ruder2017overview},
    $$\theta = \theta - \eta \cdot \nabla_\theta J(\theta :(x^{(i)}, y^{(i)}) ) $$
 
    The steps for performing SGD are as follows:
-
 \begin{verbatim}
 for i in range(nb_epochs): 
   np.random.shuffle(data) 
@@ -537,13 +532,29 @@ for i in range(nb_epochs):
     params_grad = evaluate_gradient(loss_function, example, params) 
     params = params - learning_rate * params_grad
 \end{verbatim}
+\begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
+    \centering
+    \label{fluctuation-SGD}
+    \includegraphics[width=0.4\textwidth]{fluctuation-SGD}
+    \caption{SGD fluctuation, from \citep{ruder2017overview}}
+\end{wrapfigure}
+Notice that the data is shuffled before each iteration. This is done to prevent bias that would occur if the data were trained in a specific order. A downside of SGD is that it doesn't converge as surely as vanilla gradient descent to the minimum of the "basin" where the parameters were initialized. Indeed, since SGD updates the parameters after every gradient computation on a single sample, it has high fluctuation. This may cause it to jump to a new local minima. Research indicates that by gradually decreasing the learning rate with a \textbf{learning rate schedule}, SGD exhibits similar convergence behavior to vanilla gradient descent, nearly always converging to a local minimum for non-convex functions and to the global minimum for convex functions \citep{ruder2017overview}.
 
+\subsubsection{Mini-Batch Gradient Descent}%
+  \label{sub:Mini-Batch Gradient Descent}
+  Finally, Mini-batch is the middle ground between SGD and Vanilla gradient descent. Instead of computing the gradient on one sample, or on the entire data set, we compute it on a fixed number $n$ of samples, 
+  $$\theta = \theta - \eta \cdot \nabla_\theta J(\theta: (x^{(i:i+n)} ,y^{(i:i+n)}))$$
+This approach reduces the variance of parameter updates, leading to more stable convergence, and leverages highly optimized matrix operations in modern deep learning libraries, making gradient computation with mini-batches very efficient. Common mini-batch sizes range from 50 to 256, though they can vary depending on the application. Mini-batch gradient descent is typically the preferred algorithm for training neural networks, and the term SGD is often used even when mini-batches are employed \citep{ruder2017overview}. The code for mini-batch gradient descent with a batch size of 50 would be, 
+\begin{verbatim}
+for i in range(nb_epochs): 
+  np.random.shuffle(data)
+  for batch in get_batches(data, batch_size=50):
+    params_grad = evaluate_gradient(loss_function, batch, params) 
+    params = params - learning_rate * params_grad
+\end{verbatim}
 
-
-
-
-
-\subsection{Regression Loss Functions}%
+Now, there exist many more gradient descent algorithms, such as \textit{Nesterov Accelerated Gradient, Adagrad, Adadelta, Adam,} and many more. For more information on the subject, we refer the reader to \cite{ruder2017overview}.
+  \subsection{Regression Loss Functions}%
   \label{sub:Loss Function}
   The attentive reader will have noticed that supervised machine learning revolves around optimizing the outputs of a loss function. This also applies to a wide range of other machine learning strategies. Thus, defining a good loss function is essential. We offer an overview of the most widely utilized loss functions for a variety of uses, starting with \textbf{Regression Losses}.
 
@@ -717,7 +728,7 @@ not serve them well on the test set. The capacity of a model is a way to measure
   Before altering the capacity of a model, one must evaluate whether a model is overfitting or underfitting. This can be done with the help of cross-validation, which we'll discuss in the next chapter.
 
   As long as the training error is low, one way to increase regularization without playing with capacity is to increase the amount of training data. If this is not possible, there are a number of components we can adjust in order to control the capacity of a model, such as \citep{capacity-Brownlee}, 
-\begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
+\begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
     \centering
     \label{capacity}
     \includegraphics[width=0.4\textwidth]{capacity}
