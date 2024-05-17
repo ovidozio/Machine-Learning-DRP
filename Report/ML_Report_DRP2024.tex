@@ -173,23 +173,20 @@
 \newpage
 
 \section{Introduction}
-Machine learning has surged in popularity due to its ability to tackle complex problems by discerning patterns in data, making accurate predictions, and informing decisions. Unlike traditional approaches, machine learning focuses not only on understanding data but also on inferring from it, allowing models to generalize knowledge and make predictions on unseen data. This emphasis on inference enables machine learning to transcend comprehension, driving innovation and progress across various domains. There are several types of Machine Learning algorithms. The main categories are divided into \textit{Supervised learning, Semi-supervised learning, Unsupervised learning and Reinforcement learning.}
+Machine learning has surged in popularity due to its ability to tackle complex problems by discerning patterns in data, making accurate predictions, and informing decisions. Unlike traditional approaches, machine learning focuses not only on understanding data but also on inferring from it, allowing models to generalize knowledge and make predictions on unseen data. This emphasis on inference enables machine learning to transcend comprehension, driving innovation and progress across various domains. There are several types of Machine Learning algorithms. The main categories are divided into \textit{Supervised learning, Unsupervised learning and Reinforcement learning.} \autoref{fig:ML} depicts the main classes of Machine Learning and some popular models for each. 
 
 \vspace{4mm}
-  \noindent \textsc{Supervised learning} allows the machine to learn through examples. The machine learning algorithm is tasked with developing the strategy for achieving the specified outputs given some input.  To do so, a known dataset is supplied  that contains a set of inputs and associated target outputs in the form $(x, t)$. The algorithm finds patterns in the data and adjusts its parameters in order to predict more accurately future inputs. This kind of machine learning algorithm needs a developer to oversee it directly. The training data must be accurately labelled. 
+  \noindent \textsc{Supervised learning} allows the machine to learn through examples. The machine learning algorithm is tasked with developing the strategy for achieving the specified outputs given some input.  To do so, a known dataset is supplied  that contains a set of inputs and associated target outputs in the form $(x, t)$, where $x$ is the input to the model, and $t$ the target output, i.e. the \textit{label}. The algorithm finds patterns in the data and adjusts its parameters to predict more accurately future inputs. This kind of machine learning algorithm needs a developer to accurately label the training data. 
 
-  The two main problems requiring Supervised learning are \textbf{Classification} and \textbf{Regression}. The former consists of classifying objects into their appropriate classes. A well known example is the MNIST data set, which is a set of images representing hand drawn numbers from 0 to 9. A classification ML algorithm will analyse each point $(x,t)$ of the data set during the \textit{training phase}, where $x$ is the image, and $t$ is the number it represents. Then, given an unseen image as input, the algorithm should predict which number it represents.
+  The two main problems requiring Supervised learning are \textbf{Classification} and \textbf{Regression}. The former consists of classifying objects into their appropriate classes. A well known example operates on the MNIST data set, which is a set of images representing hand drawn numbers from 0 to 9. A classification ML algorithm will analyse each point $(x,t)$ of the data set during the \textit{training phase}, where $x$ is the image, and $t$ is the number it represents. Then, given an unseen image as input, the algorithm should predict which number it represents.
 
   Regression is the other common use of Supervised learning. It aims to predict a continuous output variable, rather than a discrete one (classification). An example would be to predict the cost of a house, given a set of training data consisting of characteristics of houses and their corresponding price.
 
+\vspace{4mm}
+\noindent\textsc{Unsupervised learning} algorithms discern patterns within data without predefined labels. The algorithm identifies correlations and structures within datasets. Key steps in this process include clustering, which groups similar data sets, and dimension reduction, which simplifies variables to extract essential information. 
 
 \vspace{4mm}
-\noindent\textsc{Semi-supervised learning} operates on a blend of labelled and unlabelled data, where labelled data contains meaningful tags for algorithmic comprehension, while unlabelled data lacks such information. By leveraging both types of data, semi-supervised learning algorithms can deduce labels for unlabelled data, enhancing their learning capability. 
-
-
-\vspace{4mm}
-\noindent\textsc{Unsupervised learning} algorithms discern patterns within data without predefined answers or human guidance. Through analysis, the algorithm identifies correlations and structures within datasets. Key steps in this process include clustering, which groups similar data sets, and dimension reduction, which simplifies variables to extract essential information.
-
+\noindent\textsc{Semi-Supervised learning} acts on a data set that contains both labelled and unlabelled data. Normally, labelled data is rare, while unlabelled data makes up most of the set. The goal of semi-supervised learning algorithms would be to classify the unlabelledby inferring from the labelled data.
 
 \vspace{4mm}
 \noindent\textsc{Reinforcement learning} involves a structured approach where algorithms are provided with actions, parameters, and goals. These algorithms explore various options, learn from trial and error, and adapt their strategies based on past experiences to optimize outcomes \citep{GuideML}.
@@ -197,30 +194,30 @@ Machine learning has surged in popularity due to its ability to tackle complex p
 
 In this paper, we will focus on \textit{Supervised learning}, in particular, the \textit{Neural Network} approach. However, most of the basic concepts we'll cover, such as Neurons, Backpropagation, and Overfitting, are topics that apply to all spheres of machine learning. 
 \begin{figure}
-  \label{ML}
   \includegraphics{MachineLearning}
   \caption{Classification of Machine Learning Algorithms from \cite{SurveyML}}
+  \label{fig:ML}
 \end{figure}
 \section{Neural Networks}
-Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}. They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and thresholds}. Activated nodes transmit data to the next layer if their output surpasses the threshold. 
+Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}. They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and biases}. Activated nodes transmit data to the next layer through outgoing edges.
+
 \subsection{Single Layer Perceptron} \label{sub:Single Layer Perceptron}
-The simplest neural network is referred to as the perceptron. This neural network contains
+The simplest neural network is referred to as the \textbf{Signle Layer Perceptron} (see \autoref{fig:SLP}). This neural network contains
 a single input layer and an output node \citep{inbook:Aggarwal-1.2}.
 
 Consider a situation where each \textit{training instance} is of the form $(\overline{X}, y)$, where each $\overline{X} = [x_1,..., x_d]$ contains $d$ feature variables, and $y \in [-1, +1]$ contains the observed value of the binary class variable. By “observed value” we refer to the fact that it is given to us as a part of the training data, and our goal is to predict the class variable for cases in which it is not observed.
 
-%\begin{minipage}[t]{0.5\textwidth}
 \begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
     \centering
     \includegraphics[width=0.4\textwidth]{SingleLayerP}
-    
-    \caption{A single layer perceptron.}
+    \caption{A single layer perceptron, from \cite{inbook:Aggarwal-1.2}.}
+    \label{fig:SLP}
 \end{wrapfigure}
 
-The input layer of the \textbf{perceptron} contains $d$ nodes that transmit the $d$ features $\overline{X} = [x_1, . . . x_d]$ with \textbf{edges} of \textbf{weight} $\overline{W} = [w_1, . . . w_d]$  to an output node. The input \textbf{layer} does not perform any computation in its own right. The linear function $\overline{W} \cdot \overline{X} =\sum^{d}_{i=1}  w_ix_i$ is computed at the output node. Subsequently, the sign of this real value is used in order to predict the dependent variable of $\overline{X}$. Therefore, the prediction $\hat y$ is computed as follows:
+The input layer of the {perceptron} contains $d$ nodes that transmit the $d$ features $\overline{X} = [x_1, . . . x_d]$ with \textbf{edges} of \textbf{weight} $\overline{W} = [w_1, . . . w_d]$  to an output node. The input \textbf{layer} does not perform any computation. The linear function $\overline{W} \cdot \overline{X} =\sum^{d}_{i=1}  w_ix_i$ is computed at the output node. Subsequently, the sign of this real value is used in order to predict the dependent variable of $\overline{X}$. Therefore, the prediction $\hat y$ is computed as follows:
     $$\hat y = \text{sign}[\overline{X} \cdot \overline{W}] =\text{sign}\left[\sum^{d}_{i=1}  w_ix_i\right] $$
 
-Here, the sign function serves the role of an activation function (\ref{sub:ActivationFunction}). The goal of the \textbf{perceptron} algorithm with respect to all training instances in a data set $\mathcal{D} = \{(\overline{X_1}, y_1 ), \cdots,(\overline{X_n}, y_n )\}$ is to minimize the loss function (\ref{sub:Loss Function}). We shall learn more about loss functions in a following section, but an example would be to minimize the least-squares function: 
+Here, the sign function serves the role of an activation function (\autoref{sub:ActivationFunction}). The goal of the \textbf{perceptron} algorithm with respect to all training instances in a data set $\mathcal{D} = \{(\overline{X_1}, y_1 ), \cdots,(\overline{X_n}, y_n )\}$ is to minimize the loss function (\autoref{sub:Loss Function}). We shall learn more about loss functions in a following section, but an example would be to minimize the least-squares function: 
  \begin{equation*}
   \begin{split}
     \sum^{n}_{i=1} (\hat y_i - y_i)^2 =\sum^{n}_{i=1} \left(\text{sign}[\overline{X_i} \cdot \overline{W}] -y_i \right)
@@ -230,7 +227,7 @@ Here, the sign function serves the role of an activation function (\ref{sub:Acti
  To optimize the loss function, the perceptron will use a \textit{gradient descent} method, which we will see later.
  \subsection{Neurons}%
   \label{sub:Neurons}
-The neuron is the smallest computational unit of a neural network. The single layer perceptron described in the previous section is exactly a neuron.  
+The neuron is the smallest computational unit of a neural network. The single layer perceptron described in the previous section is exactly a neuron, see \autoref{fig:Neuron} for a picture.  
 \begin{definition}[Neurons]
   Neurons are made up of 4 elements: 
   \begin{enumerate}
@@ -243,9 +240,9 @@ The neuron is the smallest computational unit of a neural network. The single la
   \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{Neuron}
-  \label{Neuron}
-  \caption{A neuron and its inputs and outputs.}
-\end{figure}
+    \caption{A neuron and its inputs and outputs.}
+    \label{fig:Neuron}
+  \end{figure}
   $$o_j = f \left( \sum^{n}_{i=0}w_{i,j} o_i  \right)$$
   where $f$ is the activation function, $o_i$ is the output activation of neuron $i$ and $w_{i,j}$ is the weight on the directed edge from neuron $i$ to the neuron $j$. 
 \end{definition}
@@ -253,11 +250,13 @@ The neuron is the smallest computational unit of a neural network. The single la
   A weight $w_{i,j} \in \mathbb{R}$ will multiply the output of neuron $i$ before giving it as input to neuron $j$. Weights are the moving parts of the neural network, as they get changed during each iteration of the learning step in order to optimize the output. They can be initialized to any random value, and after running the network on a pair $(x,t)$ from the \textit{training data}, the weight update rule (\autoref{sub:Weight Update Rule}) will alter them to minimize the error between the output $\hat y$ and the target $t.$ 
 \end{definition}
 \begin{definition}[Bias]\label{def:bias}
-  Biases are constant, they are an additional input into the next layer that will always have the value of 1. Bias units are not influenced by the previous layer but they do have outgoing connections with their own weights. The bias unit guarantees that even when all the inputs are zeros there will still be an activation in the neuron \citep{WeightsBias}. 
+  Biases are constant, they are an additional input into the next layer that will always have the value of 1. Bias units are not influenced by the previous layer, they guarantee that even when all the inputs are zeros there will still be an input in the neuron \citep{WeightsBias}. 
 \end{definition}
+
+When talking about neural networks and ML models in general, the term "\textbf{parameters}" often comes up. For example, OpenAI loves to brag about how many parameters their latest language models have (\textbf{GPT-4} has $1.76$ trillion). Parameters are the elements of a neural networks refer to the variables that the model learns from the training data. These parameters are exactly the weights and biases defined above.
 \subsection{Feed-Forward Neural Networks}%
   \label{sub:Feed-Forward Neural Networks}
-  Having defined neurons, the building blocks of neural networks, we may now give a rigorous definition of the latter. A feed-forward network has connections only in one direction—that is, it forms a directed acyclic graph. Every node receives input from “upstream” nodes and delivers output to “downstream” nodes; there are no loops. A feed-forward network represents a function of its current input; thus, it has no internal state other than the weights themselves \citep{book:AIModernApp}.
+  Having defined neurons, the building blocks of neural networks, we may now give a rigorous definition of the latter. A \textbf{feed-forward neural network} (FFN) has connections only in one direction—that is, it forms a directed acyclic graph. Every node receives input from “upstream” nodes and delivers output to “downstream” nodes; there are no loops \citep{book:AIModernApp}.
 
 The overall network is a combination of function composition and matrix multiplication:
 
@@ -267,15 +266,16 @@ The overall network is a combination of function composition and matrix multipli
   A neural network is a \textit{computational directed acyclic graph,} in which a unit of computation is the neuron. Each directed edge in the graph represents a function passing the weighed output of a node in a layer to a node in the next layer.
  \end{definition} 
 
-   Artificial neural networks are often refered to as \textbf{multi-layer perceptrons} (abbreviated to MLPs) for one simple reason: you can think of such an MLP as the composition of multiple perceptrons, where, in this case, the perceptron would be a synonym for artificial neuron, so the smallest computational unit of a neural network, which performs, for example, a linear combination of its inputs followed by the application of an activation function, which can be the sigmoid, tanh, ReLU, identity, or any other function that is differentiable, if you plan to train the neural network with gradient descent.
+   Artificial neural networks are often refered to as \textbf{multi-layer perceptrons} (MLPs) for one simple reason: you can think of a neural network as the composition of multiple perceptrons. In this case, the perceptron would be a synonym for neuron, so the smallest computational unit of a neural network, which performs, for example, a linear combination of its inputs followed by the application of an activation function, which can be the sigmoid, tanh, ReLU, identity, or any other function that is differentiable, if you plan to train the neural network with gradient descent.
 \subsection{Layers}
 \label{sub:Layers}
-Feed-forward networks are usually arranged in layers, such that each unit receives input
-only from units in the immediately preceding layer. The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. Layers are a general term given to a grouping of neurons that act together in the neural network.
+FFNs are usually arranged in layers, such that each unit receives input
+only from units in the immediately preceding layer. The layers are divided in 3 groups: the \textit{input, hidden,} and \textit{output} layers. Layers are a general term given to a grouping of neurons that act together in the neural network, as seen in \autoref{fig:NN}. 
   \begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
     \centering
     \includegraphics[width=0.4\textwidth]{NeuralNetwork}
-    \caption{A graph representation of a Neural Network.}
+    \caption{A graph representation of a Neural Network, from \cite{inbook:Aggarwal-1.2}.}
+  \label{fig:NN}
 \end{wrapfigure}
 
 The first layer in a neural network is the \textbf{Input Layer}, it receives the initial data for the network from the outside world. The "Entry point" of the neural network. Then, come the \textbf{hidden layer(s)}, which are where the magic happens in neural networks. Each layer is trying to learn different aspects about the data by minimizing the \textbf{cost function}. The most intuitive way to understand these layers is in the context of image recognition such as a face. The first layer may learn edge detection, the second may detect eyes, third a nose, etc. \citep{layers}. The final layer in the neural network is the \textbf{output layer}. This layer is responsible for holding the final result or output of the problem. Input, such as raw images, is fed into the input layer, and the output layer produces the corresponding result.
@@ -293,39 +293,19 @@ The activation function determines whether a neuron should be activated or not b
 \noindent There is no universal rule for choosing the best activation function, but there are some characteristics to look for, namely
 \begin{enumerate}
   \item \textbf{Nonlinearity} is one of the most essential characteristics
-of an activation function is nonlinearity. In comparison
-to linear activation functions, the non-linearity of the
-activation function significantly improves the learning
-capability of neural networks. 
-\item The activation function must
-  be \textbf{computationally cheap}. This has
-the potential to greatly improve network efficiency.
-  \item It must be \textbf{bounded}, as gradient-based training approaches are more stable when the range of the activation function is finite, because pattern presentations
-significantly affect only limited weights. 
+of an activation function. The non-linearity significantly improves the network's ability to learn and model complex, non-linear relationships in the data. If only linear activation functions were used, the entire network would be equivalent to a single linear transformation of the input, regardless of the number of layers. This would severely limit the network's ability to solve complex problems.
+
+  \item The activation function must
+  be \textbf{computationally cheap} in order to reduce training costs.
+  \item It must be \textbf{bounded}, as gradient-based training approaches are more stable when the range of the activation function is finite. 
 \item The most desirable quality for using
 gradient-based optimization approaches is \textbf{continuously
   differentiable} activation functions. This ensures that the
 back-propagation algorithm works properly. 
 \end{enumerate}
-\begin{remark}[The vanishing and exploding gradient problems] The variation
-of the inputs and outputs of some activation functions,
-such as the logistic function (Sigmoid), is extremely
-large. To put it another way, they reduce and transform
-a bigger input space into a smaller output space that
-falls between [0,1]. As a result, the back-propagation
-algorithm has almost no gradients to propagate backward
-in the network, and any residual gradients that do exist
-continue to dilute as the program goes down through the
-top layers. Due to this, the initial hidden-layers are left
-with no information about the gradients. For hyperbolic
-tangent and sigmoid activation functions, it has been
-observed that the saturation region for large input (both
-positive and negative) is a major reason behind the
-vanishing of gradient. One of the important remedies
-to this problem is the use of non-saturating activation
-functions, such as ReLU.
+\begin{remark}[The vanishing and exploding gradient problems] The inputs and outputs of certain activation functions, like the logistic function (Sigmoid), can vary greatly. These functions compress a large input space into a smaller output range between [0,1]. This may cause the back-propagation algorithm to have almost no gradients to propagate backward through the network, and any remaining gradients diminish as they move down through the layers. This leaves the initial hidden layers with little to no gradient information. Using non-saturating activation functions, such as ReLU, is one way to solve this problem. 
 \end{remark}
-We present some commonly used activation functions.
+We present some commonly used activation functions discussed in \cite{jagtap2022important}.
 \begin{enumerate}
   \item \textit{Sigmoid Function.} Its range is $[0,1]$, and is defined as,
 $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
@@ -361,13 +341,13 @@ the standard exponential function to each element $x_i$
 of the input vector $x$ and normalizes these values by
 dividing them by the sum of all these exponentials, which ensures that the sum of the components of the output vector is 1.
 \end{enumerate}
-\begin{figure}[b]
-  \label{actfun}
+\autoref{fig:actfun} summarizes the information described above.
+\begin{figure}[]
   \includegraphics{ActFunTable}
-\caption{Common activation functions, their derivatives, range, and order of continuity.}
+  \caption{Common activation functions, their derivatives, range, and order of continuity, from \cite{jagtap2022important}.}
+\label{fig:actfun}
 \end{figure}
 
-\newpage
 \section{Learning}
   \label{sec:Learning}
   At the core of machine learning lies the art of learning itself. In this section, we delve into the essential components that drive this process forward: backpropagation, weight updates, gradient descent, and loss functions.
@@ -379,13 +359,15 @@ In the subsections ahead, we dissect each facet of learning, providing insights 
 \subsection{BackPropagation}%
   \label{sub:BackPropagation}
 \textbf{Backpropagation} is an algorithm for automatic differentiation that calculates the gradients of parameters in neural networks. The gradient estimate is used by optimization algorithms such as \textit{Stochastic Gradient Descent} (\autoref{subsub:Stochastic Gradient Descent}) to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} (\autoref{sub:Weight Update Rule}). Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
-\begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
+\begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
     \centering
-    \label{simpleNet}
     \includegraphics[width=0.4\textwidth]{simpleNet}
     \caption{A simple network with 2 inputs, one hidden layer, and two outputs.}
+    \label{fig:simpleNet}
 \end{wrapfigure}
-  Let us first begin by recalling that a neural network evaluates compositions of functions computed at individual nodes. Think of a neural network as a function $h_w(x)$ of the input, parametrized by the weights. Consider the network in Figure 5, let $\{x_1,x_2\}$ be the input vector, $f$ the activation function and $a_i$ denote the activated output at node $i$. Then, the output at node 3 is given by
+  Let us first begin by recalling that a neural network evaluates compositions of functions computed at individual nodes. Think of a neural network as a function $h_w(x)$ of the input, parametrized by the weights. 
+\begin{example}[]
+   Consider the network in \autoref{fig:simpleNet}, let $\{x_1,x_2\}$ be the input vector, $f$ the activation function and $a_i$ denote the activated output at node $i$. Then, the output at node 3 is given by
   $$a_3 = f(w_{0, 3} + f(x_1)w_{1,3} + f(x_2)w_{2,3}), $$
   where $w_{0,3}$ is the bias weight (\autoref{def:bias}) at node 3. Similarly, the output at node 5 is
   \begin{equation*}
@@ -394,12 +376,14 @@ In the subsections ahead, we dissect each facet of learning, providing insights 
       &= f[w_{0,5} + f(w_{0, 3} + f(x_1)w_{1,3} + f(x_2)w_{2,3})w_{3,5} +f(w_{0, 4} + f(x_1)w_{1,4} + f(x_2)w_{2,4})w_{4,5} ]
     \end{split}
   \end{equation*}
-  And even with such a small network, we can already see how awkward it would be to compute the derivative of $a_5$ with respect to $w$. But an even bigger problem arises when we think of how we would compute the loss function in hidden layers. Whereas the error $y -h_w$ at the output layer is clear, the error at the hidden layers seems mysterious because the training data do not say what value the hidden nodes should have. Note that here, $y$ is the target output, and $h_w$ the value computed by the network.
+  And even with such a small network, we can already see how awkward it would be to compute the derivative of $a_5$ with respect to $w$. 
+\end{example}
+ An even bigger problem than in the above example arises when we think of how we would compute the loss function in hidden layers. Whereas the error $y -h_w$ at the output layer is clear, the error at the hidden layers seems mysterious because the training data do not say what value the hidden nodes should have. Note that here, $y$ is the target output, and $h_w$ the value computed by the network.
 \begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
     \centering
-    \label{simpleNet}
     \includegraphics[width=0.4\textwidth]{pre-post-neuron}
     \caption{Pre and Post activation values of a neuron.}
+    \label{fig:ppNeuron}
 \end{wrapfigure}
 
   Therefore, we need some kind of iterative approach to compute the derivatives, and a way to \textit{back-propagate} the error from the output layer to the hidden layers. The resulting iterative approach uses \textit{dynamic programming}, and the \textbf{weight update rule} is the \textit{chain rule} of differential calculus \citep{inbook:Aggarwal-3.2}.
@@ -409,16 +393,18 @@ In the subsections ahead, we dissect each facet of learning, providing insights 
 $$
 \frac{\partial z}{\partial x_i} = \sum_{j=1}^{m} \frac{\partial z}{\partial y_j} \frac{\partial y_j}{\partial x_i}.$$
   \end{theorem}
-  We note that backpropagation can be implemented by using either the \textit{pre-activation}, or \textit{post-activation} values at each neuron. Here, we'll focus on the method that acts on the pre activation values neurons. For the sake of simplicity, we view the neural network as a \textit{Directed Acyclic Graph} $G$, where 
+  We note that backpropagation can be implemented by using either the \textit{pre-activation}, or \textit{post-activation} values at each neuron. Here, we'll focus on the method that acts on the pre-activation values, illustrated in \autoref{fig:ppNeuron}. For the sake of simplicity, we view the neural network as a \textit{Directed Acyclic Graph} $G$, where 
   \begin{enumerate}
     \item Each node represents a neuron, and is denoted by a number $j$.
     \item The weight on the edge from neuron $i$ to $j$ is denoted $w_{i,j}$.
   \end{enumerate}
   The algorithm can be divided in two phases: \textit{forward} and \textit{backward}.
-  \begin{enumerate}
-    \item \textbf{Forward Phase.} The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The derivative of the loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. For the sake of simplicity, we will explore the case of a single output node for the time being. We will then talk about the simple generalization to many outputs. 
 
-    \item \textbf{Backward Phase.} In this phase, the gradient of the loss function with respect to different weights is calculated. First, the derivative $\frac{\partial {o}}{\partial {w}} {}$ is computed. This establishes the gradient computation's initialization. The multivariable chain rule is then used to propagate the derivatives in the opposite direction. Since we are focussing on the pre-activation approach, the gradients are computed with respect to the pre-activation values of the hidden variables, which are then propagated backwards.
+    \vspace{4mm}
+\noindent\textsc{Forward Phase.} The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The derivative of the loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. For the sake of simplicity, we will explore the case of a single output node for the time being. We will then talk about the simple generalization to many outputs. 
+
+ \vspace{4mm}
+\noindent\textsc{Backward Phase.} In this phase, the gradient of the loss function with respect to different weights is calculated. First, the derivative $\frac{\partial {o}}{\partial {w}} {}$ is computed. This establishes the gradient computation's initialization. The multivariable chain rule is then used to propagate the derivatives in the opposite direction. Since we are focussing on the pre-activation approach, the gradients are computed with respect to the pre-activation values of the hidden variables, which are then propagated backwards.
   \end{enumerate}
   More precisely, the process can be described as follows. Let $(x,t)$ be the input to our algorithm, where $t$ is the target output of the input vector $x.$ Define the value
   $$L = \operatorname{Loss}(y,t),$$
@@ -469,7 +455,7 @@ to conclude that the partial derivative of $L$ with respect to the weight $w_{i,
   \label{sub:Weight Update Rule}
   After having found the derivatives of the loss function with respect to the weights, one needs a way to update the weights. The goal is to modify the weights of the neural network so that given the input $(x,t)$, where $x$ is the input vector and $t$ the target output, it points more toward $t$. Then, in the future, it will have a better chance of classifying $x$ correctly \citep{Hagan_Martin}. The naive way would be to set the weights so that they point directly to $t$. Unfortunately, this leads to overfitting, which we'll address in the next chapter.
   
-  To update the weight $w_{i,j}$ using backpropagation, we first choose a learning rate $\mu> 0$. We may then choose to update $w_{i,j}$ by adding $\Delta w_{i,j}$ to it, where
+  To update the weight $w_{i,j}$ using backpropagation, we first choose a \textbf{learning rate} $\mu> 0$. We may then choose to update $w_{i,j}$ by adding $\Delta w_{i,j}$ to it, where
   \begin{equation*}
     \begin{split}
       \Delta w_{i,j} = -\mu \frac{\partial {L}}{\partial {w_{i,j}}}  = - \mu  o_i \delta_j
@@ -490,7 +476,7 @@ If ${\frac {\partial L}{\partial w_{i,j}}}>0$, an increase in $w_{i,j}$ increase
 \subsection{Gradient Descent}%
   \label{sub:Gradient Descent}
   
-Gradient descent is a method for minimizing an \textbf{objective function} \( J(\theta) \) parameterized by a model's parameters \( \theta \in \mathbb{R}^d \), namely, the weights and biases. This is achieved by updating the parameters in the opposite direction of the gradient of the objective function \( \nabla_{\theta} J(\theta) \) with respect to the parameters. The \textbf{learning rate} \( \eta \) (see \autoref{sub:Weight Update Rule}) determines the size of the steps taken towards a (potentially local) minimum. Essentially, we move in the direction of the slope of the surface defined by the objective function, descending until we reach a valley \citep{ruder2017overview}. 
+Gradient descent is a method for minimizing an \textbf{objective function} \( J(\theta) \) parameterized by a model's parameters \( \theta \in \mathbb{R}^d \), namely, the weights and biases. This is achieved by updating the parameters in the opposite direction of the gradient of the objective function \( \nabla_{\theta} J(\theta) \) with respect to the parameters. The learning rate \( \eta \) (see \autoref{sub:Weight Update Rule}) determines the size of the steps taken towards a (potentially local) minimum. Essentially, we move in the direction of the slope of the surface defined by the objective function, descending until we reach a valley \citep{ruder2017overview}. 
 
    In the context of neural networks, the objective function would be the \textit{loss function}, and in order to find the gradient, one would use \textit{backpropagation}. It is common for developers to say they trained their model using back-propagation, but technically, this is incorrect. Back-propagation is not an optimization algorithm and cannot be used to train a model by itself. The term back-propagation is often misunderstood as the entire learning algorithm for multi-layer neural networks. In reality, back-propagation only refers to the gradient computation method, while another algorithm, like SGD, performs the learning using these gradients \citep{Goodfellow-et-al-2016}. Before exploring the different gradient descent algorithms, we define some terminology from \cite{batchvsEpoch}. 
 
@@ -538,11 +524,11 @@ for i in range(nb_epochs):
 \end{verbatim}
 \begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
     \centering
-    \label{fluctuation-SGD}
     \includegraphics[width=0.4\textwidth]{fluctuation-SGD}
     \caption{SGD fluctuation, from \citep{ruder2017overview}}
+    \label{fig:fluctuation-SGD}
 \end{wrapfigure}
-Notice that the data is shuffled before each iteration. This is done to prevent bias that would occur if the data were trained in a specific order. A downside of SGD is that it doesn't converge as surely as vanilla gradient descent to the minimum of the "basin" where the parameters were initialized. Indeed, since SGD updates the parameters after every gradient computation on a single sample, it has high fluctuation. This may cause it to jump to a new local minima. Research indicates that by gradually decreasing the learning rate with a \textbf{learning rate schedule}, SGD exhibits similar convergence behavior to vanilla gradient descent, nearly always converging to a local minimum for non-convex functions and to the global minimum for convex functions \citep{ruder2017overview}.
+Notice that the data is shuffled before each iteration. This is done to prevent bias that would occur if the data were trained in a specific order. A downside of SGD is that it doesn't converge as surely as vanilla gradient descent to the minimum of the "basin" where the parameters were initialized. Indeed, since SGD updates the parameters after every gradient computation on a single sample, it fluctuates a lot, as seen in \autoref{fig:fluctuation-SGD}. This may cause it to jump to a new local minima. Research indicates that by gradually decreasing the learning rate with a \textbf{learning rate schedule}, SGD exhibits similar convergence behavior to vanilla gradient descent, nearly always converging to a local minimum for non-convex functions and to the global minimum for convex functions \citep{ruder2017overview}.
 
 \subsubsection{Mini-Batch Gradient Descent}%
   \label{sub:Mini-Batch Gradient Descent}
@@ -558,12 +544,12 @@ for i in range(nb_epochs):
 \end{verbatim}
 
 Now, there exist many more gradient descent algorithms, such as \textit{Nesterov Accelerated Gradient, Adagrad, Adadelta, Adam,} and many more. For more information on the subject, we refer the reader to \cite{ruder2017overview}.
-  \subsection{Regression Loss Functions}%
-  \label{sub:Loss Function}
+\subsection{Loss Functions}%
+  \label{sub:Loss Functions}
   The attentive reader will have noticed that supervised machine learning revolves around optimizing the outputs of a loss function. This also applies to a wide range of other machine learning strategies. Thus, defining a good loss function is essential. We offer an overview of the most widely utilized loss functions for a variety of uses, starting with \textbf{Regression Losses}.
-
-
-  Regression losses are loss functions used to solve the regression problems of \textit{supervised ML}. Recall that regressions model predict the output of a continuous output variable. The regression losses are all based on residuals, namely the difference between the predicted and expected outputs. In the following, let $x_i$ be the $i^{th}$ element of input $x$, $f(x_i)$ the $i^{th}$ element of the predicted output, and $y_i$ the $i^{th}$ element of the expected output. The following represent commonly used regression losses,
+  \subsubsection{Regression Loss Functions}%
+  \label{sub:Loss Function}
+    Regression losses are loss functions used to solve the regression problems of \textit{supervised ML}. Recall that regressions model predict the output of a continuous output variable. The regression losses are all based on residuals, namely the difference between the predicted and expected outputs. In the following, let $x_i$ be the $i^{th}$ element of input $x$, $f(x_i)$ the $i^{th}$ element of the predicted output, and $y_i$ the $i^{th}$ element of the expected output. The following represent commonly used regression losses,
   \begin{enumerate}
     \item \textit{Mean Bias Error Loss [Continuous, Differentiable]}. The Mean Bias Error loss is the most basic loss function, it is given by,
     \begin{equation}
@@ -623,7 +609,7 @@ The squared term makes all the biases positive and magnifies the contribution ma
 
      When it comes to RMSE, the only distinction is that the logarithm is used on both the observed and the anticipated values. The logarithm's plus one term permits zero values for $f(x_i)$. The RMSLE is more resilient to outliers because of the logarithm, as well as the relative inaccuracy between the expected and actual values. In particular, the RMLSE's size does not increase in proportion to the error's magnitude. Rather, when both the anticipated and actual values are high, data points with large residuals are not penalized as much. Because of this, the RMSLE is a viable option for problems where the targets have an exponential relationship or when penalizing underestimates more heavily than overestimates is desirable. This loss, however, is inappropriate for problems where negative values are permitted \citep{ciampiconi2023survey}.
   \end{enumerate}
-\subsection{Classification Loss Functions}%
+\subsubsection{Classification Loss Functions}%
   \label{sub:Classification Loss Functions}
   The second subset of supervised ML, \textit{Classification}, also has its own set of loss functions. The following consists of the most commonly used \textit{Margin-based} Classification losses. 
   \begin{enumerate}
@@ -702,14 +688,15 @@ In the topic of machine learning, if we choose too large of a network, it will b
 As was hinted above, the degree of overfitting is influenced by the amount of data supplied, as well as the model's \textit{complexity}. The complexity of the model is determined by the number of underlying parameters that a neural network has. Additional degrees of freedom are the consequence of having more parameters, which can be utilized to explain certain training data points without making a strong generalization to new ones \citep{inbook:Aggarwal-4.1}.
 \begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
     \centering
-    \label{Overfitting}
     \includegraphics[width=0.4\textwidth]{Overfitting}
     \caption{A diagram showing overfitting (green line) of data from \citep{overfitting-img}}
+    \label{fig:Overfitting}
 \end{wrapfigure}
 \begin{example}
   Suppose we have 5 training pairs $(x, t)$ available. Then, it can be shown that there exists a degree 4 polynomial that fits the 5 training points exactly with zero error. This does not mean, however, that the polynomial will approximate unseen data with zero error. 
 \end{example}
-As seen in figure \ref{Overfitting}, an overfit model will have low \textit{bias}, but high \textit{variance} on the training data. However, an overfit model will "have estimated (and actual) sampling variances that are needlessly large (the precision of the estimators is poor, relative to what could have been accomplished with a more parsimonious model) [...]. A best approximating model is achieved by properly balancing the errors of underfitting and overfitting." \citep{burnham2002model}.
+As seen in \autoref{fig:Overfitting}, an overfit model will have low \textit{bias}, but high \textit{variance} on the training data. However, as explained in \cite{burnham2002model}, an overfit model will
+\begin{quote}"have estimated (and actual) sampling variances that are needlessly large (the precision of the estimators is poor, relative to what could have been accomplished with a more parsimonious model) [...]. A best approximating model is achieved by properly balancing the errors of underfitting and overfitting." \end{quote}
 \begin{remark} 
   In machine learning models, overfitting is more likely when learning is performed for too long, or when the training data set is small.
 \end{remark}
@@ -729,14 +716,16 @@ with high capacity can overfit by memorizing properties of the training set that
 not serve them well on the test set. The capacity of a model is a way to measure its complexity.
   \end{definition}
 
-  Before altering the capacity of a model, one must evaluate whether a model is overfitting or underfitting. This can be done with the help of cross-validation, which we'll discuss in the next chapter.
+  Before altering the capacity of a model, one must evaluate whether a model is overfitting or underfitting. This can be done with the help of cross-validation, which we'll discuss in the next chapter. 
+
+The \textbf{bias-variance tradeoff} is a fundamental concept in machine learning that deals with the tradeoff between a model's bias and its variance. \textit{Bias} refers to the error introduced by approximating a real-world problem with a simplified model, often resulting in \textit{underfitting}. \textit{Variance}, on the other hand, reflects the model's sensitivity to small fluctuations in the training data, potentially leading to \textit{overfitting}. Balancing bias and variance is crucial for achieving optimal predictive performance: reducing bias typically increases variance and vice versa. Finding the right balance involves selecting an appropriate model complexity and regularization techniques to minimize both sources of error. \autoref{fig:capacity} demonstrates the optimal point of capacity. 
 
   As long as the training error is low, one way to increase regularization without playing with capacity is to increase the amount of training data. If this is not possible, there are a number of components we can adjust in order to control the capacity of a model, such as \citep{capacity-Brownlee}, 
-\begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
+\begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
     \centering
-    \label{capacity}
     \includegraphics[width=0.4\textwidth]{capacity}
-    \caption{A diagram showing the optimal capacity of a model and its relation with the \textit{bias-variance trade-off}, from \citep{capacity-Kowalik}}
+    \caption{A diagram showing the optimal capacity of a model and its relation with the \textit{bias-variance trade-off}, from \citep{capacity-Kowalik}.}
+    \label{fig:capacity}
 \end{wrapfigure}
   \begin{enumerate}
     \item The number of nodes per layer (\textbf{width}) 
@@ -744,13 +733,13 @@ not serve them well on the test set. The capacity of a model is a way to measure
   \end{enumerate}
   It makes sense that augmenting these would increase the capacity, as they clearly increase the complexity of the model, which we know is closely related its capacity. It should be noted, however, that increasing the number of nodes and layers in a model can also increase its running time and memory usage. 
 
-  Other ways to increase tune the model optimally are part of a subset of ML called \textit{Regularization}, that we'll cover in the following sections. 
+  Other ways to tune the model optimally are part of a subset of ML called \textit{Regularization}, that we'll cover in the following sections. 
 
   \subsection{Cross-Validation}%
   \label{sub:Cross-Validation}
-Cross-validation is a technique that aims to test the ML model's testing capabilities on unseen data. This helps identify issues such as \textit{overfitting}, discussed above, or \textit{selection bias}, which is the result of selecting training data in a non-random way which doesn't represent the population. Cross-validation provides insight into how well the model will generalize to a different dataset.
+Cross-validation is a technique that aims to test the ML model's testing capabilities on unseen data. This helps identify issues such as \textit{overfitting}, discussed above, or \textit{selection bias}, which is the result of selecting training data in a non-random way that doesn't properly represent the population. Cross-validation provides insight into how well the model will generalize to a different dataset.
 
-The most common technique used is \textbf{k-fold cross-validation.} It allows one to repeatedly train and test the model $k$ times on various randomly chosen subsets of the training data. The average test error across $k$ trials can then be used to estimate the test error. In trial $i$, the $i^{th}$ subset of the data is used as the test set, and the remaining data is utilized as the training set. One issue is that there are no unbiased estimators of the variance of such average error estimators, but estimations are normally used \citep{Goodfellow-et-al-2016}. The following is the pseudo-code for the k-fold cross validation algorithm.
+The most common technique used is \textbf{k-fold cross-validation}, which allows one to repeatedly train and test the model $k$ times on various randomly chosen subsets of the training data. The average test error across $k$ trials can then be used to estimate the test error. In trial $i$, the $i^{th}$ subset of the data is used as the test set, and the remaining data is utilized as the training set \citep{Goodfellow-et-al-2016}. The following is the pseudo-code for the k-fold cross validation algorithm.
 
 
 \begin{algorithm}[h!]
@@ -808,10 +797,11 @@ Dataset augmentation has demonstrated particular effectiveness in certain classi
 It's important to be careful when applying transformations to data. For instance, in optical character recognition tasks, correctly identifying distinctions like 'b' versus 'd' and '6' versus '9' is essential. Therefore, transformations like horizontal flips are inappropriate for augmenting datasets in these cases, clearly \citep{Goodfellow-et-al-2016}. 
 \subsubsection{Early Stopping}%
   \label{sub:Early Stopping}
-When training large models with great complexity, it's common to observe a phenomenon where \textit{training error} steadily decreases over time, while \textit{validation set} error starts to rise again. Consequently, it's possible to achieve a model with improved validation set error (and ideally, better test set error) by reverting to the parameter setting at the point when validation set error was lowest. To implement this, we save a copy of the model parameters each time validation set error improves. Upon termination of the training algorithm, we return these parameters instead of the latest ones. The algorithm concludes when no parameters show improvement over the best recorded validation error for a specified number of iterations \citep{Goodfellow-et-al-2016}. 
+When training large models with great complexity, it's common to observe a phenomenon where \textit{training error} steadily decreases over time, while \textit{validation set} error starts to rise again, as illustrated in \autoref{fig:augmentData}. Consequently, it's possible to achieve a model with improved validation set error (and ideally, better test set error) by reverting to the parameter setting at the point when validation set error was lowest. To implement this, we save a copy of the model parameters each time validation set error improves. Upon termination of the training algorithm, we return these parameters instead of the latest ones. The algorithm concludes when no parameters show improvement over the best recorded validation error for a specified number of iterations \citep{Goodfellow-et-al-2016}. 
 \begin{figure}
 \includegraphics{augmentData}
-  \caption{Graph from \cite{Goodfellow-et-al-2016}. The curves depict the evolution of the negative log-likelihood loss over the number of training iterations or epochs. Initially, the training objective steadily decreases over time as the model learns from the data. However, a notable observation is that the validation set average loss eventually starts to rise again after reaching a minimum, resulting in an asymmetric U-shaped curve. This pattern indicates that despite improvements in the training loss, the model's performance on unseen data begins to degrade over time, highlighting the phenomenon of overfitting.}
+  \caption{Graph from \cite{Goodfellow-et-al-2016}. The curves depict the evolution of the negative log-likelihood loss over the number of training iterations or epochs. Initially, the training objective steadily decreases over time as the model learns from the data, yet the validation set loss eventually starts to rise again after reaching a minimum. This pattern indicates that despite improvements in the training loss, the model's performance on unseen data begins to degrade over time, highlighting the phenomenon of overfitting.}
+  \label{fig:augmentData}
 \end{figure}
 
 \subsubsection{Dropout}%

@@ -5,15 +5,16 @@
 \contentsline {subsection}{\numberline {2.3}Feed-Forward Neural Networks}{6}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Layers}{6}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Activation Function}{6}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Learning}{9}{section.3}%
-\contentsline {subsection}{\numberline {3.1}BackPropagation}{9}{subsection.3.1}%
+\contentsline {section}{\numberline {3}Learning}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}BackPropagation}{8}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Weight Update Rule}{11}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Gradient Descent}{11}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Vanilla Gradient Descent}{12}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Stochastic Gradient Descent}{12}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Mini-Batch Gradient Descent}{13}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Regression Loss Functions}{13}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Classification Loss Functions}{15}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.4}Loss Functions}{13}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Regression Loss Functions}{13}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Classification Loss Functions}{15}{subsubsection.3.4.2}%
 \contentsline {section}{\numberline {4}Fitting the model}{16}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Overfitting}{16}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Underfitting}{17}{subsection.4.2}%
