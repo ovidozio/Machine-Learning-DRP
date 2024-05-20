@@ -253,7 +253,7 @@ The neuron is the smallest computational unit of a neural network. The single la
   Biases are constant, they are an additional input into the next layer that will always have the value of 1. Bias units are not influenced by the previous layer, they guarantee that even when all the inputs are zeros there will still be an input in the neuron \citep{WeightsBias}. 
 \end{definition}
 
-When talking about neural networks and ML models in general, the term "\textbf{parameters}" often comes up. For example, OpenAI loves to brag about how many parameters their latest language models have (\textbf{GPT-4} has $1.76$ trillion). Parameters are the elements of a neural networks refer to the variables that the model learns from the training data. These parameters are exactly the weights and biases defined above.
+When talking about neural networks and ML models in general, the term "\textbf{parameters}" often comes up. For example, OpenAI loves to brag about how many parameters their latest language models have (\textbf{GPT-4} has $1.76$ trillion). Parameters are the elements of a neural networks that the model learns from the training data. These parameters are exactly the weights and biases defined above.
 \subsection{Feed-Forward Neural Networks}%
   \label{sub:Feed-Forward Neural Networks}
   Having defined neurons, the building blocks of neural networks, we may now give a rigorous definition of the latter. A \textbf{feed-forward neural network} (FFN) has connections only in one direction—that is, it forms a directed acyclic graph. Every node receives input from “upstream” nodes and delivers output to “downstream” nodes; there are no loops \citep{book:AIModernApp}.
