@@ -7,45 +7,45 @@ Warning--empty year in WeightsBias
 Warning--empty year in layers
 Warning--empty year in GuideML
 Warning--empty year in overfitting-img
-You've used 24 entries,
+You've used 26 entries,
             2773 wiz_defined-function locations,
-            735 strings with 8693 characters,
-and the built_in function-call counts, 8855 in all, are:
-= -- 745
-> -- 449
-< -- 25
-+ -- 161
-- -- 135
-* -- 593
-:= -- 1379
-add.period$ -- 86
-call.type$ -- 24
-change.case$ -- 112
-chr.to.int$ -- 22
-cite$ -- 52
-duplicate$ -- 438
-empty$ -- 819
-format.name$ -- 169
-if$ -- 1870
+            743 strings with 9111 characters,
+and the built_in function-call counts, 9935 in all, are:
+= -- 830
+> -- 545
+< -- 26
++ -- 193
+- -- 165
+* -- 688
+:= -- 1549
+add.period$ -- 90
+call.type$ -- 26
+change.case$ -- 128
+chr.to.int$ -- 24
+cite$ -- 56
+duplicate$ -- 474
+empty$ -- 891
+format.name$ -- 203
+if$ -- 2091
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 20
-newline$ -- 142
-num.names$ -- 96
-pop$ -- 332
+missing$ -- 21
+newline$ -- 150
+num.names$ -- 104
+pop$ -- 366
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 107
 quote$ -- 0
-skip$ -- 322
+skip$ -- 360
 stack$ -- 0
-substring$ -- 91
-swap$ -- 39
+substring$ -- 116
+swap$ -- 41
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 219
+type$ -- 241
 warning$ -- 4
-while$ -- 76
+while$ -- 83
 width$ -- 0
-write$ -- 331
+write$ -- 352
 (There were 4 warnings)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  20 MAY 2024 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.2)  30 MAY 2024 09:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -680,30 +680,30 @@ Package: listings 2023/02/27 1.9 (Carsten Heinz)
 \WF@everypar=\toks54
 Package: wrapfig 2003/01/31  v 3.6
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 145.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 122.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (./ML_Report_DRP2024.aux)
 \openout1 = `ML_Report_DRP2024.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count335
@@ -723,7 +723,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 145.
+Package hyperref Info: Link coloring ON on input line 122.
  (./ML_Report_DRP2024.out) (./ML_Report_DRP2024.out)
 \@outlinefile=\write4
 \openout4 = `ML_Report_DRP2024.out'.
@@ -733,15 +733,15 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 
 \c@lstlisting=\count341
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
 []\OT1/ptm/m/sc/17.28 An In-tro-duc-tion to Su-per-vised Ma-chine
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 147.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 124.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 147.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 124.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -752,260 +752,233 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [2
 
-]
-<graphics//MachineLearning.png, id=163, 953.5625pt x 698.61pt>
+] [3]
+<graphics//MachineLearning.png, id=180, 953.5625pt x 698.61pt>
 File: graphics//MachineLearning.png Graphic file (type png)
 <use graphics//MachineLearning.png>
-Package pdftex.def Info: graphics//MachineLearning.png  used on input line 197.
+Package pdftex.def Info: graphics//MachineLearning.png  used on input line 182.
 (pdftex.def)             Requested size: 397.49619pt x 291.21825pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1888) has occurred while \output is active []
 
- [3]
-<graphics//SingleLayerP.jpg, id=183, 345.29pt x 273.02pt>
+ [4 <./graphics//MachineLearning.png>]
+<graphics//SingleLayerP.jpg, id=194, 345.29pt x 273.02pt>
 File: graphics//SingleLayerP.jpg Graphic file (type jpg)
 <use graphics//SingleLayerP.jpg>
-Package pdftex.def Info: graphics//SingleLayerP.jpg  used on input line 212.
+Package pdftex.def Info: graphics//SingleLayerP.jpg  used on input line 197.
 (pdftex.def)             Requested size: 158.99338pt x 125.7157pt.
- [4 <./graphics//MachineLearning.png> <./graphics//SingleLayerP.jpg>]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 231.
-<graphics//Neuron.jpg, id=210, 616.704pt x 284.56313pt>
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 216.
+<graphics//Neuron.jpg, id=208, 616.704pt x 284.56313pt>
 File: graphics//Neuron.jpg Graphic file (type jpg)
 <use graphics//Neuron.jpg>
-Package pdftex.def Info: graphics//Neuron.jpg  used on input line 242.
+Package pdftex.def Info: graphics//Neuron.jpg  used on input line 227.
 (pdftex.def)             Requested size: 298.113pt x 137.55702pt.
- [5 <./graphics//Neuron.jpg>]
-<graphics//NeuralNetwork.jpg, id=236, 795.7471pt x 672.9658pt>
+ [5 <./graphics//SingleLayerP.jpg>]
+<graphics//parameters.png, id=237, 1059.96pt x 556.041pt>
+File: graphics//parameters.png Graphic file (type png)
+<use graphics//parameters.png>
+Package pdftex.def Info: graphics//parameters.png  used on input line 259.
+(pdftex.def)             Requested size: 397.48402pt x 208.51485pt.
+<graphics//NeuralNetwork.jpg, id=241, 795.7471pt x 672.9658pt>
 File: graphics//NeuralNetwork.jpg Graphic file (type jpg)
 <use graphics//NeuralNetwork.jpg>
-Package pdftex.def Info: graphics//NeuralNetwork.jpg  used on input line 276.
+Package pdftex.def Info: graphics//NeuralNetwork.jpg  used on input line 269.
 (pdftex.def)             Requested size: 158.98874pt x 134.45728pt.
 
-Underfull \hbox (badness 3690) in paragraph at lines 277--277
+Underfull \hbox (badness 3690) in paragraph at lines 270--270
 \OT1/ptm/m/n/10 a Neu-ral Net-work, from [][]Ag-gar-wal[][]
  []
 
-[6 <./graphics//NeuralNetwork.jpg>]
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 306.
- [7]
+[6 <./graphics//Neuron.jpg>]
+Underfull \vbox (badness 6592) has occurred while \output is active []
+
+ [7 <./graphics//parameters.png> <./graphics//NeuralNetwork.jpg>]
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 299.
+ [8]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 345.
+               Default added (so using `tbp') on input line 338.
 
-<graphics//ActFunTable.jpg, id=271, 1134.2375pt x 489.83pt>
+<graphics//ActFunTable.jpg, id=287, 1134.2375pt x 489.83pt>
 File: graphics//ActFunTable.jpg Graphic file (type jpg)
 <use graphics//ActFunTable.jpg>
-Package pdftex.def Info: graphics//ActFunTable.jpg  used on input line 346.
+Package pdftex.def Info: graphics//ActFunTable.jpg  used on input line 339.
 (pdftex.def)             Requested size: 397.47368pt x 171.65234pt.
-<graphics//simpleNet.jpg, id=278, 407.5225pt x 219.82124pt>
+<graphics//simpleNet.jpg, id=294, 407.5225pt x 219.82124pt>
 File: graphics//simpleNet.jpg Graphic file (type jpg)
 <use graphics//simpleNet.jpg>
-Package pdftex.def Info: graphics//simpleNet.jpg  used on input line 364.
+Package pdftex.def Info: graphics//simpleNet.jpg  used on input line 361.
 (pdftex.def)             Requested size: 158.98909pt x 85.76012pt.
-[8 <./graphics//ActFunTable.jpg>]
-Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 369.
 
-./ML_Report_DRP2024.tex:369: Undefined control sequence.
-\ll@example ...hmtformatoptarg {\thmt@shortoptarg 
-                                                  }\fi 
-l.369 \begin{example}[]
-                       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \vbox (badness 1097) has occurred while \output is active []
 
-./ML_Report_DRP2024.tex:369: Undefined control sequence.
-\thmt@generic@postheadhook ... {\thmt@shortoptarg 
-                                                  }
-l.369 \begin{example}[]
-                       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+ [9 <./graphics//ActFunTable.jpg>]
+Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 367.
 
 
-Package wrapfig Warning: Collision between wrapping environments on input line 382.
+Package wrapfig Warning: Collision between wrapping environments on input line 379.
 
-<graphics//pre-post-neuron.jpg, id=292, 487.8225pt x 292.09125pt>
+<graphics//pre-post-neuron.jpg, id=306, 487.8225pt x 292.09125pt>
 File: graphics//pre-post-neuron.jpg Graphic file (type jpg)
 <use graphics//pre-post-neuron.jpg>
-Package pdftex.def Info: graphics//pre-post-neuron.jpg  used on input line 384.
+Package pdftex.def Info: graphics//pre-post-neuron.jpg  used on input line 381.
 (pdftex.def)             Requested size: 158.98705pt x 95.19594pt.
 
-Underfull \hbox (badness 2126) in paragraph at lines 381--387
+Underfull \hbox (badness 2126) in paragraph at lines 378--384
 [][]\OT1/ptm/m/n/10 An even big-ger prob-lem than in the above ex-am-
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 381--387
+Underfull \hbox (badness 1694) in paragraph at lines 378--384
 \OT1/ptm/m/n/10 ple arises when we think of how we would com-
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 381--387
+Underfull \hbox (badness 1845) in paragraph at lines 378--384
 \OT1/ptm/m/n/10 pute the loss func-tion in hid-den lay-ers. Whereas
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 381--387
+Underfull \hbox (badness 1442) in paragraph at lines 378--384
 \OT1/ptm/m/n/10 the er-ror $\OML/cmm/m/it/10 y \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 h[]$ \OT1/ptm/m/n/10 at the out-put layer is clear, the
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 381--387
+Underfull \hbox (badness 1052) in paragraph at lines 378--384
 \OT1/ptm/m/n/10 the train-ing data do not say what value the hid-den
  []
 
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 387.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 384.
 
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 386.
+
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 388.
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 389.
 
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 391.
-
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 392.
-
-[9 <./graphics//simpleNet.jpg> <./graphics//pre-post-neuron.jpg>]
-
-./ML_Report_DRP2024.tex:408: LaTeX Error: \begin{document} ended by \end{enumerate}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.408   \end{enumerate}
-                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./ML_Report_DRP2024.tex:408: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.408   \end{enumerate}
-                       
-Things are pretty mixed up, but I think the worst is over.
-
-LaTeX Font Info:    Calculating math sizes for size <11.99997> on input line 425.
-[10] [11]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 501.
+[10 <./graphics//simpleNet.jpg> <./graphics//pre-post-neuron.jpg>]
+LaTeX Font Info:    Calculating math sizes for size <11.99997> on input line 422.
+ [11] [12]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 496.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (4.51501pt too wide) in paragraph at lines 524--524
+Overfull \hbox (4.51501pt too wide) in paragraph at lines 519--519
 []    \OT1/pcr/m/n/10 params_grad = evaluate_gradient(loss_function, example, params)[] 
  []
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on input line 525.
+Package wrapfig Warning: wrapfigure used inside a conflicting environment on input line 520.
 
-<graphics//fluctuation-SGD.png, id=354, 436.63126pt x 348.30125pt>
+<graphics//fluctuation-SGD.png, id=375, 436.63126pt x 348.30125pt>
 File: graphics//fluctuation-SGD.png Graphic file (type png)
 <use graphics//fluctuation-SGD.png>
-Package pdftex.def Info: graphics//fluctuation-SGD.png  used on input line 527.
+Package pdftex.def Info: graphics//fluctuation-SGD.png  used on input line 522.
 (pdftex.def)             Requested size: 158.99265pt x 126.82861pt.
 
-Underfull \hbox (badness 5403) in paragraph at lines 528--528
-[]\OT1/ptm/m/n/10 Figure 8: []SGD fluc-tu-a-tion, from
+Underfull \hbox (badness 5403) in paragraph at lines 523--523
+[]\OT1/ptm/m/n/10 Figure 9: []SGD fluc-tu-a-tion, from
  []
 
-[12] [13 <./graphics//fluctuation-SGD.png>] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 643--645
+[13] [14 <./graphics//fluctuation-SGD.png>] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 638--640
 \OT1/ptm/m/n/10 The hy-per-pa-ram-e-ter $\OML/cmm/m/it/10 ^^M$ \OT1/ptm/m/n/10 gives the de-gree of smooth-ing. As $\OML/cmm/m/it/10 ^^M \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ;$
  []
 
-[15]
-<graphics//fitting.png, id=434, 729.72626pt x 357.335pt>
+[16]
+<graphics//fitting.png, id=453, 729.72626pt x 357.335pt>
 File: graphics//fitting.png Graphic file (type png)
 <use graphics//fitting.png>
-Package pdftex.def Info: graphics//fitting.png  used on input line 679.
+Package pdftex.def Info: graphics//fitting.png  used on input line 674.
 (pdftex.def)             Requested size: 397.48694pt x 194.64284pt.
-<graphics//Overfitting.png, id=443, 1927.2pt x 1927.2pt>
+ [17 <./graphics//fitting.png>]
+<graphics//Overfitting.png, id=474, 1927.2pt x 1927.2pt>
 File: graphics//Overfitting.png Graphic file (type png)
 <use graphics//Overfitting.png>
-Package pdftex.def Info: graphics//Overfitting.png  used on input line 691.
+Package pdftex.def Info: graphics//Overfitting.png  used on input line 686.
 (pdftex.def)             Requested size: 158.97243pt x 158.97243pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--692
-[]\OT1/ptm/m/n/10 Figure 10: []A di-a-gram show-ing
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+[]\OT1/ptm/m/n/10 Figure 11: []A di-a-gram show-ing
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 692--692
+Underfull \hbox (badness 1127) in paragraph at lines 687--687
 \OT1/ptm/m/n/10 over-fit-ting (green line) of data from
  []
 
-[16 <./graphics//fitting.png>]
-Underfull \hbox (badness 1515) in paragraph at lines 699--699
+
+Underfull \hbox (badness 1515) in paragraph at lines 694--694
 \OT1/ptm/m/n/10 pre-ci-sion of the es-ti-ma-tors is poor,
  []
 
-<graphics//capacity.png, id=460, 610.28pt x 403.5075pt>
+[18 <./graphics//Overfitting.png>]
+<graphics//capacity.png, id=498, 610.28pt x 403.5075pt>
 File: graphics//capacity.png Graphic file (type png)
 <use graphics//capacity.png>
-Package pdftex.def Info: graphics//capacity.png  used on input line 726.
+Package pdftex.def Info: graphics//capacity.png  used on input line 721.
 (pdftex.def)             Requested size: 158.98566pt x 105.1188pt.
-[17 <./graphics//Overfitting.png>]
-Underfull \hbox (badness 1694) in paragraph at lines 742--743
+
+Underfull \hbox (badness 1694) in paragraph at lines 737--738
 []\OT1/ptm/m/n/10 The most com-mon tech-nique used is \OT1/ptm/b/n/10 k-fold cross-
  []
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
 
 Package relsize Warning: Font size 6.94446pt is too small.
-(relsize)                Using 7.0pt instead on input line 764.
+(relsize)                Using 7.0pt instead on input line 760.
 
-[18 <./graphics//capacity.png>] [19]
-<graphics//augmentData.png, id=535, 620.3175pt x 288.07625pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19 <./graphics//capacity.png>] [20]
+<graphics//augmentData.png, id=561, 620.3175pt x 288.07625pt>
 File: graphics//augmentData.png Graphic file (type png)
 <use graphics//augmentData.png>
-Package pdftex.def Info: graphics//augmentData.png  used on input line 802.
+Package pdftex.def Info: graphics//augmentData.png  used on input line 796.
 (pdftex.def)             Requested size: 397.48457pt x 184.59233pt.
- [20 <./graphics//augmentData.png>] (./ML_Report_DRP2024.bbl
+ [21 <./graphics//augmentData.png>] (./ML_Report_DRP2024.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 37--41
 []\OT1/ptm/m/n/9 Jason Brown-lee.  How to con-trol neu-ral net-work model ca-pac-ity with nodes
  []
@@ -1020,48 +993,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--41
 \OT1/pcr/m/n/9 how-[]to-[]control-[]neural-[]network-[]model-[]capacity-[]with-[]nodes-[]and-[]layers/$[][]\OT1/ptm/m/n/9 .
  []
 
-
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 54--58
 \OT1/pcr/m/n/9 com / questions / 35345191 / what-[]is-[]a-[]layer-[]in-[]a-[]neural-[]network / 35347548 #
  []
 
 
-Overfull \hbox (7.06459pt too wide) in paragraph at lines 87--91
+Overfull \hbox (7.06459pt too wide) in paragraph at lines 91--95
 \OT1/pcr/m/n/9 @marekkowalik97 / capacities-[]of-[]quantum-[]neural-[]networks-[]part-[]1-[]1a731f44be0$[][]\OT1/ptm/m/n/9 .
  []
 
-[21]
-Underfull \hbox (badness 4660) in paragraph at lines 131--135
+
+Underfull \hbox (badness 4660) in paragraph at lines 139--143
 []\OT1/ptm/m/n/9 Katrina Wake-field.  A guide to the types of ma-chine learn-ing al-go-rithms and their ap-pli-ca-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--135
+Underfull \hbox (badness 10000) in paragraph at lines 139--143
 \OT1/ptm/m/n/9 tions.  URL [][]$\OT1/pcr/m/n/9 https : / / www . sas . com / en _ gb / insights / articles / analytics /
  []
 
 
-Underfull \hbox (badness 3364) in paragraph at lines 137--141
+Underfull \hbox (badness 3364) in paragraph at lines 145--149
 []\OT1/ptm/m/n/9 Wikipedia, the free en-cy-clo-pe-dia.  Over-fit-ting.  URL [][]$\OT1/pcr/m/n/9 https : / / en . wikipedia . org / wiki /
  []
 
-) [22] (./ML_Report_DRP2024.aux)
+) [23] (./ML_Report_DRP2024.aux)
 Package rerunfilecheck Info: File `ML_Report_DRP2024.out' has not changed.
 (rerunfilecheck)             Checksum: D2CAE92FC07C5F80F3F37499C516825F;4232.
  ) 
 Here is how much of TeX's memory you used:
- 35167 strings out of 476025
- 803982 string characters out of 5790018
- 1873388 words of memory out of 5000000
- 54814 multiletter control sequences out of 15000+600000
+ 35187 strings out of 476025
+ 804475 string characters out of 5790018
+ 1872388 words of memory out of 5000000
+ 54829 multiletter control sequences out of 15000+600000
  552428 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,27n,94p,972b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,27n,94p,1067b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ML_Report_DRP2024.pdf (22 pages, 1455354 bytes).
+Output written on ML_Report_DRP2024.pdf (23 pages, 2128192 bytes).
 PDF statistics:
- 699 PDF objects out of 1000 (max. 8388607)
- 596 compressed objects within 6 object streams
- 179 named destinations out of 1000 (max. 500000)
- 297 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 734 PDF objects out of 1000 (max. 8388607)
+ 626 compressed objects within 7 object streams
+ 184 named destinations out of 1000 (max. 500000)
+ 302 words of extra memory for PDF output out of 10000 (max. 10000000)
 

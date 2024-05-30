@@ -41,7 +41,7 @@
     citecolor=green,
     filecolor=black,
     linkcolor=red,
-    urlcolor=black
+    urlcolor=blue
 }
 
 \usepackage{multirow}
@@ -92,29 +92,6 @@
 
 \usepackage{listings}
 \usepackage{xcolor}
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
-}
-
 \usepackage{wrapfig}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -173,36 +150,44 @@
 \newpage
 
 \section{Introduction}
-Machine learning has surged in popularity due to its ability to tackle complex problems by discerning patterns in data, making accurate predictions, and informing decisions. Unlike traditional approaches, machine learning focuses not only on understanding data but also on inferring from it, allowing models to generalize knowledge and make predictions on unseen data. This emphasis on inference enables machine learning to transcend comprehension, driving innovation and progress across various domains. There are several types of Machine Learning algorithms. The main categories are divided into \textit{Supervised learning, Unsupervised learning and Reinforcement learning.} \autoref{fig:ML} depicts the main classes of Machine Learning and some popular models for each. 
+Machine learning (ML) has surged in popularity recently due to its ability to tackle complex problems by extracting knowledge from data and learning from it autonomously. In 2022, the field of Generative Artificial Intelligence, a branch of ML, experienced a major breakthrough when OpenAI launched ChatGPT, a large language model that quickly became widely adopted. Shortly after, OpenAI introduced Dalle-3, a model designed to generate images from text captions. More recently, there has been a trend in AI towards releasing task-specific models, such as math equation solvers, paraphrasers, schedulers, and various others.
+
+Unlike traditional approaches, ML focuses not only on understanding data but also on inferring from it, allowing models to generalize knowledge and make predictions on unseen data. This emphasis on inference enables machine learning to go beyond merely understanding information, allowing ML to foster innovation and advancement in many different fields. Essentially, the power to infer enhances the practical applications and impact of ML, leading to significant developments across diverse areas.
+
+There are several types of ML algorithms. The main categories are divided into \textit{Supervised learning, Unsupervised learning, Semi-supervised learning and Reinforcement learning.} \autoref{fig:ML} depicts the main classes of ML along with some popular models for each. It is important to note that since ML is a constantly evolving field, its organization into subfields can be somewhat chaotic. As a result, some areas, such as Imitation Learning, are not included in the figure, and even the latest surveys on machine learning methods often lack thoroughness. Additionally, new techniques are introduced every year, reshaping how we approach ML. For example, the introduction of transformers with the now famous paper "Attention is All You Need" \citep{vaswani2023attention} revolutionized the field, and more recently, models like Mamba \citep{gu2023mamba} are being developed that may eventually replace transformers. While these topics are beyond the scope of this paper, they may be of interest to the reader.
 
 \vspace{4mm}
   \noindent \textsc{Supervised learning} allows the machine to learn through examples. The machine learning algorithm is tasked with developing the strategy for achieving the specified outputs given some input.  To do so, a known dataset is supplied  that contains a set of inputs and associated target outputs in the form $(x, t)$, where $x$ is the input to the model, and $t$ the target output, i.e. the \textit{label}. The algorithm finds patterns in the data and adjusts its parameters to predict more accurately future inputs. This kind of machine learning algorithm needs a developer to accurately label the training data. 
 
-  The two main problems requiring Supervised learning are \textbf{Classification} and \textbf{Regression}. The former consists of classifying objects into their appropriate classes. A well known example operates on the MNIST data set, which is a set of images representing hand drawn numbers from 0 to 9. A classification ML algorithm will analyse each point $(x,t)$ of the data set during the \textit{training phase}, where $x$ is the image, and $t$ is the number it represents. Then, given an unseen image as input, the algorithm should predict which number it represents.
+  Broadly speaking, the two main problems addressed by Supervised learning are \textbf{Classification} and \textbf{Regression}. The former consists of classifying objects into their appropriate classes. A well known example operates on the MNIST data set, which is a set of images representing hand drawn numbers from 0 to 9. A classification ML algorithm will analyse each point $(x,t)$ of the data set during the \textit{training phase}, where $x$ is the image, and $t$ is the number it represents. Then, given an unseen image as input, the algorithm should predict which number it represents.
 
-  Regression is the other common use of Supervised learning. It aims to predict a continuous output variable, rather than a discrete one (classification). An example would be to predict the cost of a house, given a set of training data consisting of characteristics of houses and their corresponding price.
+  \textit{Regression} aims to predict a continuous output variable, rather than a discrete one (as in \textit{Classification}). An example would be predicting the cost of a house given a set of training data consisting of house characteristics and their corresponding prices. We note, however, that supervised learning can also encompass more complex tasks, such as image segmentation and object detection (e.g., \href{https://github.com/ultralytics/ultralytics}{YOLO} with bounding boxes), where models learn more than just labels from the data.
 
 \vspace{4mm}
 \noindent\textsc{Unsupervised learning} algorithms discern patterns within data without predefined labels. The algorithm identifies correlations and structures within datasets. Key steps in this process include clustering, which groups similar data sets, and dimension reduction, which simplifies variables to extract essential information. 
 
 \vspace{4mm}
-\noindent\textsc{Semi-Supervised learning} acts on a data set that contains both labelled and unlabelled data. Normally, labelled data is rare, while unlabelled data makes up most of the set. The goal of semi-supervised learning algorithms would be to classify the unlabelledby inferring from the labelled data.
+\noindent\textsc{Semi-Supervised learning} acts on a data set that contains both labelled and unlabelled data. Normally, labelled data is rare, while unlabelled data makes up most of the set. The goal of semi-supervised learning algorithms would be to classify the unlabelled by inferring from the labelled data.
 
 \vspace{4mm}
 \noindent\textsc{Reinforcement learning} involves a structured approach where algorithms are provided with actions, parameters, and goals. These algorithms explore various options, learn from trial and error, and adapt their strategies based on past experiences to optimize outcomes \citep{GuideML}.
 
+\vspace{4mm}
+In this paper, we will focus on \textit{Supervised learning}, in particular, the \textit{Neural Network} approach. However, most of the basic concepts we'll cover, such as Neurons, Backpropagation, and Overfitting, are topics that apply to all spheres of machine learning.
 
-In this paper, we will focus on \textit{Supervised learning}, in particular, the \textit{Neural Network} approach. However, most of the basic concepts we'll cover, such as Neurons, Backpropagation, and Overfitting, are topics that apply to all spheres of machine learning. 
+We note that throughout, some terms will be introduced before they are defined, or may only be clarified by illustrative examples. We chose this approach to communicate ideas because of the broad nature of machine learning. Precise definitions can be made in some cases for terms, while other significant terms are more flexibly used like in common language. The figures and examples used were taken from trusted sources in the field and citations are included. 
+
+Before starting, we want to highlight that ML, while closely related to statistics, is distinct from it. Both fields share common methods and terminologies, but their goals differ. Statistics primarily focuses on analyzing and interpreting existing data, whereas ML aims to make predictions and infer from new data. Terms like \textbf{Bias} and \textbf{Variance} can have different implications in ML. In ML, bias refers to the error introduced by approximating a real-world problem with a simplified model, while variance measures how much the model's predictions change with different training data. Understanding and managing the trade-off between bias and variance is crucial for developing robust ML models, as we'll learn in \autoref{sec:fitting}.
 \begin{figure}
   \includegraphics{MachineLearning}
   \caption{Classification of Machine Learning Algorithms from \cite{SurveyML}}
   \label{fig:ML}
 \end{figure}
 \section{Neural Networks}
-Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain \citep{web:IBM:NN}. They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and biases}. Activated nodes transmit data to the next layer through outgoing edges.
+Neural networks, a subset of machine learning, form the core of supervised learning and are inspired by the human brain. They are made of input, hidden, and output layers, and consist of interconnected \textit{neurons} with associated \textit{weights and biases}. Activated nodes transmit data to the next layer through outgoing edges.
 
 \subsection{Single Layer Perceptron} \label{sub:Single Layer Perceptron}
-The simplest neural network is referred to as the \textbf{Signle Layer Perceptron} (see \autoref{fig:SLP}). This neural network contains
+The simplest neural network is referred to as the \textbf{Single Layer Perceptron} (see \autoref{fig:SLP}). This neural network contains
 a single input layer and an output node \citep{inbook:Aggarwal-1.2}.
 
 Consider a situation where each \textit{training instance} is of the form $(\overline{X}, y)$, where each $\overline{X} = [x_1,..., x_d]$ contains $d$ feature variables, and $y \in [-1, +1]$ contains the observed value of the binary class variable. By “observed value” we refer to the fact that it is given to us as a part of the training data, and our goal is to predict the class variable for cases in which it is not observed.
@@ -253,7 +238,9 @@ The neuron is the smallest computational unit of a neural network. The single la
   Biases are constant, they are an additional input into the next layer that will always have the value of 1. Bias units are not influenced by the previous layer, they guarantee that even when all the inputs are zeros there will still be an input in the neuron \citep{WeightsBias}. 
 \end{definition}
 
-When talking about neural networks and ML models in general, the term "\textbf{parameters}" often comes up. For example, OpenAI loves to brag about how many parameters their latest language models have (\textbf{GPT-4} has $1.76$ trillion). Parameters are the elements of a neural networks that the model learns from the training data. These parameters are exactly the weights and biases defined above.
+When talking about neural networks and ML models in general, the term "\textbf{parameters}" often comes up. For example, OpenAI loves to brag about how many parameters their latest language models have (\textbf{GPT-4} has $1.76$ trillion). Parameters are the elements of a neural networks that the model learns from the training data. These parameters are exactly the weights and biases defined above. See \autoref{fig:parameters} for a comparison of popular Large Language Models in their number of parameters.
+ 
+
 \subsection{Feed-Forward Neural Networks}%
   \label{sub:Feed-Forward Neural Networks}
   Having defined neurons, the building blocks of neural networks, we may now give a rigorous definition of the latter. A \textbf{feed-forward neural network} (FFN) has connections only in one direction—that is, it forms a directed acyclic graph. Every node receives input from “upstream” nodes and delivers output to “downstream” nodes; there are no loops \citep{book:AIModernApp}.
@@ -266,7 +253,13 @@ The overall network is a combination of function composition and matrix multipli
   A neural network is a \textit{computational directed acyclic graph,} in which a unit of computation is the neuron. Each directed edge in the graph represents a function passing the weighed output of a node in a layer to a node in the next layer.
  \end{definition} 
 
-   Artificial neural networks are often refered to as \textbf{multi-layer perceptrons} (MLPs) for one simple reason: you can think of a neural network as the composition of multiple perceptrons. In this case, the perceptron would be a synonym for neuron, so the smallest computational unit of a neural network, which performs, for example, a linear combination of its inputs followed by the application of an activation function, which can be the sigmoid, tanh, ReLU, identity, or any other function that is differentiable, if you plan to train the neural network with gradient descent.
+   Artificial neural networks are often referred to as \textbf{multi-layer perceptrons} (MLPs) for one simple reason: you can think of a neural network as the composition of multiple perceptrons. In this case, the perceptron would be a synonym for neuron, so the smallest computational unit of a neural network, which performs, for example, a linear combination of its inputs followed by the application of an activation function, which can be the sigmoid, tanh, ReLU, identity, or any other function that is differentiable, if you plan to train the neural network with gradient descent.
+ \begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{parameters}
+    \caption{A graph comparing the number of parameters in popular Large Language Models (LLMs), data from \href{https://en.wikipedia.org/wiki/Large_language_model}{Wikipedia}.}
+    \label{fig:parameters}
+  \end{figure}
 \subsection{Layers}
 \label{sub:Layers}
 FFNs are usually arranged in layers, such that each unit receives input
@@ -350,15 +343,19 @@ dividing them by the sum of all these exponentials, which ensures that the sum o
 
 \section{Learning}
   \label{sec:Learning}
-  At the core of machine learning lies the art of learning itself. In this section, we delve into the essential components that drive this process forward: backpropagation, weight updates, gradient descent, and loss functions.
 
-Backpropagation serves as the engine of learning in neural networks, refining model parameters through the propagation of error starting from the output, all the way to the first hidden layer. Accompanying this is the concept of loss functions, which quantify the disparity between predicted and actual outcomes, guiding the learning trajectory towards convergence.
+  At the core of machine learning lies the art of learning itself. But how can a computer program "learn"? The answer lies in viewing learning from data as an optimization problem. Essentially, the model's goal is to minimize the error between the predicted output and the actual expected output.
 
-In the subsections ahead, we dissect each facet of learning, providing insights into backpropagation, weight update rules, and unraveling the nuances of loss functions.
-  
+ In practice, given many data points, the model learns by adjusting its parameters iteratively. Each iteration involves tweaking the model's parameters to reduce the error between its predictions and the true values. This process continues until the model achieves the desired level of accuracy.
+
+In this section, we delve into the essential components that drive this process forward: gradient descent, backpropagation, and loss functions.
+
+\textbf{Gradient descent} is the main concept that enables learning. Its goal is to navigate down the gradient of the \textbf{loss function}, which quantifies the disparity between predicted and actual outputs, guiding the learning trajectory towards convergence. This optimization technique iteratively adjusts the model’s parameters to minimize the error.
+
+To achieve this, gradient descent relies on the computation of gradients, which are crucial for understanding the direction and rate at which the model parameters should be updated. This is where \textbf{backpropagation} comes into play. Backpropagation serves as the engine of learning in neural networks, propagating the error from the output layer back through the network to the first hidden layer. This process enables the calculation of the gradient of the loss function with respect to the weights, allowing the model to update its parameters in a way that reduces the overall error. By continually applying these updates, the model gradually improves its performance.
 \subsection{BackPropagation}%
   \label{sub:BackPropagation}
-\textbf{Backpropagation} is an algorithm for automatic differentiation that calculates the gradients of parameters in neural networks. The gradient estimate is used by optimization algorithms such as \textit{Stochastic Gradient Descent} (\autoref{subsub:Stochastic Gradient Descent}) to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} (\autoref{sub:Weight Update Rule}). Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent, exactly the way we would with linear regression and logistic regression. 
+\textbf{Backpropagation} is an algorithm for automatic differentiation that calculates the gradients of parameters in neural networks. The gradient estimate is used by optimization algorithms such as \textit{Stochastic Gradient Descent} (\autoref{subsub:Stochastic Gradient Descent}) to compute the network weight updates. So, when we say a neural network is \textit{learning}, it means that backprop is computing a gradient descent that minimizes the loss function, and updates the weights using a \textbf{weight update rule} (\autoref{sub:Weight Update Rule}). Backpropagation is a way of computing the partial derivatives of a loss function with respect to the weights of a network; we use these derivatives in gradient descent. 
 \begin{wrapfigure}{R}{0.4\textwidth} %this figure will be at the right
     \centering
     \includegraphics[width=0.4\textwidth]{simpleNet}
@@ -366,7 +363,7 @@ In the subsections ahead, we dissect each facet of learning, providing insights 
     \label{fig:simpleNet}
 \end{wrapfigure}
   Let us first begin by recalling that a neural network evaluates compositions of functions computed at individual nodes. Think of a neural network as a function $h_w(x)$ of the input, parametrized by the weights. 
-\begin{example}[]
+\begin{example}
    Consider the network in \autoref{fig:simpleNet}, let $\{x_1,x_2\}$ be the input vector, $f$ the activation function and $a_i$ denote the activated output at node $i$. Then, the output at node 3 is given by
   $$a_3 = f(w_{0, 3} + f(x_1)w_{1,3} + f(x_2)w_{2,3}), $$
   where $w_{0,3}$ is the bias weight (\autoref{def:bias}) at node 3. Similarly, the output at node 5 is
@@ -401,14 +398,14 @@ $$
   The algorithm can be divided in two phases: \textit{forward} and \textit{backward}.
 
     \vspace{4mm}
-\noindent\textsc{Forward Phase.} The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The derivative of the loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. For the sake of simplicity, we will explore the case of a single output node for the time being. We will then talk about the simple generalization to many outputs. 
+\noindent\textsc{Forward Phase.} The term "forward phase" refers to this process of computing values of each hidden layer depending on the current weight values using a specific input vector. These computations naturally cascade forward across the layers. The aim of the forward phase is to compute every intermediate hidden and output variable for a given input. The Backward phase will call for these values. The loss function $L$ with respect to this output, as well as the value of the output $o$, are calculated at the completion of the computation. 
 
  \vspace{4mm}
-\noindent\textsc{Backward Phase.} In this phase, the gradient of the loss function with respect to different weights is calculated. First, the derivative $\frac{\partial {o}}{\partial {w}} {}$ is computed. This establishes the gradient computation's initialization. The multivariable chain rule is then used to propagate the derivatives in the opposite direction. Since we are focussing on the pre-activation approach, the gradients are computed with respect to the pre-activation values of the hidden variables, which are then propagated backwards.
-  \end{enumerate}
-  More precisely, the process can be described as follows. Let $(x,t)$ be the input to our algorithm, where $t$ is the target output of the input vector $x.$ Define the value
-  $$L = \operatorname{Loss}(y,t),$$
-  where Loss could be any \textit{loss function}, such as the MSE. At each neuron $j$, let its post-activation output be 
+\noindent\textsc{Backward Phase.} In this phase, the gradient of the loss function with respect to different weights is calculated. First, the derivative $\frac{\partial {o}}{\partial {w}} {}$ is computed. This establishes the gradient computation's initialization. The multivariate chain rule is then used to propagate the derivatives \textit{backwards} in the neural network. Since we are focussing on the pre-activation approach, the gradients are computed with respect to the pre-activation values of the hidden variables, which are then propagated backwards.
+  
+  More precisely, the process can be described as follows \citep{Dreyfus1990ArtificialNN}. Let $(x,t)$ be the input to our algorithm, where $t$ is the target output of the input vector $x.$ Define the value
+  $$L = \operatorname{Loss}(y,t),$$  
+  where Loss could be any \textit{loss function} (see \autoref{sub:Loss Functions}), such as the MSE. At each neuron $j$, let its post-activation output be 
   $$o_j = \Phi (\net_j) = \Phi \left( \sum^{n}_{i=0}w_{i,j} o_i  \right) , $$
   where $\Phi$ is any \textit{activation function}, $w_{i,j}$ is the weight on the edge between neurons $i$ and $j$, and $o_i$ is the output from neuron $i.$ Then, the pre-activation value is easily seen to be $\net_j$.
 
@@ -464,15 +461,10 @@ to conclude that the partial derivative of $L$ with respect to the weight $w_{i,
  Then, the weight update rule would be defined as, 
  \begin{equation*}
   \begin{split}
-    w_{i,j}^{(\text{updated})} =  w_{i,j}^{(\text{old})} - \mu  o_i \delta_j
+    w_{i,j}^{(\text{updated})} =  w_{i,j}^{(\text{old})} - \Delta w_{i,j} 
   \end{split}
  \end{equation*}
- We claim that this update rule decreases the loss $L$. 
- \begin{proof} 
-  
-If ${\frac {\partial L}{\partial w_{i,j}}}>0$, an increase in $w_{i,j}$ increases $L$; conversely, if $\frac {\partial L}{\partial w_{i,j}}<0$, an increase in $w_{i,j}$ decreases $L$. The new $\Delta w_{i,j}$ is added to the old weight, and the product of the learning rate and the gradient, multiplied by $-1$ guarantees that $w_{i,j}$  changes in a way that always decreases $L$. 
-
- \end{proof}
+ We claim that this update rule decreases the loss $L$, and refer the reader to section $4.15$ of \cite{Hagan_Martin} for a proof, which is quite lengthy.  
 \subsection{Gradient Descent}%
   \label{sub:Gradient Descent}
   
@@ -483,6 +475,9 @@ Gradient descent is a method for minimizing an \textbf{objective function} \( J(
 \begin{definition}[Sample]
   A sample is a single row of data containing inputs for the algorithm and an output for error calculation. A training dataset consists of many samples, also known as instances, observations, input vectors, or feature vectors.
 \end{definition}
+
+The term \textit{feature vectors} may be more appropriate for describing a row of data, as \textit{features} refer to specific, measurable attributes or characteristics of a given phenomenon. Selecting informative features is crucial for the success of algorithms in tasks such as pattern recognition, classification, and regression. Although features are typically numerical, they can also be structural, such as strings and graphs. The concept of a feature is analogous to that of an explanatory variable in statistical methods like linear regression. For simplicity, we will use the term \textit{sample} for the remainder of the paper.
+
 \begin{definition}[Batch]
   The batch size is a hyperparameter defining the number of samples processed before updating the model parameters. A batch iterates over samples, makes predictions, calculates errors, and updates the model. 
 \end{definition}
@@ -551,7 +546,7 @@ Now, there exist many more gradient descent algorithms, such as \textit{Nesterov
   \label{sub:Loss Function}
     Regression losses are loss functions used to solve the regression problems of \textit{supervised ML}. Recall that regressions model predict the output of a continuous output variable. The regression losses are all based on residuals, namely the difference between the predicted and expected outputs. In the following, let $x_i$ be the $i^{th}$ element of input $x$, $f(x_i)$ the $i^{th}$ element of the predicted output, and $y_i$ the $i^{th}$ element of the expected output. The following represent commonly used regression losses,
   \begin{enumerate}
-    \item \textit{Mean Bias Error Loss [Continuous, Differentiable]}. The Mean Bias Error loss is the most basic loss function, it is given by,
+    \item \textit{Mean Bias Error Loss [Continuous, Differentiable]}. The Mean Bias Error loss (MBE) is the most basic loss function, it is given by,
     \begin{equation}
       \begin{split}
         \mathcal{L}_{MBE} (y_i, f(x_i))= \frac{1}{n} \sum^{n}_{i=1} [y_i-f(x_i)]
@@ -594,7 +589,7 @@ The squared term makes all the biases positive and magnifies the contribution ma
         \end{cases}
       \end{split}
     \end{equation*}
-    \item \textit{Log-cosh Loss [Continuous, Differentiable].} The Log-cosh loss is given by the logarithm of the \textit{hyperbolic cosine} of the residuals between the actual value $y$ and the forecasted value $f(y_i)$. It is more computationally demanding than \textit{Huber loss}, but it provides all the same benefits without the need to establish a hyperparameter. Moreover, the log-cosh loss has the advantage of being twice differentiable, which makes it appropriate for techniques that need to solve the second derivative \citep{ciampiconi2023survey}. It is defined as, 
+    \item \textit{Log-cosh Loss [Continuous, Differentiable].} The Log-cosh loss is given by the logarithm of the \textit{hyperbolic cosine} of the residuals between the actual value $y$ and the predicted value $f(y_i)$. It is more computationally demanding than \textit{Huber loss}, but it provides all the same benefits without the need to establish a hyperparameter. The log-cosh loss has the advantage of being twice differentiable, making it appropriate for algorithms needing to compute the hessian. It is also considered as a \textit{Robust estimator}, meaning that is is tolerant to outliers in the data set \citep{ciampiconi2023survey}. It is defined as, 
   \begin{equation}
       \begin{split}
         \mathcal{L}_{Logcosh}(y_i, f(x_i)) = \frac{1}{n} \sum^{n}_{i=1} \log[\cosh(y_i-f(x_i))]
@@ -664,7 +659,7 @@ The squared term makes all the biases positive and magnifies the contribution ma
     \end{equation}
   \end{enumerate}
 Other loss functions based on \textit{Information Theory}, such as the \textit{Cross-Entropy loss}, and the \textit{Kullback-Leiber divergence} are widely used in classification problems, and we refer the reader to \citep{ciampiconi2023survey} for more information.
- \section{Fitting the model}
+ \section{Fitting the model}\label{sec:fitting}
 
 Amidst the pursuit of learning, lurk the pitfalls of overfitting and underfitting. Overfitting occurs when a model becomes overly tailored to the training data, while underfitting results in oversimplified representations. Finding the right balance between generality and complexity is essential, achieved through techniques like regularization and cross-validation.
 
@@ -739,13 +734,14 @@ The \textbf{bias-variance tradeoff} is a fundamental concept in machine learning
   \label{sub:Cross-Validation}
 Cross-validation is a technique that aims to test the ML model's testing capabilities on unseen data. This helps identify issues such as \textit{overfitting}, discussed above, or \textit{selection bias}, which is the result of selecting training data in a non-random way that doesn't properly represent the population. Cross-validation provides insight into how well the model will generalize to a different dataset.
 
-The most common technique used is \textbf{k-fold cross-validation}, which allows one to repeatedly train and test the model $k$ times on various randomly chosen subsets of the training data. The average test error across $k$ trials can then be used to estimate the test error. In trial $i$, the $i^{th}$ subset of the data is used as the test set, and the remaining data is utilized as the training set \citep{Goodfellow-et-al-2016}. The following is the pseudo-code for the k-fold cross validation algorithm.
+The most common technique used is \textbf{k-fold cross-validation}, which allows one to repeatedly train and test the model $k$ times on various randomly chosen subsets of the training data. The average test error across $k$ trials can then be used to estimate the test error. In trial $i$, the $i^{th}$ subset of the data is used as the test set, and the remaining data is utilized as the training set \citep{Goodfellow-et-al-2016}. See \autoref{algo1} for the pseudo-code for the k-fold cross validation algorithm.
 
 
 \begin{algorithm}[h!]
   \SetKwProg{Fn}{Function }{\string:}{}
   \SetKwFunction{KFoldXV}{KFoldXV}
   \caption{$k$-fold cross-validation}\label{k-CrossVal} 
+  \label{algo1}
   \Fn{\KFoldXV{$\mathbb{D}, A, L, k$}}{
   \textbf {Require: } $\mathbb{D}$ \text {, the given dataset, with elements } $ \boldsymbol{z}^{(i)}$\\
   \textbf {Require: } $A$, the learning algorithm, seen as a function that takes a dataset as input and outputs a learned function \\
@@ -765,9 +761,7 @@ The most common technique used is \textbf{k-fold cross-validation}, which allows
 
 \subsection{Regularization Techniques}%
   \label{sub:Regularization Techniques}
-Regularization is defined as any change we make to a
-learning algorithm with the goal of lowering its generalization error but not its training error. Regularization is one of the central concerns of the field of machine
-learning, rivaled in its importance only by optimization \citep{Goodfellow-et-al-2016}. Finding effective regularization methods is a hot research area in the field.
+Regularization refers to any change we make to a learning algorithm with the goal of lowering its generalization error but not its training error. It is a key technique for addressing \textit{overfitting} (\autoref{sub:Overfitting}) and is one of the main concerns in the field of ML, rivaled in its importance only by optimization \citep{Goodfellow-et-al-2016}. Finding effective regularization methods is a hot research area in the field.
 
 A significant portion of machine learning involves creating various models and algorithms tailored to suit them. Techniques like cross validation help us empirically determine the most suitable approach for our specific problem. Yet, there isn't one "best" model universally applicable, this concept is often referred to as the "no free lunch theorem". The rationale behind this theorem lies in the fact that assumptions effective in one domain may not perform well in another \citep{MurphyML}.
 
@@ -809,14 +803,17 @@ When training large models with great complexity, it's common to observe a pheno
   Dropout is yet another technique to address the regularization problem. The core concept is to randomly deactivate units, along with their connections, within the neural network during training. This prevents units from becoming overly reliant on each other. Throughout training, dropout samples from an array of "thinned" networks. At the testing phase, approximating the ensemble effect of these thinned networks can be achieved by utilizing a single unthinned network with reduced weights. This approach significantly mitigates overfitting and surpasses other regularization techniques. Dropout has demonstrated its efficacy in enhancing the performance of neural networks across various supervised learning tasks, including vision, speech recognition, document classification, and computational biology. Notably, it has achieved state-of-the-art results on numerous benchmark data sets \citep{JMLR:v15:srivastava14a}.
     \section{Conclusion}%
     \label{sec:Conclusion}
-As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be, from the basic concept of neural networks, all the way to the more advanced method of backpropagation. It becomes evident, however, that the reliance of supervised learning on carefully labeled datasets poses a significant limitation. The need for abundant, high-quality data, paired with corresponding inputs and desired outputs, can be restrictive and often impractical in real-world scenarios. This limitation becomes particularly apparent when faced with complex tasks where defining the desired outputs may be challenging or even impossible. 
+As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be. Through simple mathematics and precise engineering of neural networks, supervised learning algorithms can extract information from labelled data to make inferences about unseen data, behaving like an intelligent being. This is where machine learning diverges from statistics, which focuses solely on understanding the dataset without making inferences. We covered the foundational concepts of neural networks and their construction, progressing to the more advanced techniques of backpropagation and gradient descent. We provided brief surveys of activation and loss functions for the reader's reference. We also addressed key challenges in machine learning, such as overfitting and underfitting, along with techniques to mitigate them.
+
+The concept of supervised learning represents a change in how we see intelligence and knowledge. It was once believed that intelligence was a quality exclusive to humans, one that was demonstrated by one's capacity for understanding, reasoning, and experience-based learning. Supervised learning challenges this notion by demonstrating that machines can also exhibit these capabilities. It draws attention to a novel paradigm in which knowledge can arise from the interaction of algorithms and data. 
+
+Supervised learning has a significant impact on today's world. It drives many different applications, including as natural language processing, autonomous cars, and medical diagnostics. The ability to learn from labelled data has enabled the creation of systems that can recognize speech, translate languages, detect fraud, and recommend products with remarkable accuracy.
+
+It becomes evident, however, that the reliance of supervised learning on carefully labelled datasets poses a significant limitation. The need for abundant, high-quality data, paired with corresponding inputs and desired outputs, can be restrictive and often impractical in real-world scenarios. This limitation becomes particularly apparent when faced with complex tasks where defining the desired outputs may be challenging or even impossible. 
 
 This is the basis of the power of reinforcement learning (RL), an approach that learns from interacting directly with the environment, surpassing the limitations of supervised learning. In RL, agents move through a set of options, learning the best methods by making mistakes and getting feedback in the form of rewards. Due to its self-learning mechanism, RL can now address issues for which explicit supervision is impractical, providing access to previously uncharted territory for conventional machine learning techniques.
 
-Consider, for instance, the task of training a model to beat the world's best chess player. In such a scenario, the sheer complexity of the game and the infinite array of possible moves render the notion of a predefined dataset ridiculous to even think about. Supervised learning falls short in this context, as the desired optimal moves to win the game are elusive and ever-changing. Here, RL emerges as the preferred approach, empowering agents to learn from experience, adapt strategies in real-time, and ultimately, achieve superhuman performance.
-
-
-
+\section*{Acknowledgments}
 
 {\footnotesize
   \bibliography{ML_Report_DRP2024}

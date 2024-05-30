@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -60,11 +60,21 @@ cdeterman.
 Lorenzo Ciampiconi, Adam Elwood, Marco Leonardi, Ashraf Mohamed, and Alessandro Rozza.
 \newblock A survey and taxonomy of loss functions in machine learning, 2023.
 
+\bibitem[Dreyfus(1990)]{Dreyfus1990ArtificialNN}
+Stuart~E. Dreyfus.
+\newblock Artificial neural networks, back propagation, and the kelley-bryson gradient procedure.
+\newblock \emph{Journal of Guidance Control and Dynamics}, 13:\penalty0 926--928, 1990.
+\newblock URL \url{https://api.semanticscholar.org/CorpusID:121153720}.
+
 \bibitem[Goodfellow et~al.(2016)Goodfellow, Bengio, and Courville]{Goodfellow-et-al-2016}
 Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
 \newblock \emph{Deep Learning}.
 \newblock MIT Press, 2016.
 \newblock \url{http://www.deeplearningbook.org}.
+
+\bibitem[Gu and Dao(2023)]{gu2023mamba}
+Albert Gu and Tri Dao.
+\newblock Mamba: Linear-time sequence modeling with selective state spaces, 2023.
 
 \bibitem[Hagan et~al.(2014)Hagan, Demuth, Beale, and Orlando]{Hagan_Martin}
 Martin~T Hagan, Howard~B Demuth, Mark~H Beale, and Jesús Orlando, De.
@@ -72,12 +82,6 @@ Martin~T Hagan, Howard~B Demuth, Mark~H Beale, and Jesús Orlando, De.
 \newblock Martin Hagan, 2014.
 \newblock ISBN 978-0971732117.
 \newblock URL \url{https://hagan.okstate.edu/NNDesign.pdf}.
-
-\bibitem[IBM(2024)]{web:IBM:NN}
-IBM.
-\newblock What are neural networks, 2024.
-\newblock URL \url{https://www.ibm.com/topics/neural-networks}.
-\newblock Accessed 7 Febuary 2024.
 
 \bibitem[Jagtap and Karniadakis(2022)]{jagtap2022important}
 Ameya~D. Jagtap and George~Em Karniadakis.
@@ -126,6 +130,10 @@ Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan 
 Dipam Vasani.
 \newblock This thing called weight decay, Nov 2019.
 \newblock URL \url{https://towardsdatascience.com/this-thing-called-weight-decay-a7cd4bcfccab}.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin]{vaswani2023attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need, 2017.
 
 \bibitem[Wakefield()]{GuideML}
 Katrina Wakefield.
